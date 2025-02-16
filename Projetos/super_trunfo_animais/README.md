@@ -54,14 +54,14 @@ Para rodar o jogo localmente, siga os passos abaixo:
 1. **Clone o repositório**:
 
    ```bash
-   git clone https://github.com/seu-usuario/super-trunfo-animais.git
+   git clone https://github.com/seu-usuario/super_trunfo_animais.git
 
    ```
 
 2. **Navegue até a pasta do projeto**:
 
    ```bash
-   cd super-trunfo-animais
+   cd super_trunfo_animais
 
    ```
 
