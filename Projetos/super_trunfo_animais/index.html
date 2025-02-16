@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./vendor/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://code.s3.yandex.net/web-code/favicon.ico"
+    />
+    <title>Super Trunfo - Batalha de Animais</title>
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1 class="header__title">Super Trunfo - Batalha de Animais</h1>
+        <p class="header__description">
+          Escolha um atributo para batalhar e veja quem vence!
+        </p>
+      </header>
+
+      <main class="content">
+        <section class="cards">
+          <div class="cards__player">
+            <!-- card 1 do Jogador -->
+            <div class="card-wrap">
+              <div class="card-header one">
+                <img id="first-player_image" src="" alt="Animal do Jogador1" />
+              </div>
+              <div class="card-content" id="cardPlayer1">
+                <h2 class="card-title" id="player1_animal">Animal</h2>
+                <div class="card-text">
+                  <p id="player1_attribute1">Ataque : 0</p>
+                  <p id="player1_attribute2">Defesa : 0</p>
+                  <p id="player1_attribute3">Velocidade : 0</p>
+                </div>
+                <button class="card-btn one">
+                  <p id="power1"></p>
+                </button>
+              </div>
+            </div>
+
+            <!-- Adiciona o texto "+" entre os cards do Jogador -->
+            <div class="plus">+</div>
+
+            <!-- card 2 do Jogador -->
+            <div class="card-wrap">
+              <div class="card-header two">
+                <img id="second-player_image" src="" alt="Animal do Jogador2" />
+              </div>
+              <div class="card-content" id="cardPlayer2">
+                <h2 class="card-title" id="player2_animal">Animal</h2>
+                <div class="card-text">
+                  <p id="player2_attribute1">Ataque : 0</p>
+                  <p id="player2_attribute2">Defesa : 0</p>
+                  <p id="player2_attribute3">Velocidade : 0</p>
+                </div>
+                <button class="card-btn two">
+                  <p id="power2"></p>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Adiciona o texto "VS" entre o Jogador e a Máquina -->
+          <div class="vs">VS</div>
+
+          <div class="cards__machine">
+            <!-- card 1 da Máquina -->
+            <div class="card-wrap">
+              <div class="card-header three">
+                <img id="first-machine_image" src="" alt="Animal da Máquina1" />
+              </div>
+              <div class="card-content" id="cardMachine1">
+                <h2 class="card-title" id="machine1_animal">Animal</h2>
+                <div class="card-text">
+                  <p id="machine1_attribute1">Ataque : 0</p>
+                  <p id="machine1_attribute2">Defesa : 0</p>
+                  <p id="machine1_attribute3">Velocidade : 0</p>
+                </div>
+                <button class="card-btn three">
+                  <p id="power3"></p>
+                </button>
+              </div>
+            </div>
+
+            <!-- Adiciona o texto "+" entre os cards da Máquina -->
+            <div class="plus">+</div>
+
+            <!-- card 2 da Máquina -->
+            <div class="card-wrap">
+              <div class="card-header four">
+                <img
+                  id="second-machine_image"
+                  src=""
+                  alt="Animal da Máquina2"
+                />
+              </div>
+              <div class="card-content" id="cardMachine2">
+                <h2 class="card-title" id="machine2_animal">Animal</h2>
+                <div class="card-text">
+                  <p id="machine2_attribute1">Ataque : 0</p>
+                  <p id="machine2_attribute2">Defesa : 0</p>
+                  <p id="machine2_attribute3">Velocidade : 0</p>
+                </div>
+                <button class="card-btn four">
+                  <p id="power4"></p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Seção Batalha + Botões de Atributos -->
+        <section class="battle">
+          <div class="game_buttons">
+            <button id="btnAtaque">Ataque</button>
+            <button id="btnDefesa">Defesa</button>
+            <button id="btnVelocidade">Velocidade</button>
+          </div>
+          <div class="battle__result" id="result"></div>
+          <div class="battle__score">
+            <p>
+              Placar: Jogador <span id="scoreJogador">0</span> x
+              <span id="scoreMaquina">0</span> Máquina
+            </p>
+          </div>
+        </section>
+        <script src="app.js"></script>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__columns">
+        <div class="footer__column footer__column--logo">
+          <h3 class="footer__column-heading">
+            Super Trunfo - <span>Batalha de Animais</span>
+          </h3>
+          <p class="footer__column-description">Batalha de Duplas.</p>
+        </div>
+
+        <div class="footer__column footer__column--contacts">
+          <h3 class="footer__column-heading">Contato</h3>
+          <ul class="footer__list footer__list--contacts">
+            <li class="footer__list-item">
+              <a href="mailto:viniciusuchita@gmail.com" class="footer__link">
+                <i class="fa fa-envelope"></i> viniciusuchita@gmail.com
+              </a>
+            </li>
+            <li class="footer__list-item">
+              <a
+                href="https://api.whatsapp.com/send?phone=5511963840830"
+                class="footer__link"
+              >
+                <i class="fa fa-whatsapp"></i> +55 (11) 96384-0830
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__column footer__column--social">
+          <h3 class="footer__column-heading">Sobre</h3>
+          <p class="footer__column-description">
+            Sou Vinícius Uchita, estudante de Análise e Desenvolvimento de
+            Sistemas, entusiasta de tecnologia com forte interesse em
+            desenvolvimento Web.
+          </p>
+
+          <ul class="footer__list footer__list--social">
+            <li class="footer__list-item">
+              <a
+                href="https://github.com/devviniuchita"
+                class="footer__link footer__link--social"
+              >
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+            <li class="footer__list-item">
+              <a
+                href="https://www.linkedin.com/in/viniciusuchita/"
+                class="footer__link footer__link--social"
+              >
+                <i class="fa fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="footer__list-item">
+              <a
+                href="https://www.instagram.com/vincivieira"
+                class="footer__link footer__link--social"
+              >
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+            <li class="footer__list-item">
+              <a
+                href="https://web.facebook.com/viniciusvieira.uchita"
+                class="footer__link footer__link--social"
+              >
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li class="footer__list-item">
+              <a href="#" class="footer__link footer__link--social">
+                <i class="fa fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
+          <hr class="footer__divider" />
+          <p class="footer__copyright">
+            &copy; <span id="anoCorrente"></span> - Vinícius Uchita
+          </p>
+        </div>
+      </div>
+
+      <div class="footer__global">
+        <hr class="footer__divider" />
+        <p class="footer__copyright">
+          &copy;Copyright. Todos os direitos reservados.
+        </p>
+      </div>
+
+      <script>
+        document
+          .querySelectorAll("#anoCorrente")
+          .forEach((el) => (el.textContent = new Date().getFullYear()));
+      </script>
+    </footer>
+  </body>
+</html>
