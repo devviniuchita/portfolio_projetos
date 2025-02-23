@@ -54,11 +54,11 @@ Para rodar o jogo localmente, siga os passos abaixo:
 1. **Clone o repositório**:
 
    ```bash
-   git clone https://github.com/seu-usuario/super_trunfo_animais.git
+   git clone https://github.com/devviniuchita/super_trunfo_animais.git
 
    ```
 
-2. **Navegue até a pasta do projeto**:
+2. **Entre na pasta**:
 
    ```bash
    cd super_trunfo_animais
@@ -79,13 +79,28 @@ Para rodar o jogo localmente, siga os passos abaixo:
 
 - **Atualização Rápida:** Imagens pré-carregadas e transições suaves para uma experiência fluida.
 
-- **Responsivo:** Funciona bem em dispositivos móveis e desktops.
-
 ---
 
 ## 📊 Combinações e Estratégia
 
 Com **27 cartas de animais**, o jogo oferece **17.550 combinações diferentes**. Isso significa que cada partida é única! Desenvolva estratégias para maximizar seus atributos e vencer a máquina.
+
+---
+
+## 📉 Status do Projeto
+
+- Em desenvolvimento.
+- Atualmente, o jogo inclui a lógica básica de comparação de atributos e uma interface inicial.
+  
+- **Próximos passos**:
+
+**1-** Melhorar o design responsivo para melhor funcionamento em dispositivos móveis e telas menores;
+
+**2-** Adicionar mais cartas;
+
+**3-** Adiconar mais atributos para aumentar as combinações e consequentemente aumentar a dificuldade do jogo;
+
+**4-** Evoluir o código para o **Back-end**, incluir API's e banco de dados para deixar o jogo mais dinâmico. Exexemplo: Rota <mark>/batalha</mark> que recebe quatro cartas via POST e retorna o vencedor.
 
 ---
 
@@ -110,7 +125,7 @@ git commit -m 'Adicionei uma nova feature'
 **4-** **Push** para a **branch**:
 
 ```bash
-git checkout -b minha-feature
+git push origin minha-feature
 ```
 
 **5-** Abra um **Pull Request**.
@@ -125,7 +140,7 @@ git checkout -b minha-feature
 
 - Inspirado no clássico jogo Super Trunfo.
 
-- Créditos às imagens e ícones utilizados:
+- Créditos às imagens e ícones utilizados: https://unsplash.com/pt-br
 
 ---
 
