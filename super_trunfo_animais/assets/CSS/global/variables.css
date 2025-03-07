@@ -1,0 +1,63 @@
+:root {
+  /* Cores principais */
+  --color-text: #616161;
+  --color-text-btn: #ffffff;
+  --card1-gradient-color1: #f12711;
+  --card1-gradient-color2: #f5af19;
+  --card2-gradient-color1: #7f00ff;
+  --card2-gradient-color2: #e100ff;
+  --card3-gradient-color1: #3f2b96;
+  --card3-gradient-color2: #a8c0ff;
+  --card4-gradient-color1: #11998e;
+  --card4-gradient-color2: #38ef7d;
+
+  /* Cores específicas para ícones */
+  --gmail-icon-color: #d14836; /* Cor do ícone do Gmail */
+  --whatsapp-icon-color: #25d366; /* Cor do ícone do WhatsApp */
+  --youtube-icon-color: #ff0000; /* Cor do ícone do YouTube */
+  --tiktok-icon-color: #2c292f; /* Cor do ícone do TikTok */
+  --instagram-icon-color: #bd0d9f; /* Cor do ícone do Instagram */
+  --facebook-icon-color: #1877f2; /* Cor do ícone do Facebook */
+  --linkedin-icon-color: #0a66c2; /* Cor do ícone do LinkedIn */
+  --share-icon-color: #86146a; /* Cor do ícone de compartilhar */
+
+  /* Efeitos */
+  --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra padrão */
+  --box-shadow-hover: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Sombra para hover */
+  --transition: all 0.3s ease; /* Transição padrão */
+  --transform: scale(1.05); /* Transformação para hover */
+  --drop-shadow: drop-shadow(
+    0 2px 4px rgba(0, 0, 0, 0.2)
+  ); /* Sombra para hover */
+
+  /* Fontes */
+  --font-noto: "Noto Sans JP", sans-serif; /* Fonte estilo japonesa */
+  --font-inter: "Inter", sans-serif; /* Fonte Inter */
+  --font-roboto: "Roboto", sans-serif; /* Fonte Roboto */
+  --font-montserrat: "Montserrat", sans-serif; /* Fonte Montserrat */
+
+  /* Tamanhos de fonte */
+  --font-size-small: 12px; /* Tamanho de fonte pequeno */
+  --font-size-medium: 16px; /* Tamanho de fonte médio */
+  --font-size-large: 20px; /* Tamanho de fonte grande */
+  --font-size-xlarge: 24px; /* Tamanho de fonte extra grande */
+  --font-size-xxlarge: 28px; /* Tamanho de fonte muito grande */
+}
+#btnAtaque {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+#btnDefesa {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+#btnVelocidade {
+  background: linear-gradient(to right, #f9d423, #ff4e50);
+}
+#btnAtaque:hover {
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+}
+#btnDefesa:hover {
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+}
+#btnVelocidade:hover {
+  background: linear-gradient(to right, #ff4e50, #f9d423);
+}

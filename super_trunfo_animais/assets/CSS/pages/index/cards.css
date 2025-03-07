@@ -1,0 +1,309 @@
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+  gap: 20px;
+}
+.card-header img {
+  display: grid;
+  place-items: center;
+  height: 90%;
+  width: 95%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.cards__player,
+.cards__machine {
+  display: flex;
+  gap: 20px;
+}
+.card-wrap {
+  width: 220px;
+  overflow: hidden;
+  color: var(--color-text);
+  background: #473e3e;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  cursor: pointer;
+}
+.card-wrap:hover {
+  transform: scale(1.1);
+}
+.card-wrap img {
+  transition: opacity 0.3s ease-in-out;
+}
+.card-wrap img.hidden {
+  opacity: 0;
+}
+.card-header {
+  display: grid;
+  height: 200px;
+  width: 100%;
+  place-items: center;
+  background: red;
+}
+.card-header i {
+  font-size: 72px;
+  color: #fff;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+}
+.card-title,
+.card-text p {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: white;
+}
+.card-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#player1_animal,
+#player2_animal,
+#machine1_animal,
+#machine2_animal {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+#player1_animal {
+  background: linear-gradient(
+    to left,
+    var(--card1-gradient-color1),
+    var(--card1-gradient-color2)
+  );
+}
+#player2_animal {
+  background: linear-gradient(
+    to left,
+    var(--card2-gradient-color1),
+    var(--card2-gradient-color2)
+  );
+}
+#machine1_animal {
+  background: linear-gradient(
+    to left,
+    var(--card3-gradient-color1),
+    var(--card3-gradient-color2)
+  );
+}
+#machine2_animal {
+  background: linear-gradient(
+    to left,
+    var(--card4-gradient-color1),
+    var(--card4-gradient-color2)
+  );
+}
+.card-text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.card-btn {
+  padding: 5px 30px;
+  margin-bottom: 15px;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+.card-header.one {
+  background: linear-gradient(
+    to bottom left,
+    var(--card1-gradient-color1),
+    var(--card1-gradient-color2)
+  );
+}
+.card-header.two {
+  background: linear-gradient(
+    to bottom left,
+    var(--card2-gradient-color1),
+    var(--card2-gradient-color2)
+  );
+}
+.card-header.three {
+  background: linear-gradient(
+    to bottom left,
+    var(--card3-gradient-color1),
+    var(--card3-gradient-color2)
+  );
+}
+.card-header.four {
+  background: linear-gradient(
+    to bottom left,
+    var(--card4-gradient-color1),
+    var(--card4-gradient-color2)
+  );
+}
+.card-btn.one {
+  background: linear-gradient(
+    to left,
+    var(--card1-gradient-color1),
+    var(--card1-gradient-color2)
+  );
+}
+.card-btn.two {
+  background: linear-gradient(
+    to left,
+    var(--card2-gradient-color1),
+    var(--card2-gradient-color2)
+  );
+}
+.card-btn.three {
+  background: linear-gradient(
+    to left,
+    var(--card3-gradient-color1),
+    var(--card3-gradient-color2)
+  );
+}
+.card-btn.four {
+  background: linear-gradient(
+    to left,
+    var(--card4-gradient-color1),
+    var(--card4-gradient-color2)
+  );
+}
+.plus {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+}
+.vs {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20% 0;
+  color: white;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 10px #521121, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+    opacity: 0.8;
+  }
+  100% {
+    text-shadow: 0 0 10px #521121, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    opacity: 1;
+  }
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 1366px) {
+  .content {
+    flex-direction: column; /* Empilhar conteúdo em telas menores */
+    align-items: center;
+  }
+}
+
+/* Ajustes para telas de 769px até 1100px */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .cards {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+  .cards__player,
+  .cards__machine {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .card-wrap {
+    width: 180px;
+  }
+  .card-header {
+    height: 150px;
+  }
+  .card-title {
+    font-size: 14px;
+  }
+  .card-text p {
+    font-size: 12px;
+  }
+  .plus {
+    font-size: 24px;
+  }
+  .vs {
+    font-size: 32px;
+    margin: 10% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cards__player,
+  .cards__machine {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+  .card-wrap {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+  .card-header {
+    height: 120px;
+  }
+  .card-title {
+    font-size: 14px;
+  }
+  .card-text p {
+    font-size: 12px;
+  }
+  .plus {
+    display: none;
+  }
+  .vs {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+}
+
+/* Ajustes adicionais para telas muito pequenas */
+@media (max-width: 480px) {
+  .card-wrap {
+    width: 130px;
+  }
+  .card-header {
+    height: 100px;
+  }
+  .card-title {
+    font-size: 12px;
+  }
+  .card-text p {
+    font-size: 10px;
+  }
+  .plus .vs {
+    font-size: 20px;
+  }
+}
