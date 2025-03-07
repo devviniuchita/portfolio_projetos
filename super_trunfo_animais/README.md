@@ -12,9 +12,14 @@ Bem-vindo ao **Super Trunfo de Animais**! Este jogo é inspirado no clássico jo
 
 - O **Sistema de Batalhas** é de: **Dupla vs Dupla**.
 
-Prepare-se para mergulhar em um mundo de estratégia e diversão!
+Prepare-se para mergulhar em um mundo de estratégia e diversão!</br></br>
 
----
+## 🔗 Jogue Agora
+
+Se quiser testar o jogo, ele está disponível online no Vercel:  
+[🔹 Super Trunfo de Animais](https://supertrunfoanimais.vercel.app/)
+
+</br>
 
 ## 🎮 Como Jogar
 
@@ -54,7 +59,7 @@ Para rodar o jogo localmente, siga os passos abaixo:
 1. **Clone o repositório**:
 
    ```bash
-   git clone https://github.com/devviniuchita/super_trunfo_animais.git
+   git clone https://github.com/devviniuchita/portfolio_projetos/tree/main/Projetos/super_trunfo_animais
 
    ```
 
@@ -91,7 +96,6 @@ Com **27 cartas de animais**, o jogo oferece **17.550 combinações diferentes**
 
 - Em desenvolvimento.
 - Atualmente, o jogo inclui a lógica básica de comparação de atributos e uma interface inicial.
-  
 - **Próximos passos**:
 
 **1-** Melhorar o design responsivo para melhor funcionamento em dispositivos móveis e telas menores;
@@ -132,7 +136,7 @@ git push origin minha-feature
 
 ## 📄 Licença
 
-- Este projeto está sob a licença **MIT**. Veja o arquivo **LICENSE** para mais detalhes.
+- Este projeto está sob a licença **MIT**. Veja o arquivo **[MIT LICENSE](LICENSE)** para mais detalhes.
 
 ---
 

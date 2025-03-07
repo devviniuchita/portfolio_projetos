@@ -4,14 +4,14 @@ const animais = [
     ataque: 320,
     defesa: 150,
     velocidade: 230,
-    imagem: "images/lion.jpg",
+    imagem: "./assets/images/animals/lion.jpg",
   },
   {
     nome: "Camaleão",
     ataque: 70,
     defesa: 300,
     velocidade: 140,
-    imagem: "images/chameleon.jpg",
+    imagem: "./assets/images/animals/chameleon.jpg",
   },
 
   {
@@ -19,168 +19,168 @@ const animais = [
     ataque: 270,
     defesa: 380,
     velocidade: 80,
-    imagem: "images/aligator.jpg",
+    imagem: "./assets/images/animals/aligator.jpg",
   },
   {
     nome: "Rinoceronte",
     ataque: 270,
     defesa: 390,
     velocidade: 160,
-    imagem: "images/rino.jpg",
+    imagem: "./assets/images/animals/rino.jpg",
   },
   {
     nome: "Hipopótamo",
     ataque: 280,
     defesa: 380,
     velocidade: 130,
-    imagem: "images/hipo.jpg",
+    imagem: "./assets/images/animals/hipo.jpg",
   },
   {
     nome: "Tartaruga",
     ataque: 30,
     defesa: 440,
     velocidade: 10,
-    imagem: "images/turtle.jpg",
+    imagem: "./assets/images/animals/turtle.jpg",
   },
   {
     nome: "Lobo",
     ataque: 210,
     defesa: 200,
     velocidade: 200,
-    imagem: "images/wolf.jpg",
+    imagem: "./assets/images/animals/wolf.jpg",
   },
   {
     nome: "Hiena",
     ataque: 250,
     defesa: 200,
     velocidade: 170,
-    imagem: "images/hyena.jpg",
+    imagem: "./assets/images/animals/hyena.jpg",
   },
   {
     nome: "Elefante",
     ataque: 350,
     defesa: 430,
     velocidade: 50,
-    imagem: "images/elephant.jpg",
+    imagem: "./assets/images/animals/elephant.jpg",
   },
   {
     nome: "Urso Polar",
     ataque: 330,
     defesa: 270,
     velocidade: 180,
-    imagem: "images/polar_bear.jpg",
+    imagem: "./assets/images/animals/polar_bear.jpg",
   },
   {
     nome: "Urso Pardo",
     ataque: 270,
     defesa: 310,
     velocidade: 190,
-    imagem: "images/bear.jpg",
+    imagem: "./assets/images/animals/bear.jpg",
   },
   {
     nome: "Cobra",
     ataque: 260,
     defesa: 50,
     velocidade: 310,
-    imagem: "images/snake.jpg",
+    imagem: "./assets/images/animals/snake.jpg",
   },
   {
     nome: "Orca",
     ataque: 290,
     defesa: 230,
     velocidade: 280,
-    imagem: "images/orca.jpg",
+    imagem: "./assets/images/animals/orca.jpg",
   },
   {
     nome: "Guepardo",
     ataque: 60,
     defesa: 40,
     velocidade: 420,
-    imagem: "images/cheetah.jpg",
+    imagem: "./assets/images/animals/cheetah.jpg",
   },
   {
     nome: "Lebre",
     ataque: 10,
     defesa: 10,
     velocidade: 400,
-    imagem: "images/hare.jpg",
+    imagem: "./assets/images/animals/hare.jpg",
   },
   {
     nome: "Águia",
     ataque: 180,
     defesa: 90,
     velocidade: 390,
-    imagem: "images/eagle.jpg",
+    imagem: "./assets/images/animals/eagle.jpg",
   },
   {
     nome: "Leopardo",
     ataque: 200,
     defesa: 200,
     velocidade: 210,
-    imagem: "images/leopard.jpg",
+    imagem: "./assets/images/animals/leopard.jpg",
   },
   {
     nome: "Gorila",
     ataque: 300,
     defesa: 280,
     velocidade: 120,
-    imagem: "images/gorilla.jpg",
+    imagem: "./assets/images/animals/gorilla.jpg",
   },
   {
     nome: "Tigre",
     ataque: 290,
     defesa: 180,
     velocidade: 250,
-    imagem: "images/tiger.jpg",
+    imagem: "./assets/images/animals/tiger.jpg",
   },
   {
     nome: "Pinguim",
     ataque: 50,
     defesa: 110,
     velocidade: 200,
-    imagem: "images/penguin.jpg",
+    imagem: "./assets/images/animals/penguin.jpg",
   },
   {
     nome: "Raposa",
     ataque: 100,
     defesa: 150,
     velocidade: 300,
-    imagem: "images/fox.jpg",
+    imagem: "./assets/images/animals/fox.jpg",
   },
   {
     nome: "Tubarão",
     ataque: 410,
     defesa: 190,
     velocidade: 190,
-    imagem: "images/shark.jpg",
+    imagem: "./assets/images/animals/shark.jpg",
   },
   {
     nome: "Cavalo",
     ataque: 120,
     defesa: 190,
     velocidade: 350,
-    imagem: "images/horse.jpg",
+    imagem: "./assets/images/animals/horse.jpg",
   },
   {
     nome: "Panda",
     ataque: 190,
     defesa: 240,
     velocidade: 100,
-    imagem: "images/panda.jpg",
+    imagem: "./assets/images/animals/panda.jpg",
   },
   {
     nome: "Falcão",
     ataque: 190,
     defesa: 80,
     velocidade: 380,
-    imagem: "images/falcon.jpg",
+    imagem: "./assets/images/animals/falcon.jpg",
   },
   {
     nome: "Leão Especial",
     ataque: 380,
     defesa: 230,
     velocidade: 240,
-    imagem: "images/special_lion.jpg",
+    imagem: "./assets/images/animals/special_lion.jpg",
     especial: true,
   },
   {
@@ -188,7 +188,7 @@ const animais = [
     ataque: 390,
     defesa: 220,
     velocidade: 230,
-    imagem: "images/special_tiger.jpg",
+    imagem: "./assets/images/animals/special_tiger.jpg",
     especial: true,
   },
 ];
@@ -263,23 +263,36 @@ function preloadImages() {
     img.src = animal.imagem;
   });
 }
+// Executar o pré-carregamento assim que a página carregar
+window.addEventListener("load", preloadImages);
 
 // Função para atualizar as cartas na tela
 function atualizarCartas() {
   requestAnimationFrame(() => {
-    const atualizarCarta = (carta, elementos) => {
+    // Função assíncrona para atualizar cada carta
+    const atualizarCarta = async (carta, elementos) => {
       elementos.image.classList.add("hidden");
-      setTimeout(() => {
+      setTimeout(async () => {
         elementos.animal.textContent = carta.nome;
         elementos.attribute1.textContent = `Ataque: ${carta.ataque}`;
         elementos.attribute2.textContent = `Defesa: ${carta.defesa}`;
         elementos.attribute3.textContent = `Velocidade: ${carta.velocidade}`;
-        elementos.image.src = carta.imagem;
         elementos.power.textContent = `Power: ${calcularPoderTotal(carta)}`;
+
+        // Verifica se a imagem já foi carregada
+        if (elementos.image.src !== carta.imagem) {
+          elementos.image.src = carta.imagem;
+          try {
+            await elementos.image.decode(); // Decodifica a imagem em segundo plano
+          } catch (error) {
+            console.error("Erro ao decodificar a imagem:", error);
+          }
+        }
         elementos.image.classList.remove("hidden");
       }, 300); // Tempo da transição de imagem
     };
 
+    // Atualiza todas as cartas
     atualizarCarta(cartasJogador[0], elementosDOM.player1);
     atualizarCarta(cartasJogador[1], elementosDOM.player2);
     atualizarCarta(cartasMaquina[0], elementosDOM.machine1);

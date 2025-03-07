@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./vendor/normalize.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/CSS/pages/style.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -33,7 +32,12 @@
             <!-- card 1 do Jogador -->
             <div class="card-wrap">
               <div class="card-header one">
-                <img id="first-player_image" src="" alt="Animal do Jogador1" />
+                <img
+                  id="first-player_image"
+                  src=""
+                  alt="Animal do Jogador1"
+                  loading="lazy"
+                />
               </div>
               <div class="card-content" id="cardPlayer1">
                 <h2 class="card-title" id="player1_animal">Animal</h2>
@@ -54,7 +58,12 @@
             <!-- card 2 do Jogador -->
             <div class="card-wrap">
               <div class="card-header two">
-                <img id="second-player_image" src="" alt="Animal do Jogador2" />
+                <img
+                  id="second-player_image"
+                  src=""
+                  alt="Animal do Jogador2"
+                  loading="lazy"
+                />
               </div>
               <div class="card-content" id="cardPlayer2">
                 <h2 class="card-title" id="player2_animal">Animal</h2>
@@ -77,7 +86,12 @@
             <!-- card 1 da Máquina -->
             <div class="card-wrap">
               <div class="card-header three">
-                <img id="first-machine_image" src="" alt="Animal da Máquina1" />
+                <img
+                  id="first-machine_image"
+                  src=""
+                  alt="Animal da Máquina1"
+                  loading="lazy"
+                />
               </div>
               <div class="card-content" id="cardMachine1">
                 <h2 class="card-title" id="machine1_animal">Animal</h2>
@@ -102,6 +116,7 @@
                   id="second-machine_image"
                   src=""
                   alt="Animal da Máquina2"
+                  loading="lazy"
                 />
               </div>
               <div class="card-content" id="cardMachine2">
@@ -134,7 +149,6 @@
             </p>
           </div>
         </section>
-        <script src="app.js"></script>
       </main>
     </div>
 
@@ -233,5 +247,6 @@
           .forEach((el) => (el.textContent = new Date().getFullYear()));
       </script>
     </footer>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
