@@ -1,0 +1,56 @@
+:root {
+  /* Cores principais */
+  --primary-color: #d22630; /* Vermelho usado no botão de contato e outros elementos */
+  --secondary-color: #003057; /* Azul escuro usado no footer e outros elementos */
+  --background-clear: #fafafa; /* Cor de fundo clara */
+  --background-color: #f4f4f4; /* Cor de fundo um pouco mais escura*/
+  --cards-color: #f8f8f8; /* Cor de fundo dos cards */
+  --white-color: #ffffff; /* Branco */
+  --soft-grey: #e1e1e9; /* Cinza claro usado no footer */
+  --border-color: #e0e0e0; /* Cor da borda dos elementos */
+  --border-input-color: #ccc; /* Cor da borda dos inputs */
+  --text-bootom: #fbdadc; /* Cor do texto do botão de contato */
+  --text-color: #333; /* Cor do texto principal */
+  --dark-gray-color: #1e1e1e; /* Cinza escuro usado no header */
+  --strong-gray: #101820; /* Cinza mais escuro usado no footer */
+  --blue-color: #003366; /* Azul usado no header e outros elementos */
+  --red-hover-color: #a91d25; /* Vermelho mais escuro para hover */
+  --blue-hover-color: #002b4e; /* Azul mais escuro para hover */
+  --light-blue-color: #3f71ea; /* Azul claro usado no footer para links */
+  --footer-background-color: #003057; /* Cor de fundo do footer */
+  --footer-copyright-color: #002a4d; /* Cor de fundo do copyright no footer */
+  --footer-divider-color: #444; /* Cor do divisor no footer */
+  --primary-paycolor: #46c900; /* Verde usado no botão de pagamento */
+
+  /* Cores específicas para ícones */
+  --gmail-icon-color: #d14836; /* Cor do ícone do Gmail */
+  --whatsapp-icon-color: #25d366; /* Cor do ícone do WhatsApp */
+  --youtube-icon-color: #ff0000; /* Cor do ícone do YouTube */
+  --tiktok-icon-color: #2c292f; /* Cor do ícone do TikTok */
+  --instagram-icon-color: #bd0d9f; /* Cor do ícone do Instagram */
+  --facebook-icon-color: #1877f2; /* Cor do ícone do Facebook */
+  --linkedin-icon-color: #0a66c2; /* Cor do ícone do LinkedIn */
+  --share-icon-color: #86146a; /* Cor do ícone de compartilhar */
+
+  /* Efeitos */
+  --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra padrão */
+  --box-shadow-hover: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Sombra para hover */
+  --transition: all 0.3s ease; /* Transição padrão */
+  --transform: scale(1.05); /* Transformação para hover */
+  --drop-shadow: drop-shadow(
+    0 2px 4px rgba(0, 0, 0, 0.2)
+  ); /* Sombra para hover */
+
+  /* Fontes */
+  --font-noto: "Noto Sans JP", sans-serif; /* Fonte estilo japonesa */
+  --font-inter: "Inter", sans-serif; /* Fonte Inter */
+  --font-roboto: "Roboto", sans-serif; /* Fonte Roboto */
+  --font-montserrat: "Montserrat", sans-serif; /* Fonte Montserrat */
+
+  /* Tamanhos de fonte */
+  --font-size-small: 12px; /* Tamanho de fonte pequeno */
+  --font-size-medium: 16px; /* Tamanho de fonte médio */
+  --font-size-large: 20px; /* Tamanho de fonte grande */
+  --font-size-xlarge: 24px; /* Tamanho de fonte extra grande */
+  --font-size-xxlarge: 28px; /* Tamanho de fonte muito grande */
+}

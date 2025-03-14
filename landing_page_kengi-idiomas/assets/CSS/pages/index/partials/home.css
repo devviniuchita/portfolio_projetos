@@ -1,0 +1,294 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: auto;
+  padding: 2rem 2rem;
+}
+.home__background {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 105.375rem;
+  padding: 4rem;
+  background: #dee8ef;
+  border-radius: 4.25rem;
+}
+.home__intro {
+  flex: 1;
+  text-align: left;
+  max-width: 47rem;
+  min-width: 300px;
+}
+.home__title-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.home__teacher-name {
+  font-family: var(--font-noto);
+  font-weight: 700;
+  font-size: 6.25rem;
+  display: inline-block;
+  color: var(--secondary-color);
+}
+.home__dot {
+  display: inline-block;
+  width: 0.8125rem;
+  height: 0.8125rem;
+  margin-bottom: 0.2rem;
+  margin-left: 0.5rem;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+.home__description {
+  font-family: var(--font-montserrat);
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1.5;
+  max-width: 39.25rem;
+  margin-bottom: 2rem;
+  color: #101820;
+}
+.home__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 19.375rem;
+  height: 3.625rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  background: var(--primary-color);
+  border-radius: 1.25rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.home__button:hover {
+  transform: var(--transform);
+  background: var(--red-hover-color);
+}
+.home__learn-more {
+  font-family: var(--font-montserrat);
+  font-weight: 500;
+  font-size: 1.875rem;
+  text-align: center;
+  color: var(--text-bootom);
+}
+.home__photo-card {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 300px;
+  gap: 2rem;
+}
+.home__photo img {
+  width: 100%;
+  max-width: 38.5625rem;
+  height: auto;
+  overflow: visible;
+}
+.home__testimonial {
+  text-align: left;
+  width: 80%;
+  max-width: 31.75rem;
+  height: auto;
+  position: absolute;
+  bottom: -6rem;
+  left: 50%;
+  transform: translateX(-20%);
+  padding: 2rem;
+  background: #fafafa;
+  border-radius: 1.25rem;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+.home__testimonial:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+.home__quote-icon {
+  width: 3.625rem;
+  height: 3.2825rem;
+  margin-bottom: 1rem;
+}
+.home__testimonial-text {
+  font-family: var(--font-montserrat);
+  font-weight: 400;
+  font-size: 1.375rem;
+  color: #101820;
+}
+.home__student-info {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.home__avatar {
+  width: 4.625rem;
+  height: 4.625rem;
+  border-radius: 50%;
+}
+.home__student-details p {
+  margin: 0;
+}
+.home__student-name {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 1.375rem;
+  color: #101820;
+}
+.home__course-type {
+  font-family: var(--font-montserrat);
+  font-weight: 400;
+  font-size: 1.375rem;
+  margin: 0;
+  color: #101820;
+}
+
+/* RESPONSIVIDADE */
+@media (min-width: 1440px) {
+  .home__teacher-name {
+    font-size: 5.5rem;
+  }
+  .home__photo img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home__background {
+    flex-direction: column;
+    align-items: center;
+  }
+  .home__teacher-name {
+    font-size: 4.5rem;
+  }
+  .home__description {
+    font-size: 1.5rem;
+  }
+  .home__photo-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .home__testimonial {
+    position: relative;
+    bottom: 0;
+    left: auto;
+    transform: none;
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .home__teacher-name {
+    font-size: 4rem;
+  }
+  .home__photo-card {
+    flex-direction: column;
+  }
+  .home__photo img {
+    max-width: 90%;
+  }
+  .home__testimonial {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .home__testimonial-text {
+    font-size: 1.125rem;
+  }
+  .home__student-info {
+    flex-direction: column;
+  }
+  .home__avatar {
+    width: 4rem;
+    height: 4rem;
+  }
+  .home__button {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 1rem;
+  }
+  .home__background {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  .home__intro {
+    text-align: center;
+    width: 100%;
+    max-width: none;
+  }
+  .home__title-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .home__teacher-name {
+    font-size: 2.5rem;
+  }
+  .home__dot {
+    margin-left: 0;
+    margin-bottom: 0.2rem;
+  }
+  .home__description {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+  .home__button {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1.5rem;
+  }
+  .home__learn-more {
+    font-size: 1.5rem;
+  }
+  .home__photo-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .home__photo img {
+    max-width: 90%;
+  }
+  .home__testimonial {
+    width: 90%;
+    padding: 1rem;
+    position: relative;
+    left: auto;
+    transform: none;
+    box-shadow: none;
+    text-align: center;
+  }
+  .home__testimonial-text {
+    font-size: 1rem;
+  }
+  .home__student-info {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .home__avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .home__student-name {
+    font-size: 1.2rem;
+  }
+  .home__course-type {
+    font-size: 1rem;
+  }
+}

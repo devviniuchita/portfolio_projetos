@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Kengi Idiomas</title>
+    <meta
+      name="description"
+      content="Aprenda Japonês com o Professor Renato Kengi. Aulas de japonês para todos os níveis: básico, intermediário e avançado."
+    />
+    <meta
+      name="keywords"
+      content="aulas de japonês, japonês básico, japonês intermediário, japonês fluente, nihongo"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Aulas de Japonês com o Professor Renato Kengi"
+    />
+    <meta
+      property="og:description"
+      content="Aprenda Japonês com o Professor Renato Kengi. Aulas para todos os níveis."
+    />
+    <meta
+      property="og:site_name"
+      content="Aulas de Japonês com o Professor Renato Kengi"
+    />
+    <meta property="og:url" content="#" />
+    <meta property="og:image" content="#" />
+    <meta property="og:image:secure_url" content="#" />
+    <link rel="icon" href="#" />
+    <link rel="apple-touch-icon" href="#" />
+
+    <!-- Otimização de pré-conexão e DNS-prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./assets/CSS/pages/index/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#d22630",
+              secondary: "#003057",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Scripts assíncronos -->
+    <script async src="https://connect.facebook.net/en_US/fbevents.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="nav__logo">
+          <a href="index.html" class="nav__logo-link">
+            <img
+              src="./assets/images/index_images/header/logo_header.svg"
+              alt="Logo Kengi Terruya"
+              class="nav__logo-image"
+            />
+          </a>
+        </div>
+
+        <!-- Ícone do menu hamburguer para telas pequenas -->
+        <div class="nav__hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+          <!-- Ícone do FontAwesome -->
+        </div>
+
+        <ul class="nav__list" id="nav-list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#planos" class="nav__link">Planos</a>
+          </li>
+          <li class="nav__item"><a href="#" class="nav__link">Contatos</a></li>
+          <li class="nav__item">
+            <a href="comunidade.html" class="nav__link">Comunidade</a>
+          </li>
+          <li class="nav__item">
+            <a href="#sobre" class="nav__link">Sobre</a>
+          </li>
+          <li class="nav__contact-button">
+            <a href="#contato" class="nav__contact-link">
+              <div class="contact-button__background"></div>
+              <div class="contact-button__text">Entre em contato</div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="home">
+      <div class="home__background">
+        <article class="home__intro">
+          <div class="home__title-container">
+            <h1 class="home__teacher-name">
+              Kengi Terruya<span class="home__dot"></span>
+            </h1>
+          </div>
+          <p class="home__description">
+            Domine o japonês de onde estiver!
+            <br />
+            Nosso curso online oferece aulas interativas, material exclusivo e
+            suporte de professores qualificados. Aprenda no seu ritmo e alcance
+            a fluência com praticidade!
+          </p>
+          <button class="home__button">
+            <span class="home__learn-more">Conheça mais</span>
+          </button>
+        </article>
+
+        <div class="home__photo-card">
+          <figure class="home__photo">
+            <img
+              src="assets/images/index_images/home/photo_home.svg"
+              alt="Foto do Professor Kengi Terruya"
+            />
+          </figure>
+          <aside class="home__testimonial">
+            <div class="home__testimonial-background"></div>
+            <figure class="home__quote-icon">
+              <img
+                src="assets/images/index_images/home/quote_home.svg"
+                alt="Ícone de citação"
+              />
+            </figure>
+            <blockquote class="home__testimonial-text">
+              As aulas são tão dinâmicas que nem percebo o tempo passar. Adorei!
+            </blockquote>
+            <div class="home__student-info">
+              <img
+                class="home__avatar"
+                src="assets/images/index_images/home/aluns-photo_home.svg"
+                alt="Foto do aluno Carlos Mendes"
+              />
+              <div class="home__student-details">
+                <p class="home__student-name">Carlos Mendes</p>
+                <p class="home__course-type">Curso em Grupo</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="course">
+      <div class="course__background">
+        <article class="course__content">
+          <div class="course__header">
+            <h2 class="course__title" id="curso">
+              Curso<span class="course__dot"></span>
+            </h2>
+          </div>
+          <p class="course__description">
+            Nossa metodologia é focada em desenvolver suas habilidades de
+            <strong class="course__highlight">escuta e fala</strong>, para que
+            você se comunique em japonês de forma natural e confiante. As aulas
+            são dinâmicas, com
+            <strong class="course__highlight"
+              >ênfase em conversação e compreensão auditiva</strong
+            >, usando situações do dia a dia para facilitar o aprendizado. Você
+            pratica desde o início, com atividades interativas e feedback
+            constante dos professores.
+          </p>
+          <p class="course__text course__text--emphasis">
+            Aprenda japonês de verdade, falando e ouvindo como um nativo!
+          </p>
+          <button class="course__button">
+            <a href="#contato" class="course__contact-button">
+              <span class="course__button-text">Entre em contato</span>
+            </a>
+          </button>
+        </article>
+        <div class="course__photo-card">
+          <figure class="course__photo">
+            <img
+              class="course__image"
+              src="./assets/images/index_images/course/image_course.svg"
+              alt="Imagem ilustrativa do curso"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="plans">
+      <!-- Fundo decorativo -->
+      <img
+        class="plans__background"
+        src="./assets/images/plans_images/plans_background.svg"
+        alt="Fundo dos planos"
+      />
+      <div class="plans__container">
+        <!-- Título principal -->
+        <h2 id="planos" class="plans__title">
+          Planos<span class="plans__dot"></span>
+        </h2>
+        <!-- Lista de planos -->
+        <ul class="plans__list">
+          <!-- Plano Particular -->
+          <li class="plans__item">
+            <a href="particular.html" class="plan-card-link">
+              <article class="plan-card">
+                <div class="plan-card__background"></div>
+                <div class="plan-card__content">
+                  <img
+                    class="plan-card__image"
+                    src="./assets/images/plans_images/plans_especial.png"
+                    alt="Plano Particular"
+                  />
+                  <h3 class="plan-card__title">
+                    Particular<span class="plans__dot"></span>
+                  </h3>
+                </div>
+              </article>
+            </a>
+          </li>
+
+          <!-- Plano Grupo -->
+          <li class="plans__item">
+            <a href="grupo.html" class="plan-card-link">
+              <article class="plan-card">
+                <div class="plan-card__background"></div>
+                <div class="plan-card__content">
+                  <img
+                    class="plan-card__image"
+                    src="./assets/images/plans_images/image (1).jpg"
+                    alt="Plano Grupo"
+                  />
+                  <h3 class="plan-card__title">
+                    Grupo<span class="plans__dot"></span>
+                  </h3>
+                </div>
+              </article>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="about__wrapper">
+        <div class="about__photos">
+          <div class="about__photo-wrapper">
+            <img
+              class="about__photo about__photo--primary"
+              src="./assets/images/index_images/about/about_elipse-image.PNG"
+              alt="Foto de perfil em elipse"
+            />
+          </div>
+          <div class="about__photo-wrapper about__photo-wrapper--hidden">
+            <img
+              class="about__photo about__photo--secondary"
+              src="./assets/images/index_images/about/about_photo.svg"
+              alt="Foto inferior de perfil com elipse"
+            />
+          </div>
+        </div>
+        <article class="about__content">
+          <h2 class="about__title">
+            Sobre Kengi<span class="about__title-dot"></span>
+          </h2>
+          <p class="about__description">
+            Kengi Terruya é formado em Letras Japonesas e atua como professor de
+            japonês há 5 anos, já tendo ajudado mais de 350 alunos a alcançarem
+            seus objetivos no idioma. Sua didática é interativa e dinâmica,
+            focada em tornar o aprendizado divertido e eficiente. Durante um
+            intercâmbio de 1 ano no Japão, Kengi adquiriu experiências que
+            enriquecem suas aulas, trazendo a cultura japonesa de forma
+            autêntica. Apaixonado por animes, ele usa exemplos do universo otaku
+            para conectar o conteúdo com o interesse dos alunos, tornando cada
+            aula única e envolvente.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="testimonials py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <!-- Título da seção -->
+        <h2 class="text-3xl font-bold text-center text-secondary mb-8">
+          Depoimentos dos Alunos
+        </h2>
+
+        <!-- Carrossel com Swiper -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="bg-white p-8 rounded-lg shadow-lg mx-4">
+                <p class="text-xl text-gray-900 mb-4">
+                  Adoro como o curso traz exemplos práticos e dicas que uso no
+                  dia a dia. Já percebi uma grande evolução e me sinto muito
+                  mais confiante!
+                </p>
+                <div class="flex items-center">
+                  <img
+                    src="https://placehold.co/87x130"
+                    alt="Ana Beatriz Souza"
+                    class="w-16 h-16 rounded-full"
+                  />
+                  <div class="ml-4">
+                    <p class="text-sm font-bold text-gray-900">
+                      Ana Beatriz Souza
+                    </p>
+                    <p class="text-sm text-gray-900">Curso particular</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="bg-white p-8 rounded-lg shadow-lg mx-4">
+                <p class="text-xl text-gray-900 mb-4">
+                  Recomendo para todos que querem aprender de verdade! O curso
+                  tem uma metodologia que realmente funciona. Estou amando!
+                </p>
+                <div class="flex items-center">
+                  <img
+                    src="https://placehold.co/67x100"
+                    alt="Rafael Almeida"
+                    class="w-16 h-16 rounded-full"
+                  />
+                  <div class="ml-4">
+                    <p class="text-sm font-bold text-gray-900">
+                      Rafael Almeida
+                    </p>
+                    <p class="text-sm text-gray-900">Curso em grupo</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="bg-white p-8 rounded-lg shadow-lg mx-4">
+                <p class="text-xl text-gray-900 mb-4">
+                  A didática é fantástica! O curso consegue ser descontraído e
+                  super eficiente ao mesmo tempo. Já estou vendo resultados
+                  incríveis!
+                </p>
+                <div class="flex items-center">
+                  <img
+                    src="https://placehold.co/90x135"
+                    alt="Pedro Henrique"
+                    class="w-16 h-16 rounded-full"
+                  />
+                  <div class="ml-4">
+                    <p class="text-sm font-bold text-gray-900">
+                      Pedro Henrique
+                    </p>
+                    <p class="text-sm text-gray-900">Curso em grupo</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <div class="bg-white p-8 rounded-lg shadow-lg mx-4">
+                <p class="text-xl text-gray-900 mb-4">
+                  O suporte e a atenção aos alunos são impressionantes. Sempre
+                  que tenho dúvidas, recebo ajuda rápida e eficiente.
+                </p>
+                <div class="flex items-center">
+                  <img
+                    src="https://placehold.co/87x131"
+                    alt="Ana Beatriz Souza"
+                    class="w-16 h-16 rounded-full"
+                  />
+                  <div class="ml-4">
+                    <p class="text-sm font-bold text-gray-900">
+                      Ana Beatriz Souza
+                    </p>
+                    <p class="text-sm text-gray-900">Curso em grupo</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide">
+              <div class="bg-white p-8 rounded-lg shadow-lg mx-4">
+                <p class="text-xl text-gray-900 mb-4">
+                  A didática é fantástica! O curso consegue ser descontraído e
+                  super eficiente ao mesmo tempo. Já estou vendo resultados
+                  incríveis!
+                </p>
+                <div class="flex items-center">
+                  <img
+                    src="https://placehold.co/68x55"
+                    alt="Bruno Carvalho"
+                    class="w-16 h-16 rounded-full"
+                  />
+                  <div class="ml-4">
+                    <p class="text-sm font-bold text-gray-900">
+                      Bruno Carvalho
+                    </p>
+                    <p class="text-sm text-gray-900">Curso particular</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="contact__background">
+        <img
+          class="contact__background-image"
+          src="./assets/images/index_images/contact/background_contact.svg"
+          alt="Fundo do formulário de contato"
+        />
+        <div class="contact__content">
+          <div class="contact__column">
+            <h2 class="contact__title">
+              Entre em contato<span class="contact__dot"></span>
+            </h2>
+            <p class="contact__description">
+              Conheça nosso curso mais de perto.
+              <br /><br />
+              Preencha os campos e deixe que entremos em contato para nos
+              conhecermos melhor.
+            </p>
+            <div class="contact__photos">
+              <div
+                class="contact__photos-image1"
+                alt="Cidade do Japão"
+                style="
+                  background-image: url('./assets/images/index_images/contact/photos_contact.svg');
+                "
+              ></div>
+              <div
+                class="contact__photos-image2"
+                alt="Montanha do Japão"
+                style="
+                  background-image: url('./assets/images/index_images/contact/photos_contact2.svg');
+                "
+              ></div>
+              <div
+                class="contact__photos-image3"
+                alt="Bandeira do Japão"
+                style="
+                  background-image: url('./assets/images/index_images/contact/background_contact3.svg');
+                "
+              ></div>
+            </div>
+          </div>
+          <div class="contact__container">
+            <form class="contact__form" action="#" method="post">
+              <div class="contact__field">
+                <label class="contact__label" for="name"
+                  >Nome e sobrenome:</label
+                >
+                <input
+                  class="contact__input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="João Paulo Almeida"
+                  required
+                />
+              </div>
+              <div class="contact__field">
+                <label class="contact__label" for="email"
+                  >Seu melhor e-mail:</label
+                >
+                <input
+                  class="contact__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="ex.: email@gmail.com"
+                  required
+                />
+              </div>
+              <div class="contact__field">
+                <label class="contact__label" for="message">Mensagem:</label>
+                <textarea
+                  class="contact__textarea"
+                  id="message"
+                  name="message"
+                  placeholder="Mensagem!"
+                  required
+                ></textarea>
+              </div>
+              <div class="contact__terms">
+                <label class="contact__checkbox-container">
+                  <input class="contact__checkbox" type="checkbox" required />
+                  <span class="contact__checkbox-box"></span>
+                  <span class="contact__checkbox-text">
+                    Concordo com o Aviso de Privacidade e com o uso dos meus
+                    dados para atividades institucionais e de marketing.
+                  </span>
+                </label>
+              </div>
+              <button
+                id="mybutton"
+                class="contact__submit-button flex items-center justify-center w-full max-w-[19.375rem] h-[3.625rem] mb-8 overflow-hidden bg-primary rounded-[1.25rem] cursor-pointer transition-all duration-300 hover:bg-red-hover"
+                type="submit"
+              >
+                <span
+                  class="contact__send-button font-montserrat font-medium text-[1.875rem] text-text-bootom"
+                >
+                  Enviar
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <!-- Logo -->
+        <div class="footer__logo">
+          <a href="index.html" class="footer__logo-link">
+            <img
+              class="footer__logo-image"
+              src="./assets/images/footer_images/kengi_logo.svg"
+              alt="Logo da Kengi"
+            />
+          </a>
+          <p class="footer__description">
+            Escola de japonês online.<br />
+            Domine o japonês de onde estiver.
+          </p>
+          <a href="#contato" class="footer__contact-link">Entre em contato →</a>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <nav class="footer__content">
+          <div class="footer__section">
+            <h3 class="footer__section-title">Sobre Kengi</h3>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a href="#" class="footer__link">Quem somos?</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__link">Comentários de alunos</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__section">
+            <h3 class="footer__section-title">Institucional</h3>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a href="#planos" class="footer__link">Planos</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="comunidade.html" class="footer__link">Comunidade</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#curso" class="footer__link">Curso</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__link">Perguntas frequentes</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__section footer__section--contacts">
+            <h3 class="footer__section-title">Contato</h3>
+            <ul class="footer__social-list">
+              <li class="footer__social-item">
+                <a
+                  href="mailto:kengiteruya@gmail.com"
+                  class="footer__social-link"
+                  aria-label="Gmail"
+                >
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a
+                  href="https://wa.me/5511981911913"
+                  class="footer__social-link"
+                  aria-label="Whatsapp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Redes sociais -->
+        <div class="footer__social">
+          <h3 class="footer__section-title">Redes Sociais</h3>
+          <ul class="footer__social-list">
+            <li class="footer__social-item">
+              <a href="#" class="footer__social-link" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a
+                href="https://www.tiktok.com/@kengicomg"
+                class="footer__social-link"
+                aria-label="TikTok"
+              >
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a
+                href="https://www.instagram.com/eusouokengi/#"
+                class="footer__social-link"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a href="#" class="footer__social-link" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a href="#" class="footer__social-link" aria-label="Linkedin">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a
+                id="share-button"
+                class="footer__social-link"
+                aria-label="Compartilhar"
+              >
+                <i class="fas fa-share-alt"></i>
+              </a>
+            </li>
+          </ul>
+
+          <hr class="footer__divider" />
+          <p class="footer__copyright">
+            &copy; <span id="anoCorrente"></span> - Kenji Terruya
+          </p>
+        </div>
+      </div>
+
+      <!-- Informações globais -->
+      <div class="footer__global">
+        <hr class="footer__divider-global" />
+        <p class="footer__copyright">
+          &copy; Copyright. Todos os direitos reservados.
+        </p>
+      </div>
+
+      <!-- Script para atualizar o ano -->
+      <script>
+        document
+          .querySelectorAll("#anoCorrente")
+          .forEach((el) => (el.textContent = new Date().getFullYear()));
+      </script>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        loop: true,
+        slidesPerView: 1, // Padrão para telas pequenas
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2, // 2 slides em telas médias
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3, // 3 slides em telas grandes
+            spaceBetween: 30,
+          },
+        },
+      });
+    </script>
+    <script type="module" src="./assets/js/pages/index/index.js"></script>
+    <script>
+      document
+        .getElementById("mybutton")
+        .addEventListener("click", function () {
+          // Alterna entre as cores primária (azul) e secundária (vermelho)
+          this.classList.toggle("bg-primary"); // Azul
+          this.classList.toggle("bg-secondary"); // Vermelho
+
+          // Altera os estados de hover
+          if (this.classList.contains("bg-secondary")) {
+            this.classList.add("hover:bg-[#002B4E]"); // Define hover azul escuro após clique
+            this.classList.remove("hover:bg-red-hover"); // Remove o hover vermelho
+          } else {
+            this.classList.add("hover:bg-red-hover"); // Restaura hover vermelho inicial
+            this.classList.remove("hover:bg-[#002B4E]");
+          }
+        });
+    </script>
+  </body>
+</html>

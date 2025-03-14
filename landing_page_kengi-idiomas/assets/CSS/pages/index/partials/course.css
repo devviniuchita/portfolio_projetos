@@ -1,0 +1,209 @@
+.course {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: auto;
+  padding: 0 1rem;
+}
+.course__background {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 105rem;
+  padding: 4rem;
+  border-radius: 4.25rem;
+}
+.course__content {
+  flex: 1;
+  text-align: left;
+  max-width: 50%;
+  min-width: 320px;
+  padding-right: 2rem;
+}
+.course__header {
+  display: flex;
+  align-items: center;
+}
+.course__title {
+  font-family: var(--font-noto);
+  font-weight: 700;
+  font-size: 4rem;
+  display: inline-block;
+  color: var(--blue-color);
+}
+.course__dot {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-bottom: 0.2rem;
+  margin-left: 0.5rem;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+.course__description {
+  font-family: var(--font-montserrat);
+  font-weight: 400;
+  font-size: 1.55rem;
+  line-height: 1.5;
+  text-align: justify;
+  max-width: 39.25rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+.course__highlight {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  color: var(dark-gray-color);
+}
+.course__text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--blue-color);
+}
+.course__text--emphasis {
+  font-family: "Montserrat-Bold", sans-serif;
+  font-weight: 900;
+  display: block;
+  margin-top: 1rem;
+  color: var(--blue-color);
+}
+.course__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 19.375rem;
+  height: 3.625rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  background: var(--primary-color);
+  border-radius: 1.25rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.course__button:hover {
+  transform: var(--transform);
+  background: var(--red-hover-color);
+}
+.course__contact-button {
+  display: inline-flex;
+  text-decoration: none;
+  color: inherit;
+}
+.course__button-text {
+  font-family: var(--font-montserrat);
+  font-weight: 500;
+  font-size: 1.875rem;
+  text-align: center;
+  color: var(--text-bootom);
+}
+.course__image {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+/* Media queries */
+@media (min-width: 1201px) and (max-width: 1480px) {
+  .course__background {
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+  .course__content {
+    max-width: 50%;
+    padding-right: 2rem;
+    text-align: left;
+  }
+  .course__photo-card {
+    width: 45%;
+    margin-left: 2rem;
+  }
+  .course__image {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .course__background {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+  }
+  .course__content {
+    max-width: 100%;
+    padding-right: 0;
+    margin-bottom: 1rem;
+  }
+  .course__photo-card {
+    width: 100%;
+  }
+  .course__image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .course__title {
+    font-size: 3rem;
+  }
+  .course__description,
+  .course__text {
+    font-size: 1.25rem;
+  }
+  .course__button {
+    max-width: 100%;
+    font-size: 1.5rem;
+  }
+  .course__button-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .course {
+    padding: 1rem;
+  }
+  .course__background {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .course__content {
+    max-width: 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+  .course__title {
+    font-size: 2.5rem;
+    margin: 0 auto;
+  }
+  .course__description,
+  .course__text {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+  }
+  .course__button {
+    margin: 0 auto;
+    height: 3rem;
+  }
+  .course__button-text {
+    font-size: 1.25rem;
+  }
+  .course__image {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}

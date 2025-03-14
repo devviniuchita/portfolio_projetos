@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Renato Kengi │ Professor de Japonês - Curso de Japonês</title>
+    <meta
+      name="description"
+      content="Aprenda Japonês com o Professor Renato Kengi. Aulas de japonês para todos os níveis: básico, intermediário e avançado."
+    />
+    <meta
+      name="keywords"
+      content="aulas de japonês, japonês básico, japonês intermediário, japonês fluente, nihongo"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Aulas de Japonês com o Professor Renato Kengi"
+    />
+    <meta
+      property="og:description"
+      content="Aprenda Japonês com o Professor Renato Kengi. Aulas para todos os níveis."
+    />
+    <meta
+      property="og:site_name"
+      content="Aulas de Japonês com o Professor Renato Kengi"
+    />
+    <meta property="og:url" content="#" />
+    <meta property="og:image" content="#" />
+    <meta property="og:image:secure_url" content="#" />
+    <link rel="icon" href="#" />
+    <link rel="apple-touch-icon" href="#" />
+
+    <!-- Otimização de pré-conexão e DNS-prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./assets/CSS/pages/index/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#d22630",
+              secondary: "#003057",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Scripts assíncronos -->
+    <script async src="https://connect.facebook.net/en_US/fbevents.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="nav__logo">
+          <a href="index.html" class="nav__logo-link">
+            <img
+              src="./assets/images/index_images/header/logo_header.svg"
+              alt="Logo Kengi Terruya"
+              class="nav__logo-image"
+            />
+          </a>
+        </div>
+
+        <!-- Ícone do menu hamburguer para telas pequenas -->
+        <div class="nav__hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+          <!-- Ícone do FontAwesome -->
+        </div>
+
+        <ul class="nav__list" id="nav-list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#planos" class="nav__link">Planos</a>
+          </li>
+          <li class="nav__item"><a href="#" class="nav__link">Contatos</a></li>
+          <li class="nav__item">
+            <a href="comunidade.html" class="nav__link">Comunidade</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#sobre" class="nav__link">Sobre</a>
+          </li>
+          <li class="nav__contact-button">
+            <a href="index.html#contato" class="nav__contact-link">
+              <div class="contact-button__background"></div>
+              <div class="contact-button__text">Entre em contato</div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="payment">
+      <!-- Header: Imagem do Plano -->
+      <div class="payment__header">
+        <img
+          src="./assets/images/payment_images/product__plan-image.png"
+          alt="Imagem do plano"
+          class="payment__header-image"
+        />
+      </div>
+
+      <!-- Conteúdo Principal: Formulário e Detalhes -->
+      <div class="payment__container">
+        <!-- Lado Esquerdo: Formulário -->
+        <div class="payment__form">
+          <h2 class="payment__title">Preencha os campos abaixo</h2>
+          <form id="payment-form" class="form">
+            <div class="form__group">
+              <label for="fullname" class="form__label">Nome Completo</label>
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                required
+                class="form__input"
+              />
+            </div>
+            <div class="form__group">
+              <label for="email" class="form__label">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="form__input"
+              />
+            </div>
+            <div class="form__group">
+              <label for="cpf" class="form__label">CPF</label>
+              <input
+                type="text"
+                id="cpf"
+                name="cpf"
+                required
+                class="form__input"
+              />
+            </div>
+            <div class="form__group">
+              <label for="phone" class="form__label">Telefone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="form__input"
+              />
+            </div>
+            <div class="form__group">
+              <label for="card-number" class="form__label"
+                >Número do Cartão</label
+              >
+              <input
+                type="text"
+                id="card-number"
+                name="card-number"
+                required
+                class="form__input"
+              />
+            </div>
+            <div class="form__group">
+              <label for="card-expiry" class="form__label">Validade</label>
+              <input
+                type="text"
+                id="card-expiry"
+                name="card-expiry"
+                placeholder="MM/AA"
+                required
+                class="form__input"
+              />
+            </div>
+            <div class="form__group">
+              <label for="card-cvc" class="form__label">CVC</label>
+              <input
+                type="text"
+                id="card-cvc"
+                name="card-cvc"
+                required
+                class="form__input"
+              />
+            </div>
+            <div class="form__group">
+              <label for="installments" class="form__label">Parcelas</label>
+              <select id="installments" name="installments" class="form__input">
+                <option value="1">1x sem juros</option>
+                <option value="2">2x sem juros</option>
+                <option value="3">3x sem juros</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <input
+                type="checkbox"
+                id="save-details"
+                name="save-details"
+                checked
+                class="form__checkbox"
+              />
+              <label for="save-details" class="form__label"
+                >Salvar dados para próximas compras</label
+              >
+            </div>
+            <button type="submit" class="payment__button">Pagar Agora</button>
+          </form>
+        </div>
+
+        <!-- Lado Direito: Detalhes do Plano -->
+        <div class="payment__content">
+          <h2 class="payment__title payment__title--plans">
+            Escolha o seu plano
+          </h2>
+          <div class="product-info">
+            <h3 class="product-info__title">Curso de Japonês em Grupo</h3>
+            <a href="#" class="product-info__link">
+              <img
+                src="./assets/images/payment_images/plano mensal.png"
+                alt="Imagem do plano mensal - Curso em Grupo"
+                class="product-info__image"
+              />
+            </a>
+            <a href="#" class="product-info__link">
+              <img
+                src="./assets/images/payment_images/Semestral.png"
+                alt="Imagem do plano semestral - Curso em Grupo"
+                class="product-info__image"
+              />
+            </a>
+            <a href="#" class="product-info__link">
+              <img
+                src="./assets/images/payment_images/plano mensal.png"
+                alt="Imagem do plano anual - Curso em Grupo"
+                class="product-info__image"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <!-- Logo -->
+        <div class="footer__logo">
+          <a href="index.html" class="footer__logo-link">
+            <img
+              class="footer__logo-image"
+              src="./assets/images/footer_images/kengi_logo.svg"
+              alt="Logo da Kengi"
+            />
+          </a>
+          <p class="footer__description">
+            Escola de japonês online.<br />
+            Domine o japonês de onde estiver.
+          </p>
+          <a href="#" class="footer__contact-link">Entre em contato →</a>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <nav class="footer__content">
+          <div class="footer__section">
+            <h3 class="footer__section-title">Sobre Kengi</h3>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a href="#" class="footer__link">Quem somos?</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__link">Comentários de alunos</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__section">
+            <h3 class="footer__section-title">Institucional</h3>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a href="index.html#planos" class="footer__link">Planos</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="comunidade.html" class="footer__link">Comunidade</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__link">Curso</a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__link">Perguntas frequentes</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__section footer__section--contacts">
+            <h3 class="footer__section-title">Contato</h3>
+            <ul class="footer__social-list">
+              <li class="footer__social-item">
+                <a
+                  href="mailto:kengiteruya@gmail.com"
+                  class="footer__social-link"
+                  aria-label="Gmail"
+                >
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a
+                  href="https://wa.me/5511981911913"
+                  class="footer__social-link"
+                  aria-label="Whatsapp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Redes sociais -->
+        <div class="footer__social">
+          <h3 class="footer__section-title">Redes Sociais</h3>
+          <ul class="footer__social-list">
+            <li class="footer__social-item">
+              <a href="#" class="footer__social-link" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a
+                href="https://www.tiktok.com/@kengicomg"
+                class="footer__social-link"
+                aria-label="TikTok"
+              >
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a
+                href="https://www.instagram.com/eusouokengi/#"
+                class="footer__social-link"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a href="#" class="footer__social-link" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a href="#" class="footer__social-link" aria-label="Linkedin">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a
+                id="share-button"
+                class="footer__social-link"
+                aria-label="Compartilhar"
+              >
+                <i class="fas fa-share-alt"></i>
+              </a>
+            </li>
+          </ul>
+
+          <hr class="footer__divider" />
+          <p class="footer__copyright">
+            &copy; <span id="anoCorrente"></span> - Kenji Terruya
+          </p>
+        </div>
+      </div>
+
+      <!-- Informações globais -->
+      <div class="footer__global">
+        <hr class="footer__divider-global" />
+        <p class="footer__copyright">
+          &copy; Copyright. Todos os direitos reservados.
+        </p>
+      </div>
+
+      <!-- Script para atualizar o ano -->
+      <script>
+        document
+          .querySelectorAll("#anoCorrente")
+          .forEach((el) => (el.textContent = new Date().getFullYear()));
+      </script>
+    </footer>
+
+    <script type="module" src="./assets/js/pages/index/index.js"></script>
+  </body>
+</html>

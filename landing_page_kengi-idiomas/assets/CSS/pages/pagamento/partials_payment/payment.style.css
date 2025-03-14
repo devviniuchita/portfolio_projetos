@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Layout principal */
+.payment {
+  max-width: 1600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header: Imagem do Plano */
+.payment__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.payment__header-image {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+/* Container: Formulário e Detalhes */
+.payment__container {
+  display: flex;
+  gap: 2rem;
+}
+
+.payment__form,
+.payment__content {
+  flex: 1;
+}
+
+/* Estilização do formulário */
+.payment__form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.payment__title {
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.payment__title--plans {
+  font-weight: bold;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form__label {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.form__input,
+.form__select {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form__checkbox {
+  margin-right: 0.5rem;
+}
+
+.payment__button {
+  background-color: var(--primary-paycolor);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.payment__button:hover {
+  background-color: #3aa800;
+}
+
+/* Detalhes do Plano */
+.payment__content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.product-info__image {
+  width: 300px; /* Aumente o tamanho das imagens */
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Adiciona transição suave */
+  border: 2px solid var(--border-color);
+}
+
+.product-info__image:hover {
+  transform: scale(1.1); /* Aumenta a imagem em 10% ao passar o mouse */
+  border-color: var(
+    --primary-color
+  ); /* Muda a cor da borda ao passar o mouse */
+}
+
+.product-info__link {
+  display: block;
+  text-align: center;
+}
+
+.product-info__image:hover {
+  transform: scale(1.1); /* Aumenta a imagem em 10% ao passar o mouse */
+}
+
+.product-info__title {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .payment__container {
+    flex-direction: column;
+  }
+
+  .payment__form,
+  .payment__content {
+    flex: none;
+    width: 100%;
+  }
+}
