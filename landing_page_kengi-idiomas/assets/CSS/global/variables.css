@@ -10,7 +10,7 @@
   --border-color: #e0e0e0; /* Cor da borda dos elementos */
   --border-input-color: #ccc; /* Cor da borda dos inputs */
   --text-bootom: #fbdadc; /* Cor do texto do botão de contato */
-  --text-color: #333; /* Cor do texto principal */
+  --text-color: #101820; /* Cor do texto principal */
   --dark-gray-color: #1e1e1e; /* Cinza escuro usado no header */
   --strong-gray: #101820; /* Cinza mais escuro usado no footer */
   --blue-color: #003366; /* Azul usado no header e outros elementos */
@@ -42,6 +42,7 @@
   ); /* Sombra para hover */
 
   /* Fontes */
+  --font-kyokasho: "UDDigiKyokashoN-B", sans-serif; /* Fonte estilo japonesa */
   --font-noto: "Noto Sans JP", sans-serif; /* Fonte estilo japonesa */
   --font-inter: "Inter", sans-serif; /* Fonte Inter */
   --font-roboto: "Roboto", sans-serif; /* Fonte Roboto */

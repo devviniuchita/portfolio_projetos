@@ -2,3 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap"); /* Fonte Inter */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"); /* Fonte Roboto */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap"); /* Fonte Montserrat */
+@font-face {
+  font-family: UDDigiKyokashoN-B;
+  src: url("/assets/fonts/UD_Digi_Kyokasho_NP-B.ttf") format("truetype"); /*caminho da fonte*/
+  font-weight: bold;
+  font-style: normal;
+}

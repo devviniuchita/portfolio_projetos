@@ -20,7 +20,7 @@
 }
 .about__photos {
   width: 50%;
-  max-width: auto;
+  max-width: 50%;
   margin: 0 2rem;
 }
 .about__photo-wrapper {
@@ -35,15 +35,16 @@
 }
 .about__content {
   margin-top: 2rem;
-  width: 70%;
+  width: 80%;
   max-width: auto;
 }
 .about__title {
-  font-family: var(--font-noto);
+  font-family: var(--font-kyokasho);
   font-size: 3.5rem;
-  font-style: normal;
+  font-style: bold;
   font-weight: 700;
-  line-height: normal;
+  line-height: 100%;
+  letter-spacing: 0%;
   margin-bottom: 1rem;
   color: var(--secondary-color);
 }
@@ -56,87 +57,151 @@
   background: var(--primary-color);
 }
 .about__description {
-  font-size: 28px;
+  font-family: var(--font-montserrat);
   font-weight: 400;
   font-style: normal;
-  line-height: normal;
+  font-size: 1.75rem;
+  line-height: 2.5rem;
   text-align: justify;
-  color: #101820;
+  color: var(--text-color);
 }
 
 /* Estilos para telas menores */
+@media (max-width: 480px) {
+  .about__description {
+    font-size: 0.7rem;
+  }
+  .about__description {
+    width: 100%; /* Faz o texto ocupar toda a largura disponível */
+    font-size: 1rem; /* Tamanho de fonte maior para melhor legibilidade */
+    line-height: 1.4rem; /* Ajusta espaçamento entre linhas */
+    text-align: left; /* Melhor leitura em telas pequenas */
+    padding: 0.5rem; /* Adiciona um pequeno padding para não grudar nas bordas */
+  }
+}
+
 @media (max-width: 768px) {
+  .about {
+    width: 100%;
+    height: auto;
+  }
   .about__wrapper {
+    width: 100vh;
+    height: auto;
+    flex-direction: row-reverse;
+    padding: 0;
+    justify-content: space-between;
+  }
+  .about__content {
+    width: 150%;
+    max-width: 50%;
+    margin: 0;
+    text-align: left;
+    padding: 0 0.3rem;
   }
   .about__photos {
-    width: 30%; /* Ocupa toda a largura em telas pequenas */
-    margin: 0; /* Remove margens laterais */
-    order: 2; /* Define a ordem visual */
-    background-position: left; /* Posiciona a imagem à esquerda */
+    flex-shrink: 0;
+    width: 30%;
+    max-width: 50%;
+    margin: 0;
+    text-align: right;
   }
   .about__photo-wrapper {
     display: none;
   }
   .about__photo-wrapper--hidden {
-    display: flex; /* Exibe a segunda imagem */
-    width: 380px;
-    max-width: auto; /* Tamanho máximo da imagem */
-    margin: 0 auto; /* Centraliza verticalmente */
-  }
-  .about__photo--secondary {
+    display: flex;
+    justify-content: flex-end;
     width: 100%;
+    max-width: none;
     height: auto;
   }
-  .about__content {
-    flex: 1;
-    width: 500px; /* Ocupa toda a largura */
-    max-width: 100%; /* Remove restrições de largura */
-    margin-top: 0; /* Remove margem superior */
-    font-size: 1rem; /* Reduz o tamanho do texto */
-    text-align: center; /* Centraliza o texto */
-    margin: 0.5rem 0; /* Adiciona espaçamento ao redor do texto */
-    text-align: center; /* Centraliza o texto */
+  .about__photo.about__photo--secondary {
+    width: 150%;
+    max-width: 200px;
+    height: 280px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .about__photo {
+    width: 120px;
+    height: 180px;
+    border-radius: 10px;
   }
   .about__title {
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 1rem;
+    font-size: 1.8rem;
+    text-align: left;
+    margin: 0.5rem 0 0.3rem;
+  }
+  .about__title-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: 0.1rem;
   }
   .about__description {
-    font-size: 1rem;
-    font-size: 1rem; /* Reduz o tamanho do texto */
-    text-align: center; /* Centraliza o texto */
-    margin: 1rem 0; /* Adiciona espaçamento ao redor do texto */
+    width: 196px;
+    height: 195px;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0%;
+    text-align: justify;
+    font-size: 12px;
+    line-height: 15px;
   }
 }
+
 @media (max-width: 1147px) {
+  .about__title {
+    font-size: 2rem;
+  }
+  .about__description {
+    font-size: 1.2rem;
+  }
 }
 
 /* Ajusta telas intermediárias */
-@media (min-width: 1148px) and (max-width: 1280px) {
+@media (min-width: 1148px) and (max-width: 1299px) {
   .about__wrapper {
-    gap: 2.5rem; /* Ajusta o espaçamento entre os elementos */
-    padding: 0 3rem; /* Padding lateral adequado */
+    gap: 2rem;
+    padding: 0 2rem;
   }
-
   .about__photos {
-    width: 30%; /* Ajusta a largura das fotos */
+    width: 30%;
     margin: 0 3rem;
   }
-
   .about__content {
-    width: 50%; /* Ajusta a largura do conteúdo */
-    margin-top: 3rem;
+    width: 50%;
+    margin-top: 1.8rem;
   }
-
   .about__title {
-    font-size: 3rem; /* Reduz o tamanho do título */
+    font-size: 2.5rem;
   }
-
   .about__description {
-    font-size: 1.4rem; /* Reduz o tamanho do texto */
+    font-size: 1.3rem;
   }
 }
+
+@media (min-width: 1300px) and (max-width: 1480px) {
+  .about__wrapper {
+    gap: 2.5rem;
+    padding: 0 3rem;
+  }
+  .about__photos {
+    width: 30%;
+    margin: 0 3rem;
+  }
+  .about__content {
+    width: 50%;
+    margin-top: 3rem;
+  }
+  .about__title {
+    font-size: 3rem;
+  }
+  .about__description {
+    font-size: 1.5rem;
+  }
+}
+
 /* Ajusta telas grandes */
 @media (min-width: 1600px) {
   .about__wrapper {

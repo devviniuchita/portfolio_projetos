@@ -59,11 +59,12 @@
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
 }
 .contact__title {
-  font-family: var(--font-noto);
+  font-family: var(--font-kyokasho);
   font-size: 3.5rem;
   font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  font-weight: bold;
+  line-height: 100%;
+  letter-spacing: 0%;
   color: var(--background-clear);
 }
 .contact__dot {

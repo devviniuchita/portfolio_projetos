@@ -31,9 +31,11 @@
   z-index: -1;
 }
 .plans__title {
-  font-family: var(--font-noto);
-  font-weight: 700;
+  font-family: var(--font-kyokasho);
+  font-weight: bold;
   font-size: 4rem;
+  line-height: 100%;
+  letter-spacing: 0%;
   display: inline-block;
   position: relative;
   margin: 2rem 0;
@@ -122,9 +124,11 @@
   opacity: 0;
 }
 .plan-card__title {
-  font-family: var(--font-noto);
-  font-weight: 700;
+  font-family: var(--font-kyokasho);
+  font-weight: bold;
   font-size: 3.4rem;
+  line-height: 100%;
+  letter-spacing: 0%;
   text-align: center;
   margin-bottom: 0.5rem;
   display: flex;
