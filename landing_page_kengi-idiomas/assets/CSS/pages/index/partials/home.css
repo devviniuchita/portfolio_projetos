@@ -31,7 +31,7 @@
 .home__teacher-name {
   font-family: var(--font-noto);
   font-weight: 700;
-  font-size: 6.25rem;
+  font-size: 6rem;
   display: inline-block;
   color: var(--secondary-color);
 }
@@ -153,12 +153,50 @@
 }
 
 /* RESPONSIVIDADE */
-@media (min-width: 1440px) {
+@media (min-width: 1480px) {
   .home__teacher-name {
-    font-size: 5.5rem;
+    font-size: 4.5rem;
+  }
+  .home__description {
+    font-size: 1.7rem;
   }
   .home__photo img {
     max-width: 100%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1479px) {
+  .home__teacher-name {
+    font-size: 4rem;
+  }
+  .home__description {
+    font-size: 1.6rem;
+    margin-right: 1rem;
+  }
+  .home__photo img {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1299px) {
+  .home__teacher-name {
+    font-size: 3rem;
+  }
+  .home__description {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  .home__testimonial {
+    width: 80%;
+    height: auto;
+  }
+  .home__quote-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .home__testimonial-text {
+    font-size: 1rem;
   }
 }
 
@@ -168,10 +206,10 @@
     align-items: center;
   }
   .home__teacher-name {
-    font-size: 4.5rem;
+    font-size: 3rem;
   }
   .home__description {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   .home__photo-card {
     flex-direction: column;
