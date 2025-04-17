@@ -1,0 +1,224 @@
+.tplans {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 2rem 5rem 0 5rem;
+  margin-top: 2rem;
+  background: #dee8ef;
+  box-shadow: inset 0 -0.25rem 0.25rem rgba(0, 48, 87, 0.05);
+}
+.tplans__title {
+  font-family: var(--font-kyokasho);
+  font-weight: 700;
+  font-size: 4rem;
+  text-align: center;
+  line-height: 1.2;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+.tplans__title-part {
+  font-family: var(--font-kyokasho);
+  font-weight: 700;
+  line-height: inherit;
+  font-size: inherit;
+  color: var(--secondary-color);
+}
+.tplans__title-part--highlight {
+  color: var(--primary-color);
+}
+.tplans__title-part--muted {
+  color: var(--secondary-color);
+}
+.tplans__tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  gap: 1.25rem;
+}
+.tplans__tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.tplans__tab--individual .tplans__tab-highlight {
+  width: 12rem;
+  height: 4rem;
+  background: var(--background-clear);
+  border-radius: 0.75rem 0.75rem 0 0;
+  border: 0.75rem 0.75rem 0 0 solid var(--primary-color);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.tplans__tab--group .tplans__tab-highlight {
+  width: 9rem;
+  height: 3.5rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.75rem 0.75rem 0 0;
+  background: var(--background-header);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.tplans__tab-label {
+  font-family: var(--font-montserrat);
+  font-weight: 500;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  color: var(--secondary-color);
+  transform: translate(-50%, -50%);
+  transition: color 0.3s ease;
+}
+.tplans__tab:hover {
+  transform: scale(1.05);
+}
+.tplans__tab--individual:hover .tplans__tab-highlight {
+  background: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+.tplans__tab--group:hover .tplans__tab-highlight {
+  background: var(--primary-color);
+  border-color: var(--secondary-color);
+}
+.tplans__tab:hover .tplans__tab-label {
+  color: #ffffff;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 375px) {
+  .tplans__tab-label {
+    font-size: 1rem;
+  }
+}
+/* Media Query para telas entre 376px e 599px */
+@media (min-width: 376px) and (max-width: 599px) {
+  .tplans {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .tplans__title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  .tplans__tabs {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .tplans__tab {
+    width: 100%;
+  }
+  .tplans__tab--individual .tplans__tab-highlight {
+    width: 100%;
+    height: 3.5rem;
+  }
+  .tplans__tab--group .tplans__tab-highlight {
+    width: 100%;
+    height: 3.5rem;
+  }
+  .tplans__tab-label {
+    font-size: 1.2rem;
+  }
+}
+/* Telas médias (tablets) */
+@media (min-width: 600px) {
+  .tplans {
+    padding: 1.5rem 2rem 0 2rem;
+  }
+  .tplans__title {
+    font-size: 3rem;
+  }
+  .tplans__tabs {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  .tplans__tab {
+    width: auto;
+  }
+  .tplans__tab--individual .tplans__tab-highlight {
+    width: 12rem;
+    height: 3.5rem;
+  }
+  .tplans__tab--group .tplans__tab-highlight {
+    width: 9rem;
+    height: 3.5rem;
+  }
+  .tplans__tab-label {
+    font-size: 1.3rem;
+  }
+}
+/* Telas grandes (desktops) */
+@media (min-width: 1024px) {
+  .tplans {
+    padding: 2rem 4rem 0 4rem;
+  }
+  .tplans__title {
+    font-size: 4rem;
+  }
+  .tplans__tabs {
+    gap: 2rem;
+  }
+  .tplans__tab--individual .tplans__tab-highlight {
+    width: 15rem;
+    height: 4rem;
+  }
+  .tplans__tab--group .tplans__tab-highlight {
+    width: 12rem;
+    height: 4rem;
+  }
+  .tplans__tab-label {
+    font-size: 1.5rem;
+  }
+}
+/* Telas extra grandes (desktops) */
+@media (min-width: 1440px) {
+  .tplans {
+    padding: 2rem 6rem 0 6rem;
+  }
+  .tplans__title {
+    font-size: 5rem;
+  }
+  .tplans__tabs {
+    gap: 3rem;
+  }
+  .tplans__tab--individual .tplans__tab-highlight {
+    width: 18rem;
+    height: 5rem;
+  }
+  .tplans__tab--group .tplans__tab-highlight {
+    width: 15rem;
+    height: 5rem;
+  }
+  .tplans__tab-label {
+    font-size: 1.7rem;
+  }
+}
+/* Telas muito grandes (desktops) */
+@media (min-width: 2560px) {
+  .tplans {
+    padding: 2rem 8rem 0 8rem;
+  }
+  .tplans__title {
+    font-size: 6rem;
+  }
+  .tplans__tabs {
+    gap: 4rem;
+  }
+  .tplans__tab--individual .tplans__tab-highlight {
+    width: 21rem;
+    height: 6rem;
+  }
+  .tplans__tab--group .tplans__tab-highlight {
+    width: 18rem;
+    height: 6rem;
+  }
+  .tplans__tab-label {
+    font-size: 1.9rem;
+  }
+}
