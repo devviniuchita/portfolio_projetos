@@ -1,0 +1,53 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Node.js dependencies
+node_modules/
+
+# Arquivos de build
+build/
+out/
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Caches
+.parcel-cache/
+coverage/
+.turbo/
+.next/
+
+# Vite build and cache
+dist
+dist-ssr
+.vite
+
+# Production dependencies
+.pnpm-store/
+
+# Editor directories and files
+.vscode/*.code-workspace
+.vscode/*.db
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-project
+*.sublime-workspace
+
+# ESLint and Prettier cache
+.eslintcache
+.prettierignore

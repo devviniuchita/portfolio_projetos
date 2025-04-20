@@ -1,0 +1,13 @@
+@import "./index.css";
+@import "./body.css";
+@import "./header.css";
+@import "./card.css";
+@import "./battle.css";
+@import "./footer.css";
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+}

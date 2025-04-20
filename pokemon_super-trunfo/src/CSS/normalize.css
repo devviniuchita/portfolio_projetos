@@ -1,0 +1,28 @@
+/*Reset básico de estilos para navegadores*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+html {
+  scroll-behavior: smooth;
+}
+#share-button {
+  cursor: pointer;
+}
+body {
+  height: 100vh;
+}
+menu,
+ol,
+ul {
+  list-style: none;
+}
