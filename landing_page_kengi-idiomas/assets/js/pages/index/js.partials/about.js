@@ -1,4 +1,4 @@
-export function setupAbout() {
+/*export function setupAbout() {
   document.addEventListener("DOMContentLoaded", function () {
     function updateDescriptionText() {
       const description = document.querySelector(".about__description");
@@ -30,4 +30,4 @@ export function setupAbout() {
     window.addEventListener("resize", updateDescriptionText);
     window.addEventListener("orientationchange", updateDescriptionText);
   });
-}
+}*/

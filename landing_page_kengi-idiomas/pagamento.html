@@ -98,7 +98,9 @@
           <li class="nav__item">
             <a href="index.html#planos" class="nav__link">Planos</a>
           </li>
-          <li class="nav__item"><a href="#" class="nav__link">Contatos</a></li>
+          <li class="nav__item">
+            <a href="#contatos" class="nav__link">Contatos</a>
+          </li>
           <li class="nav__item">
             <a href="comunidade.html" class="nav__link">Comunidade</a>
           </li>
@@ -276,7 +278,7 @@
             Escola de japonês online.<br />
             Domine o japonês de onde estiver.
           </p>
-          <a href="#" class="footer__contact-link">Entre em contato →</a>
+          <a href="#contato" class="footer__contact-link">Entre em contato →</a>
         </div>
 
         <!-- Conteúdo principal -->
@@ -303,7 +305,7 @@
                 <a href="comunidade.html" class="footer__link">Comunidade</a>
               </li>
               <li class="footer__list-item">
-                <a href="#" class="footer__link">Curso</a>
+                <a href="index.html#curso" class="footer__link">Curso</a>
               </li>
               <li class="footer__list-item">
                 <a href="#" class="footer__link">Perguntas frequentes</a>
@@ -314,7 +316,7 @@
           <div class="footer__section footer__section--contacts">
             <h3 class="footer__section-title">Contato</h3>
             <ul class="footer__social-list">
-              <li class="footer__social-item">
+              <li id="contatos" class="footer__social-item">
                 <a
                   href="mailto:kengiteruya@gmail.com"
                   class="footer__social-link"
@@ -341,7 +343,11 @@
           <h3 class="footer__section-title">Redes Sociais</h3>
           <ul class="footer__social-list">
             <li class="footer__social-item">
-              <a href="#" class="footer__social-link" aria-label="YouTube">
+              <a
+                href="https://www.youtube.com/@kengicomg"
+                class="footer__social-link"
+                aria-label="YouTube"
+              >
                 <i class="fab fa-youtube"></i>
               </a>
             </li>
@@ -356,7 +362,7 @@
             </li>
             <li class="footer__social-item">
               <a
-                href="https://www.instagram.com/eusouokengi/#"
+                href="https://www.instagram.com/kengicomg/#"
                 class="footer__social-link"
                 aria-label="Instagram"
               >
@@ -364,12 +370,20 @@
               </a>
             </li>
             <li class="footer__social-item">
-              <a href="#" class="footer__social-link" aria-label="Facebook">
+              <a
+                href="https://www.facebook.com/renatokengi.terruya?rdid=i6XTErgtygkVJiKl&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DcF59SrKV%2F#"
+                class="footer__social-link"
+                aria-label="Facebook"
+              >
                 <i class="fab fa-facebook"></i>
               </a>
             </li>
             <li class="footer__social-item">
-              <a href="#" class="footer__social-link" aria-label="Linkedin">
+              <a
+                href="https://www.linkedin.com/in/terruya-renato-kengi-391a29168/?originalSubdomain=br"
+                class="footer__social-link"
+                aria-label="Linkedin"
+              >
                 <i class="fab fa-linkedin"></i>
               </a>
             </li>
@@ -386,7 +400,8 @@
 
           <hr class="footer__divider" />
           <p class="footer__copyright">
-            &copy; <span id="anoCorrente"></span> - Kenji Terruya
+            &copy; Renato Kenji Terruya - <span id="anoCorrente"></span>
+            <br />CNPJ: 42.176.899/0001-48 - São Paulo/SP
           </p>
         </div>
       </div>
@@ -394,6 +409,9 @@
       <!-- Informações globais -->
       <div class="footer__global">
         <hr class="footer__divider-global" />
+        <p class="footer__developer">
+          Desenvolvido por <span>Dev|Vini Uchita</span>
+        </p>
         <p class="footer__copyright">
           &copy; Copyright. Todos os direitos reservados.
         </p>
@@ -406,6 +424,8 @@
           .forEach((el) => (el.textContent = new Date().getFullYear()));
       </script>
     </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script type="module" src="./assets/js/pages/index/index.js"></script>
   </body>

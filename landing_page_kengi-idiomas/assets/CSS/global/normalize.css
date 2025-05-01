@@ -9,21 +9,31 @@
   border: none;
   text-decoration: none;
   background: none;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-html {
+html,
+body {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-#share-button {
-  cursor: pointer;
-}
-
 body {
   height: 100vh;
   background-color: var(--background-clear);
 }
-
+section {
+  scroll-snap-align: start;
+  scroll-margin-top: auto;
+}
+#share-button {
+  cursor: pointer;
+}
 menu,
 ol,
 ul {

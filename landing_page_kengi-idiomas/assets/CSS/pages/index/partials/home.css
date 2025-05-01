@@ -5,6 +5,9 @@
   position: relative;
   height: auto;
   padding: 2rem 2rem;
+  margin: 0 auto;
+  scroll-margin-top: 80px;
+  scroll-snap-align: start;
 }
 .home__background {
   display: flex;
@@ -99,6 +102,8 @@
   max-width: 38.5625rem;
   height: auto;
   overflow: visible;
+  object-fit: cover;
+  image-rendering: auto;
 }
 .home__testimonial {
   text-align: left;

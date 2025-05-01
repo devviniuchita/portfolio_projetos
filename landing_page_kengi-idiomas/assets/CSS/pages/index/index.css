@@ -4,6 +4,7 @@
 @import "../index/partials/course.css"; /* Estilos específicos da seção curso */
 @import "../index/partials/plans.css"; /* Estilos específicos da seção planos */
 @import "../index/partials/about.css"; /* Estilos específicos da seção sobre */
+@import "../index/partials/testimonials.css"; /* Estilos específicos da seção depoimentos */
 @import "../index/partials/contact.css"; /* Estilos específicos da seção contato */
 
 @import "../particular/especial.css"; /* Estilos específicos da seção especial */

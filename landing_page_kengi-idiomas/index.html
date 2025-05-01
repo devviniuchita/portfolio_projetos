@@ -70,7 +70,27 @@
     </script>
 
     <!-- Scripts assíncronos -->
-    <script async src="https://connect.facebook.net/en_US/fbevents.js"></script>
+    <script>
+      /* Facebook Pixel Code */
+      !(function (f, b, e, v, n, t, s) {
+        /* código do pixel */
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "SEU_PIXEL_ID");
+      fbq("track", "PageView");
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
+      />
+    </noscript>
   </head>
 
   <body>
@@ -99,7 +119,9 @@
           <li class="nav__item">
             <a href="#planos" class="nav__link">Planos</a>
           </li>
-          <li class="nav__item"><a href="#" class="nav__link">Contatos</a></li>
+          <li class="nav__item">
+            <a href="#contatos" class="nav__link">Contatos</a>
+          </li>
           <li class="nav__item">
             <a href="comunidade.html" class="nav__link">Comunidade</a>
           </li>
@@ -284,15 +306,12 @@
             Sobre Kengi<span class="about__title-dot"></span>
           </h2>
           <p class="about__description">
-            Kengi Terruya é formado em Letras Japonesas e atua como professor de
-            japonês há 5 anos, já tendo ajudado mais de 350 alunos a alcançarem
-            seus objetivos no idioma. Sua didática é interativa e dinâmica,
-            focada em tornar o aprendizado divertido e eficiente. Durante um
-            intercâmbio de 1 ano no Japão, Kengi adquiriu experiências que
-            enriquecem suas aulas, trazendo a cultura japonesa de forma
-            autêntica. Apaixonado por animes, ele usa exemplos do universo otaku
-            para conectar o conteúdo com o interesse dos alunos, tornando cada
-            aula única e envolvente.
+            Kengi vem ajudando alunos a atingir a fluência desde os 19 anos de
+            idade. Com experiência nas maiores escolas de japonês do país, já
+            recebeu bolsa de estudos no Japão para estudar na universidade de
+            Miyazaki. É um entusiasta de jogos e animes, e por isso entende bem
+            os interesses tanto de alunos do mundo otaku quanto de pessoas do
+            mundo literário, deixando as aulas mais interessantes e envolventes.
           </p>
         </article>
       </div>
@@ -301,7 +320,10 @@
     <section class="testimonials py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <!-- Título da seção -->
-        <h2 class="text-3xl font-bold text-center text-secondary mb-8">
+        <h2
+          id="comentarios"
+          class="text-3xl font-bold text-center text-secondary mb-8"
+        >
           Depoimentos dos Alunos
         </h2>
 
@@ -566,7 +588,9 @@
                 <a href="#" class="footer__link">Quem somos?</a>
               </li>
               <li class="footer__list-item">
-                <a href="#" class="footer__link">Comentários de alunos</a>
+                <a href="#comentarios" class="footer__link"
+                  >Comentários de alunos</a
+                >
               </li>
             </ul>
           </div>
@@ -592,7 +616,7 @@
           <div class="footer__section footer__section--contacts">
             <h3 class="footer__section-title">Contato</h3>
             <ul class="footer__social-list">
-              <li class="footer__social-item">
+              <li id="contatos" class="footer__social-item">
                 <a
                   href="mailto:kengiteruya@gmail.com"
                   class="footer__social-link"
@@ -619,7 +643,11 @@
           <h3 class="footer__section-title">Redes Sociais</h3>
           <ul class="footer__social-list">
             <li class="footer__social-item">
-              <a href="#" class="footer__social-link" aria-label="YouTube">
+              <a
+                href="https://www.youtube.com/@kengicomg"
+                class="footer__social-link"
+                aria-label="YouTube"
+              >
                 <i class="fab fa-youtube"></i>
               </a>
             </li>
@@ -634,7 +662,7 @@
             </li>
             <li class="footer__social-item">
               <a
-                href="https://www.instagram.com/eusouokengi/#"
+                href="https://www.instagram.com/kengicomg/#"
                 class="footer__social-link"
                 aria-label="Instagram"
               >
@@ -642,12 +670,20 @@
               </a>
             </li>
             <li class="footer__social-item">
-              <a href="#" class="footer__social-link" aria-label="Facebook">
+              <a
+                href="https://www.facebook.com/renatokengi.terruya?rdid=i6XTErgtygkVJiKl&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DcF59SrKV%2F#"
+                class="footer__social-link"
+                aria-label="Facebook"
+              >
                 <i class="fab fa-facebook"></i>
               </a>
             </li>
             <li class="footer__social-item">
-              <a href="#" class="footer__social-link" aria-label="Linkedin">
+              <a
+                href="https://www.linkedin.com/in/terruya-renato-kengi-391a29168/?originalSubdomain=br"
+                class="footer__social-link"
+                aria-label="Linkedin"
+              >
                 <i class="fab fa-linkedin"></i>
               </a>
             </li>
@@ -664,7 +700,8 @@
 
           <hr class="footer__divider" />
           <p class="footer__copyright">
-            &copy; <span id="anoCorrente"></span> - Kenji Terruya
+            &copy; Renato Kenji Terruya - <span id="anoCorrente"></span>
+            <br />CNPJ: 42.176.899/0001-48 - São Paulo/SP
           </p>
         </div>
       </div>
@@ -672,6 +709,9 @@
       <!-- Informações globais -->
       <div class="footer__global">
         <hr class="footer__divider-global" />
+        <p class="footer__developer">
+          Desenvolvido por <span>Dev|Vini Uchita</span>
+        </p>
         <p class="footer__copyright">
           &copy; Copyright. Todos os direitos reservados.
         </p>
@@ -686,6 +726,7 @@
     </footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script>
       var swiper = new Swiper(".swiper-container", {
         loop: true,
@@ -707,7 +748,7 @@
         },
       });
     </script>
-    <script type="module" src="./assets/js/pages/index/index.js"></script>
+    <script type="module" src="/assets/js/pages/index/index.js"></script>
     <script>
       document
         .getElementById("mybutton")

@@ -4,8 +4,8 @@ export function setupFooter() {
 
   // Define os dados a serem compartilhados
   const shareData = {
-    title: "Kengi - Escola de Japonês Online",
-    text: "Aprenda japonês de onde estiver com a Kengi!",
+    title: "Escola de Japonês Online",
+    text: "Aprenda japonês de onde estiver com Kengi Idiomas!",
     url: "https://www.kengi.com", // Substitua pela URL real do site
   };
 
