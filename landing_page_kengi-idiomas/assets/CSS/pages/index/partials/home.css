@@ -94,12 +94,12 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  min-width: 300px;
+  min-width: 18.75rem;
   gap: 2rem;
 }
 .home__photo img {
   width: 100%;
-  max-width: 38.5625rem;
+  max-width: 21.875rem;
   height: auto;
   overflow: visible;
   object-fit: cover;
@@ -107,16 +107,15 @@
 }
 .home__testimonial {
   text-align: left;
-  width: 80%;
-  max-width: 31.75rem;
-  height: auto;
+  width: 100%;
+  max-width: 25rem;
   position: absolute;
-  bottom: -6rem;
-  left: 50%;
-  transform: translateX(-20%);
-  padding: 2rem;
-  background: #fafafa;
+  left: 45%;
+  bottom: -3rem;
+  padding: 1rem;
   border-radius: 1.25rem;
+  background: #fafafa;
+  transform: translateX(-20%);
   box-shadow: var(--box-shadow);
   transition: var(--transition);
 }
@@ -124,14 +123,14 @@
   box-shadow: var(--box-shadow-hover);
 }
 .home__quote-icon {
-  width: 3.625rem;
-  height: 3.2825rem;
+  width: 2rem;
+  height: 2rem;
   margin-bottom: 1rem;
 }
 .home__testimonial-text {
   font-family: var(--font-montserrat);
   font-weight: 400;
-  font-size: 1.375rem;
+  font-size: 1.3rem;
   color: #101820;
 }
 .home__student-info {
@@ -141,8 +140,8 @@
   gap: 1rem;
 }
 .home__avatar {
-  width: 4.625rem;
-  height: 4.625rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
 }
 .home__student-details p {
@@ -151,13 +150,13 @@
 .home__student-name {
   font-family: var(--font-montserrat);
   font-weight: 700;
-  font-size: 1.375rem;
+  font-size: 1.3rem;
   color: #101820;
 }
 .home__course-type {
   font-family: var(--font-montserrat);
   font-weight: 400;
-  font-size: 1.375rem;
+  font-size: 1.3rem;
   margin: 0;
   color: #101820;
 }

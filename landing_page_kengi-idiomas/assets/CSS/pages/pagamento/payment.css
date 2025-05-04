@@ -1,1 +1,3 @@
+@import "../../global/global.css"; /* Estilos globais */
+
 @import "../pagamento/partials_payment/payment.style.css";

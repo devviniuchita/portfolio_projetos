@@ -1,3 +1,4 @@
+@import "../../index/partials/contact.css"; /* Estilos globais */
 .tplans {
   display: flex;
   flex-direction: column;

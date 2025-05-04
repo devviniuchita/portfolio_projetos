@@ -1,0 +1,246 @@
+.plans {
+  position: relative;
+  padding: 1rem 2rem;
+}
+.plans__header {
+  width: 17.44rem;
+  height: 5.56rem;
+}
+.plans__title {
+  font-family: var(--font-kyokasho);
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--secondary-color);
+}
+.plans__dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.3125rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+.plans__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.plan-card {
+  font-family: "Montserrat-Regular", sans-serif;
+  flex: 1 1 25rem;
+  max-width: 29.88rem;
+  overflow: hidden;
+  color: var(--secondary-color);
+  background: var(--white-color);
+  border-radius: 0.9rem;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+}
+/* Modificadores de Estilo Individual */
+.plan-card--mensal,
+.plan-card--semestral,
+.plan-card--anual {
+  background: var(--back-card);
+}
+.plan-card:hover {
+  transform: scale(1.02);
+}
+.plan-card__image {
+  width: 100%;
+  height: 12rem;
+}
+.plan-card__image-src {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: auto;
+}
+.plan-card__content {
+  padding: 0.94rem 2.5rem 1.88rem;
+  display: flex;
+  flex-direction: column;
+}
+.plan-card__title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.94rem;
+}
+.plan-card__title {
+  font-family: var(--font-kyokasho);
+  font-size: 2.69rem;
+  font-weight: 700;
+  margin: 0;
+}
+.plan-card__ellipse {
+  width: 0.35rem;
+  height: 0.35rem;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+.plan-card__description {
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 auto;
+  max-width: 25.69rem;
+  color: var(--text-color);
+}
+.plan-card__price {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-top: 0.94rem;
+  color: var(--text-color);
+}
+.plan-card__price-label {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+.plan-card__price-value {
+  font-family: "Montserrat-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+}
+.old-price {
+  color: #999;
+  position: relative;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.old-price::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary-color);
+  transform: translateY(-50%);
+  opacity: 0.8;
+}
+.plan-card__price-line {
+  width: 5.5rem;
+  height: 0.0625rem;
+  background: currentColor;
+}
+.plan-card__current-price-main {
+  font-family: var(--font-noto);
+  font-size: 2.69rem;
+  font-weight: 700;
+}
+.plan-card__current-price-period {
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-color);
+}
+.plan-card__button {
+  font-family: "Montserrat-Medium", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 500;
+  text-align: center;
+  align-self: center;
+  width: 21.875rem;
+  padding: 0.188rem 0;
+  margin-top: 0.94rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.625rem;
+  background: var(--back-button);
+  color: var(--background-clear);
+}
+.plan-card__button:hover {
+  opacity: 0.9;
+}
+/* Efeito hover para os cards */
+.plan-card:hover {
+  transform: scale(1.02);
+  background: var(--secondary-color) !important;
+  color: var(--white-color);
+  box-shadow: var(--box-shadow-hover);
+}
+.plan-card:hover .plan-card__title,
+.plan-card:hover .plan-card__description,
+.plan-card:hover .plan-card__price-label,
+.plan-card:hover .plan-card__price-value,
+.plan-card:hover .plan-card__current-price-main,
+.plan-card:hover .plan-card__current-price-period {
+  color: var(--white-color);
+}
+.plan-card:hover .plan-card__button {
+  background: var(--primary-color);
+  color: var(--white-color);
+}
+.plan-card:hover .plan-card__button:hover {
+  background: var(--red-hover-color) !important;
+  transform: var(--transform);
+}
+
+/* Estilos do carrossel para os cards */
+.carousel-nav {
+  display: none;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 10;
+  pointer-events: none;
+}
+.carousel-button {
+  pointer-events: all;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 1rem;
+  transition: all 0.3s ease;
+}
+.carousel-button:hover {
+  background: var(--red-hover-color);
+  transform: scale(1.1);
+}
+.carousel-button i {
+  font-size: 1.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 1328px) {
+  .plans__cards {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+    justify-content: flex-start;
+  }
+  .plan-card {
+    flex: 0 0 calc(50% - 1rem);
+    scroll-snap-align: start;
+    min-width: 25rem;
+  }
+  .plans__cards::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .plan-card {
+    flex: 0 0 100%;
+  }
+  .plans__container {
+    position: relative;
+  }
+  .carousel-nav {
+    display: flex;
+  }
+}

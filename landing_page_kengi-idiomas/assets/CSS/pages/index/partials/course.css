@@ -273,7 +273,8 @@
   }
   .course__image {
     max-width: 90%;
-    display: block; 
+    display: block;
+  }
 }
 
 /* Ajustes extras para telas muito pequenas (até 360px) */

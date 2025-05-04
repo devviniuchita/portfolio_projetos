@@ -1,6 +1,11 @@
-@import "../global/normalize.css";
-@import "../global/fonts.css";
-@import "../global/variables.css";
+@import "tailwindcss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@import "../global/header.css";
-@import "../global/footer.css";
+@import "./normalize.css";
+@import "./variables.css";
+@import "./fonts.css";
+
+@import "./header.css";
+@import "./footer.css";

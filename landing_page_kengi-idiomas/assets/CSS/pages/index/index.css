@@ -1,10 +1,13 @@
 @import "../../global/global.css"; /* Estilos globais */
 
-@import "../index/partials/home.css"; /* Estilos específicos da seção home */
-@import "../index/partials/course.css"; /* Estilos específicos da seção curso */
-@import "../index/partials/plans.css"; /* Estilos específicos da seção planos */
-@import "../index/partials/about.css"; /* Estilos específicos da seção sobre */
-@import "../index/partials/testimonials.css"; /* Estilos específicos da seção depoimentos */
-@import "../index/partials/contact.css"; /* Estilos específicos da seção contato */
+@import "tailwindcss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@import "../particular/especial.css"; /* Estilos específicos da seção especial */
+@import "../index/partials/home.css";
+@import "../index/partials/course.css";
+@import "../index/partials/plans.css";
+@import "../index/partials/about.css";
+@import "../index/partials/testimonials.css";
+@import "../index/partials/contact.css";

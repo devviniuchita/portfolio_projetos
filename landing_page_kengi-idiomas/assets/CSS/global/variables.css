@@ -5,6 +5,8 @@
   --background-clear: #fafafa; /* Cor de fundo clara */
   --background-color: #f4f4f4; /* Cor de fundo um pouco mais escura*/
   --background-header: #afc7da; /* Cor de fundo do header */
+  --back-button: #5f8fb4; /* Cor de fundo do botão de card */
+  --back-card: #ccdbe6; /* Cor de fundo do card */
   --cards-color: #f8f8f8; /* Cor de fundo dos cards */
   --white-color: #ffffff; /* Branco */
   --soft-grey: #e1e1e9; /* Cinza claro usado no footer */
@@ -35,7 +37,7 @@
 
   /* Efeitos */
   --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra padrão */
-  --box-shadow-hover: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Sombra para hover */
+  --box-shadow-hover: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra para hover */
   --transition: all 0.3s ease; /* Transição padrão */
   --transform: scale(1.05); /* Transformação para hover */
   --drop-shadow: drop-shadow(

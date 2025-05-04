@@ -1,1 +1,4 @@
+@import "../../global/global.css"; /* Estilos globais */
+@import "../particular/especial.css"; /* Estilos da page especial */
+
 @import "./partials_group/style_group.css";

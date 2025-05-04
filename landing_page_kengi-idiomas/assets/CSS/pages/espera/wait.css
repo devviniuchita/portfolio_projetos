@@ -1,1 +1,3 @@
+@import "../../global/global.css"; /* Estilos globais */
+
 @import "./partials_wait/wait.style.css";

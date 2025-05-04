@@ -43,7 +43,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="./assets/CSS/pages/index/index.css" />
+    <link rel="stylesheet" href="./assets/CSS/pages/grupo/group.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -157,6 +157,121 @@
             <div class="tplans__tab-highlight"></div>
             <span class="tplans__tab-label">Particular</span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="plans" id="planos">
+      <div class="plans__container">
+        <header class="plans__header">
+          <h2 class="plans__title">Planos<span class="plans__dot"></span></h2>
+        </header>
+
+        <div class="plans__cards" id="plans-carousel">
+          <!-- Plano Mensal -->
+          <article class="plan-card plan-card--mensal">
+            <figure class="plan-card__image">
+              <img
+                class="plan-card__image-src"
+                src="./assets/images/particular_images/cards/mensal_card.svg"
+                alt="Plano Mensal"
+              />
+            </figure>
+            <div class="plan-card__content">
+              <div class="plan-card__title-wrapper">
+                <h3 class="plan-card__title">Mensal</h3>
+                <span class="plan-card__ellipse"></span>
+              </div>
+              <p class="plan-card__description">
+                Assine o plano mensal para acesso exclusivo a conteúdos
+                especiais e benefícios incríveis!
+              </p>
+              <div class="plan-card__price">
+                <span class="plan-card__price-value">Somente:</span>
+              </div>
+              <div class="plan-card__current-price">
+                <span class="plan-card__current-price-main">R$ 000,00</span>
+                <span class="plan-card__current-price-period">/mês</span>
+              </div>
+              <button class="plan-card__button">Escolher este plano</button>
+            </div>
+          </article>
+
+          <!-- Plano Semestral -->
+          <article class="plan-card plan-card--semestral">
+            <figure class="plan-card__image">
+              <img
+                class="plan-card__image-src"
+                src="./assets/images/particular_images/cards/semetral_card.svg"
+                alt="Plano Semestral"
+              />
+            </figure>
+            <div class="plan-card__content">
+              <div class="plan-card__title-wrapper">
+                <h3 class="plan-card__title">Semestral</h3>
+                <span class="plan-card__ellipse"></span>
+              </div>
+              <p class="plan-card__description">
+                Garanta 6 meses de benefícios exclusivos e conteúdos especiais
+                com o plano semestral!
+              </p>
+              <div class="plan-card__price">
+                <span class="plan-card__price-label">De:</span>
+                <span class="plan-card__price-value old-price">R$ 000,00</span>
+              </div>
+              <div class="plan-card__current-price">
+                <span class="plan-card__current-price-label">Por:</span>
+                <span class="plan-card__current-price-main">R$ 000,00</span>
+                <span class="plan-card__current-price-period">/semestre</span>
+              </div>
+              <button class="plan-card__button">Escolher este plano</button>
+            </div>
+          </article>
+
+          <!-- Plano Anual -->
+          <article class="plan-card plan-card--anual">
+            <figure class="plan-card__image">
+              <img
+                class="plan-card__image-src"
+                src="./assets/images/particular_images/cards/anual_card.svg"
+                alt="Plano Anual"
+              />
+            </figure>
+            <div class="plan-card__content">
+              <div class="plan-card__title-wrapper">
+                <h3 class="plan-card__title">Anual</h3>
+                <span class="plan-card__ellipse"></span>
+              </div>
+              <p class="plan-card__description">
+                Tenha acesso completo por 12 meses com o plano anual e economize
+                ainda mais!
+              </p>
+              <div class="plan-card__price">
+                <span class="plan-card__price-label">De:</span>
+                <span class="plan-card__price-value old-price">R$ 000,00</span>
+              </div>
+              <div class="plan-card__current-price">
+                <span class="plan-card__current-price-label">Por:</span>
+                <span class="plan-card__current-price-main">R$ 000,00</span>
+                <span class="plan-card__current-price-period">/ano</span>
+              </div>
+              <button class="plan-card__button">Escolher este plano</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Controles do carrossel -->
+        <div class="carousel-nav">
+          <button
+            class="carousel-button"
+            id="prev-button"
+            aria-label="Anterior"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-button" id="next-button" aria-label="Próximo">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -433,23 +548,5 @@
     </footer>
 
     <script type="module" src="./assets/js/pages/index/index.js"></script>
-    <script>
-      document
-        .getElementById("mybutton")
-        .addEventListener("click", function () {
-          // Alterna entre as cores primária (azul) e secundária (vermelho)
-          this.classList.toggle("bg-primary"); // Azul
-          this.classList.toggle("bg-secondary"); // Vermelho
-
-          // Altera os estados de hover
-          if (this.classList.contains("bg-secondary")) {
-            this.classList.add("hover:bg-[#002B4E]"); // Define hover azul escuro após clique
-            this.classList.remove("hover:bg-red-hover"); // Remove o hover vermelho
-          } else {
-            this.classList.add("hover:bg-red-hover"); // Restaura hover vermelho inicial
-            this.classList.remove("hover:bg-[#002B4E]");
-          }
-        });
-    </script>
   </body>
 </html>

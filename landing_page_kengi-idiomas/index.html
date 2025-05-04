@@ -43,6 +43,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Estilos -->
+    <link rel="stylesheet" href="./dist/output.css" />
     <link rel="stylesheet" href="./assets/CSS/pages/index/index.css" />
     <link
       rel="stylesheet"
@@ -52,35 +53,32 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#d22630",
-              secondary: "#003057",
-            },
-            fontFamily: {
-              sans: ["Inter", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
-
     <!-- Scripts assíncronos -->
     <script>
-      /* Facebook Pixel Code */
       !(function (f, b, e, v, n, t, s) {
-        /* código do pixel */
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
       })(
         window,
         document,
         "script",
         "https://connect.facebook.net/en_US/fbevents.js"
       );
-      fbq("init", "SEU_PIXEL_ID");
+      fbq("init", "SEU_PIXEL_ID"); // Substitua pelo seu ID real
       fbq("track", "PageView");
     </script>
     <noscript>
@@ -749,23 +747,5 @@
       });
     </script>
     <script type="module" src="/assets/js/pages/index/index.js"></script>
-    <script>
-      document
-        .getElementById("mybutton")
-        .addEventListener("click", function () {
-          // Alterna entre as cores primária (azul) e secundária (vermelho)
-          this.classList.toggle("bg-primary"); // Azul
-          this.classList.toggle("bg-secondary"); // Vermelho
-
-          // Altera os estados de hover
-          if (this.classList.contains("bg-secondary")) {
-            this.classList.add("hover:bg-[#002B4E]"); // Define hover azul escuro após clique
-            this.classList.remove("hover:bg-red-hover"); // Remove o hover vermelho
-          } else {
-            this.classList.add("hover:bg-red-hover"); // Restaura hover vermelho inicial
-            this.classList.remove("hover:bg-[#002B4E]");
-          }
-        });
-    </script>
   </body>
 </html>
