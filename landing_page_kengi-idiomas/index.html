@@ -53,6 +53,22 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#d22630",
+              secondary: "#003057",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
     <!-- Scripts assíncronos -->
     <script>
       !(function (f, b, e, v, n, t, s) {
@@ -533,8 +549,11 @@
                 </div>
                 <div class="contact__terms">
                   <label class="contact__checkbox-container">
-                    <input class="contact__checkbox" type="checkbox" required />
-                    <span class="contact__checkbox-box"></span>
+                    <input
+                      type="checkbox"
+                      id="remember-me"
+                      class="w-4 h-4 rounded border-gray-300"
+                    />
                     <span class="contact__checkbox-text">
                       Concordo com o Aviso de Privacidade e com o uso dos meus
                       dados para atividades institucionais e de marketing.

@@ -173,17 +173,6 @@
 .contact__checkbox {
   display: none;
 }
-.contact__checkbox-box {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  border: 1px solid #003057;
-  border-radius: 0.25rem;
-  background: transparent;
-}
-.contact__checkbox:checked + .contact__checkbox-box {
-  background: #003057;
-}
 .contact__checkbox-text {
   font-family: "Poppins-Regular", sans-serif;
   font-size: 0.875rem;

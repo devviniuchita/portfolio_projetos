@@ -50,6 +50,10 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -91,6 +95,56 @@
         src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
       />
     </noscript>
+
+    <style>
+      .page {
+        font-family: "Inter", sans-serif;
+        background-color: #f8f8f8;
+      }
+      .progress-step {
+        position: relative;
+      }
+      .progress-step:not(:last-child):after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        width: 2rem;
+        height: 2px;
+        background-color: #ccd6e6;
+        transform: translateY(-50%);
+      }
+      .payment-method {
+        transition: all 0.3s ease;
+      }
+      .payment-method:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .card-input {
+        transition: border-color 0.3s ease;
+      }
+      .card-input:focus {
+        border-color: #003057;
+      }
+      .qr-code-placeholder {
+        background: repeating-conic-gradient(#f8f8f8 0% 25%, #003057 0% 50%) 50% /
+          20px 20px;
+      }
+      .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -138,151 +192,1069 @@
       </nav>
     </header>
 
-    <main class="payment">
-      <!-- Header: Imagem do Plano -->
-      <div class="payment__header">
-        <img
-          src="./assets/images/payment_images/product__plan-image.png"
-          alt="Imagem do plano"
-          class="payment__header-image"
-        />
-      </div>
-
-      <!-- Conteúdo Principal: Formulário e Detalhes -->
-      <div class="payment__container">
-        <!-- Lado Esquerdo: Formulário -->
-        <div class="payment__form">
-          <h2 class="payment__title">Preencha os campos abaixo</h2>
-          <form id="payment-form" class="form">
-            <div class="form__group">
-              <label for="fullname" class="form__label">Nome Completo</label>
-              <input
-                type="text"
-                id="fullname"
-                name="fullname"
-                required
-                class="form__input"
-              />
+    <page class="min-h-screen bg-gray-50">
+      <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Progress Steps -->
+        <div class="flex justify-between items-center mb-12 px-4">
+          <div class="progress-step">
+            <div
+              class="w-10 h-10 rounded-full bg-[#003057] flex items-center justify-center text-white font-semibold"
+            >
+              1
             </div>
-            <div class="form__group">
-              <label for="email" class="form__label">E-mail</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                class="form__input"
-              />
+            <p class="mt-2 text-sm font-medium text-[#003057]">
+              Login/Cadastro
+            </p>
+          </div>
+          <div class="progress-step">
+            <div
+              class="w-10 h-10 rounded-full bg-[#ccd6e6] flex items-center justify-center text-[#003057] font-semibold"
+            >
+              2
             </div>
-            <div class="form__group">
-              <label for="cpf" class="form__label">CPF</label>
-              <input
-                type="text"
-                id="cpf"
-                name="cpf"
-                required
-                class="form__input"
-              />
+            <p class="mt-2 text-sm font-medium text-gray-500">
+              Seleção de Plano
+            </p>
+          </div>
+          <div class="progress-step">
+            <div
+              class="w-10 h-10 rounded-full bg-[#ccd6e6] flex items-center justify-center text-[#003057] font-semibold"
+            >
+              3
             </div>
-            <div class="form__group">
-              <label for="phone" class="form__label">Telefone</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                required
-                class="form__input"
-              />
+            <p class="mt-2 text-sm font-medium text-gray-500">Pagamento</p>
+          </div>
+          <div class="progress-step">
+            <div
+              class="w-10 h-10 rounded-full bg-[#ccd6e6] flex items-center justify-center text-[#003057] font-semibold"
+            >
+              4
             </div>
-            <div class="form__group">
-              <label for="card-number" class="form__label"
-                >Número do Cartão</label
-              >
-              <input
-                type="text"
-                id="card-number"
-                name="card-number"
-                required
-                class="form__input"
-              />
-            </div>
-            <div class="form__group">
-              <label for="card-expiry" class="form__label">Validade</label>
-              <input
-                type="text"
-                id="card-expiry"
-                name="card-expiry"
-                placeholder="MM/AA"
-                required
-                class="form__input"
-              />
-            </div>
-            <div class="form__group">
-              <label for="card-cvc" class="form__label">CVC</label>
-              <input
-                type="text"
-                id="card-cvc"
-                name="card-cvc"
-                required
-                class="form__input"
-              />
-            </div>
-            <div class="form__group">
-              <label for="installments" class="form__label">Parcelas</label>
-              <select id="installments" name="installments" class="form__input">
-                <option value="1">1x sem juros</option>
-                <option value="2">2x sem juros</option>
-                <option value="3">3x sem juros</option>
-              </select>
-            </div>
-            <div class="form__group">
-              <input
-                type="checkbox"
-                id="save-details"
-                name="save-details"
-                checked
-                class="form__checkbox"
-              />
-              <label for="save-details" class="form__label"
-                >Salvar dados para próximas compras</label
-              >
-            </div>
-            <button type="submit" class="payment__button">Pagar Agora</button>
-          </form>
+            <p class="mt-2 text-sm font-medium text-gray-500">Confirmação</p>
+          </div>
         </div>
 
-        <!-- Lado Direito: Detalhes do Plano -->
-        <div class="payment__content">
-          <h2 class="payment__title payment__title--plans">
-            Escolha o seu plano
+        <!-- Login/Cadastro Section -->
+        <div id="auth-section" class="fade-in">
+          <div class="flex flex-col md:flex-row gap-8">
+            <!-- Login Form -->
+            <div
+              id="login-form"
+              class="w-full md:w-1/2 bg-white rounded-lg shadow-md p-8"
+            >
+              <h2 class="text-2xl font-bold text-[#003057] mb-6">Faça login</h2>
+
+              <!-- Google OAuth Button -->
+              <button
+                id="google-login"
+                class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 rounded-lg py-3 px-4 mb-6 hover:bg-gray-50 transition-colors"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                  alt="Google Logo"
+                  class="w-5 h-5"
+                />
+                <span class="text-gray-700 font-medium"
+                  >Continuar com Google</span
+                >
+              </button>
+
+              <div class="flex items-center mb-6">
+                <div class="flex-grow border-t border-gray-300"></div>
+                <span class="mx-4 text-gray-500">ou</span>
+                <div class="flex-grow border-t border-gray-300"></div>
+              </div>
+
+              <!-- Email Login Form -->
+              <form id="email-login">
+                <div class="mb-4">
+                  <label
+                    for="login-email"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="login-email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003057] focus:border-[#003057] outline-none"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label
+                    for="login-password"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Senha</label
+                  >
+                  <input
+                    type="password"
+                    id="login-password"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003057] focus:border-[#003057] outline-none"
+                    required
+                  />
+                </div>
+                <div class="flex justify-between items-center mb-6">
+                  <div class="flex items-center">
+                    <input
+                      type="checkbox"
+                      id="remember-me"
+                      class="w-4 h-4 text-[#d22630] rounded border-gray-300 focus:ring-[#d22630]"
+                    />
+                    <label for="remember-me" class="ml-2 text-sm text-gray-600"
+                      >Lembrar de mim</label
+                    >
+                  </div>
+                  <a href="#" class="text-sm text-[#d22630] hover:underline"
+                    >Esqueci minha senha</a
+                  >
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-[#d22630] text-white py-3 px-4 rounded-lg font-medium hover:bg-[#b51e28] transition-colors"
+                >
+                  Entrar
+                </button>
+              </form>
+
+              <p class="mt-6 text-center text-gray-600">
+                Não tem uma conta?
+                <button
+                  id="switch-to-register"
+                  class="text-[#d22630] hover:underline font-medium"
+                >
+                  Cadastre-se
+                </button>
+              </p>
+            </div>
+
+            <!-- Register Form (Hidden by default) -->
+            <div
+              id="register-form"
+              class="hidden w-full md:w-1/2 bg-white rounded-lg shadow-md p-8"
+            >
+              <h2 class="text-2xl font-bold text-[#003057] mb-6">
+                Crie sua conta
+              </h2>
+
+              <form id="email-register">
+                <div class="mb-4">
+                  <label
+                    for="register-name"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Nome completo</label
+                  >
+                  <input
+                    type="text"
+                    id="register-name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003057] focus:border-[#003057] outline-none"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label
+                    for="register-email"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="register-email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003057] focus:border-[#003057] outline-none"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label
+                    for="register-password"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Senha</label
+                  >
+                  <input
+                    type="password"
+                    id="register-password"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003057] focus:border-[#003057] outline-none"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label
+                    for="register-confirm-password"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Confirme sua senha</label
+                  >
+                  <input
+                    type="password"
+                    id="register-confirm-password"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003057] focus:border-[#003057] outline-none"
+                    required
+                  />
+                </div>
+                <div class="mb-6">
+                  <label
+                    for="register-phone"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Telefone (opcional)</label
+                  >
+                  <input
+                    type="tel"
+                    id="register-phone"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003057] focus:border-[#003057] outline-none"
+                  />
+                </div>
+                <div class="flex items-center mb-6">
+                  <input
+                    type="checkbox"
+                    id="accept-terms"
+                    class="w-4 h-4 text-[#d22630] rounded border-gray-300 focus:ring-[#d22630]"
+                    required
+                  />
+                  <label for="accept-terms" class="ml-2 text-sm text-gray-600">
+                    Eu concordo com os
+                    <a href="#" class="text-[#d22630] hover:underline"
+                      >Termos de Serviço</a
+                    >
+                    e
+                    <a href="#" class="text-[#d22630] hover:underline"
+                      >Política de Privacidade</a
+                    >
+                  </label>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-[#d22630] text-white py-3 px-4 rounded-lg font-medium hover:bg-[#b51e28] transition-colors"
+                >
+                  Cadastrar
+                </button>
+              </form>
+
+              <p class="mt-6 text-center text-gray-600">
+                Já tem uma conta?
+                <button
+                  id="switch-to-login"
+                  class="text-[#d22630] hover:underline font-medium"
+                >
+                  Faça login
+                </button>
+              </p>
+            </div>
+
+            <!-- Course Benefits -->
+            <div
+              class="w-full md:w-1/2 bg-[#003057] rounded-lg shadow-md p-8 text-white"
+            >
+              <h2 class="text-2xl font-bold mb-6">
+                Por que aprender japonês conosco?
+              </h2>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-[#f8f8f8] mt-1 mr-3"></i>
+                  <span>Professor certificado e com experiência no Japão</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-[#f8f8f8] mt-1 mr-3"></i>
+                  <span>Metodologia exclusiva e comprovada</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-[#f8f8f8] mt-1 mr-3"></i>
+                  <span>Material didático incluso</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-[#f8f8f8] mt-1 mr-3"></i>
+                  <span>Aulas flexíveis e 100% online</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-[#f8f8f8] mt-1 mr-3"></i>
+                  <span>Certificado de conclusão</span>
+                </li>
+              </ul>
+              <div class="mt-8 p-4 bg-[#00203f] rounded-lg">
+                <h3 class="font-bold mb-2">Segurança garantida</h3>
+                <p class="text-sm text-gray-300">
+                  Utilizamos criptografia SSL/TLS para proteger todas as suas
+                  informações.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan Selection Section (Hidden by default) -->
+        <div id="plan-section" class="hidden fade-in">
+          <h2 class="text-2xl font-bold text-[#003057] mb-8">
+            Escolha seu plano de estudos
           </h2>
-          <div class="product-info">
-            <h3 class="product-info__title">Curso de Japonês em Grupo</h3>
-            <a href="#" class="product-info__link">
-              <img
-                src="./assets/images/payment_images/plano mensal.png"
-                alt="Imagem do plano mensal - Curso em Grupo"
-                class="product-info__image"
-              />
-            </a>
-            <a href="#" class="product-info__link">
-              <img
-                src="./assets/images/payment_images/Semestral.png"
-                alt="Imagem do plano semestral - Curso em Grupo"
-                class="product-info__image"
-              />
-            </a>
-            <a href="#" class="product-info__link">
-              <img
-                src="./assets/images/payment_images/plano mensal.png"
-                alt="Imagem do plano anual - Curso em Grupo"
-                class="product-info__image"
-              />
-            </a>
+
+          <div class="mb-8">
+            <div class="flex justify-center mb-6">
+              <div class="inline-flex rounded-md shadow-sm">
+                <button
+                  id="group-tab"
+                  class="px-6 py-2 text-sm font-medium rounded-l-lg border border-[#003057] bg-[#003057] text-white"
+                >
+                  Aulas em Grupo
+                </button>
+                <button
+                  id="private-tab"
+                  class="px-6 py-2 text-sm font-medium rounded-r-lg border border-[#003057] bg-white text-[#003057] hover:bg-gray-50"
+                >
+                  Aulas Particulares
+                </button>
+              </div>
+            </div>
+
+            <!-- Group Plans -->
+            <div id="group-plans" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Monthly Plan -->
+              <div
+                class="bg-[#ccd6e6] rounded-lg shadow-md overflow-hidden border border-gray-200 hover:border-[#003057] transition-colors"
+              >
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-[#003057] mb-2">Mensal</h3>
+                  <p class="text-gray-600 mb-4">4 aulas por mês</p>
+                  <div class="mb-6">
+                    <span class="text-3xl font-bold text-[#003057]"
+                      >R$ 199</span
+                    >
+                    <span class="text-gray-500">/mês</span>
+                  </div>
+                  <ul class="space-y-3 mb-6">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Aulas em grupo (até 8 alunos)</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Material digital incluso</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Acesso à comunidade</span>
+                    </li>
+                  </ul>
+                  <button
+                    class="select-plan w-full bg-[#d22630] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#a91d25] transition-colors"
+                    data-type="group"
+                    data-period="monthly"
+                    data-price="199"
+                  >
+                    Selecionar
+                  </button>
+                </div>
+              </div>
+
+              <!-- Semester Plan -->
+              <div
+                class="bg-white rounded-lg shadow-md overflow-hidden border-2 border-[#003057] relative"
+              >
+                <div
+                  class="absolute top-0 right-0 bg-[#d22630] text-white px-3 py-1 text-xs font-bold"
+                >
+                  MAIS POPULAR
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-[#003057] mb-2">
+                    Semestral
+                  </h3>
+                  <p class="text-gray-600 mb-4">24 aulas em 6 meses</p>
+                  <div class="mb-6">
+                    <span class="text-3xl font-bold text-[#003057]"
+                      >R$ 179</span
+                    >
+                    <span class="text-gray-500">/mês</span>
+                    <p class="text-sm text-gray-500">
+                      ou R$ 1.074 à vista (10% off)
+                    </p>
+                  </div>
+                  <ul class="space-y-3 mb-6">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Aulas em grupo (até 8 alunos)</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Material digital e físico</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Acesso à comunidade premium</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>1 aula particular bônus</span>
+                    </li>
+                  </ul>
+                  <button
+                    class="select-plan w-full bg-[#d22630] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#a91d25] transition-colors"
+                    data-type="group"
+                    data-period="semester"
+                    data-price="179"
+                  >
+                    Selecionar
+                  </button>
+                </div>
+              </div>
+
+              <!-- Annual Plan -->
+              <div
+                class="bg-[#ccd6e6] rounded-lg shadow-md overflow-hidden border border-gray-200 hover:border-[#003057] transition-colors"
+              >
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-[#003057] mb-2">Anual</h3>
+                  <p class="text-gray-600 mb-4">48 aulas em 12 meses</p>
+                  <div class="mb-6">
+                    <span class="text-3xl font-bold text-[#003057]"
+                      >R$ 159</span
+                    >
+                    <span class="text-gray-500">/mês</span>
+                    <p class="text-sm text-gray-500">
+                      ou R$ 1.908 à vista (15% off)
+                    </p>
+                  </div>
+                  <ul class="space-y-3 mb-6">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Aulas em grupo (até 8 alunos)</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Material completo</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Acesso VIP à comunidade</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>3 aulas particulares bônus</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Certificado de conclusão</span>
+                    </li>
+                  </ul>
+                  <button
+                    class="select-plan w-full bg-[#d22630] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#a91d25] transition-colors"
+                    data-type="group"
+                    data-period="annual"
+                    data-price="159"
+                  >
+                    Selecionar
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Private Plans (Hidden by default) -->
+            <div
+              id="private-plans"
+              class="hidden grid-cols-1 md:grid-cols-3 gap-6"
+            >
+              <!-- Monthly Private -->
+              <div
+                class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:border-[#003057] transition-colors"
+              >
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-[#003057] mb-2">Mensal</h3>
+                  <p class="text-gray-600 mb-4">4 aulas por mês</p>
+                  <div class="mb-6">
+                    <span class="text-3xl font-bold text-[#d22630]"
+                      >R$ 399</span
+                    >
+                    <span class="text-gray-500">/mês</span>
+                  </div>
+                  <ul class="space-y-3 mb-6">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Aulas individuais</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Material personalizado</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Horários flexíveis</span>
+                    </li>
+                  </ul>
+                  <button
+                    class="select-plan w-full bg-[#003057] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#00203f] transition-colors"
+                    data-type="private"
+                    data-period="monthly"
+                    data-price="399"
+                  >
+                    Selecionar
+                  </button>
+                </div>
+              </div>
+
+              <!-- Semester Private -->
+              <div
+                class="bg-white rounded-lg shadow-md overflow-hidden border-2 border-[#003057] relative"
+              >
+                <div
+                  class="absolute top-0 right-0 bg-[#d22630] text-white px-3 py-1 text-xs font-bold"
+                >
+                  MELHOR CUSTO-BENEFÍCIO
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-[#003057] mb-2">
+                    Semestral
+                  </h3>
+                  <p class="text-gray-600 mb-4">24 aulas em 6 meses</p>
+                  <div class="mb-6">
+                    <span class="text-3xl font-bold text-[#d22630]"
+                      >R$ 359</span
+                    >
+                    <span class="text-gray-500">/mês</span>
+                    <p class="text-sm text-gray-500">
+                      ou R$ 2.154 à vista (10% off)
+                    </p>
+                  </div>
+                  <ul class="space-y-3 mb-6">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Aulas individuais</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Material completo</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Horários flexíveis</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Plano de estudos personalizado</span>
+                    </li>
+                  </ul>
+                  <button
+                    class="select-plan w-full bg-[#003057] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#00203f] transition-colors"
+                    data-type="private"
+                    data-period="semester"
+                    data-price="359"
+                  >
+                    Selecionar
+                  </button>
+                </div>
+              </div>
+
+              <!-- Annual Private -->
+              <div
+                class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:border-[#003057] transition-colors"
+              >
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-[#003057] mb-2">Anual</h3>
+                  <p class="text-gray-600 mb-4">48 aulas em 12 meses</p>
+                  <div class="mb-6">
+                    <span class="text-3xl font-bold text-[#d22630]"
+                      >R$ 319</span
+                    >
+                    <span class="text-gray-500">/mês</span>
+                    <p class="text-sm text-gray-500">
+                      ou R$ 3.828 à vista (15% off)
+                    </p>
+                  </div>
+                  <ul class="space-y-3 mb-6">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Aulas individuais</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Material completo + bônus</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Horários flexíveis</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Plano de estudos personalizado</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Avaliação de proficiência</span>
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-[#d22630] mr-2"></i>
+                      <span>Certificado de conclusão</span>
+                    </li>
+                  </ul>
+                  <button
+                    class="select-plan w-full bg-[#003057] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#00203f] transition-colors"
+                    data-type="private"
+                    data-period="annual"
+                    data-price="319"
+                  >
+                    Selecionar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6 mt-8">
+            <h3 class="text-lg font-bold text-[#003057] mb-4">
+              Dúvidas frequentes
+            </h3>
+            <div class="space-y-4">
+              <div class="border-b border-gray-200 pb-4">
+                <button
+                  class="faq-toggle w-full flex justify-between items-center text-left"
+                >
+                  <span class="font-medium text-[#003057]"
+                    >Posso trocar de plano depois?</span
+                  >
+                  <i class="fas fa-chevron-down text-[#d22630]"></i>
+                </button>
+                <div class="faq-content hidden mt-2 text-gray-600">
+                  Sim, você pode trocar de plano a qualquer momento. O valor já
+                  pago será considerado proporcionalmente para o novo plano.
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <button
+                  class="faq-toggle w-full flex justify-between items-center text-left"
+                >
+                  <span class="font-medium text-[#003057]"
+                    >Como funcionam as aulas em grupo?</span
+                  >
+                  <i class="fas fa-chevron-down text-[#d22630]"></i>
+                </button>
+                <div class="faq-content hidden mt-2 text-gray-600">
+                  As aulas em grupo têm no máximo 8 alunos com nível similar. As
+                  turmas são formadas após teste de nivelamento e as aulas
+                  acontecem em horários fixos semanais.
+                </div>
+              </div>
+              <div class="border-b border-gray-200 pb-4">
+                <button
+                  class="faq-toggle w-full flex justify-between items-center text-left"
+                >
+                  <span class="font-medium text-[#003057]"
+                    >Há reembolso se eu cancelar?</span
+                  >
+                  <i class="fas fa-chevron-down text-[#d22630]"></i>
+                </button>
+                <div class="faq-content hidden mt-2 text-gray-600">
+                  Oferecemos reembolso proporcional para planos semestrais e
+                  anuais dentro dos primeiros 30 dias. Planos mensais não têm
+                  reembolso, mas você pode cancelar a qualquer momento sem
+                  custos adicionais.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Section (Hidden by default) -->
+        <div id="payment-section" class="hidden fade-in">
+          <div class="flex flex-col md:flex-row gap-8">
+            <!-- Order Summary -->
+            <div class="w-full md:w-1/3">
+              <div class="bg-white rounded-lg shadow-md p-6 sticky top-6">
+                <h2 class="text-xl font-bold text-[#003057] mb-6">
+                  Resumo do Pedido
+                </h2>
+
+                <div class="border-b border-gray-200 pb-4 mb-4">
+                  <h3 id="plan-type" class="font-medium text-[#003057]">
+                    Aulas em Grupo - Semestral
+                  </h3>
+                  <p id="plan-period" class="text-sm text-gray-600">
+                    24 aulas em 6 meses
+                  </p>
+                </div>
+
+                <div class="mb-4">
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-600">Subtotal</span>
+                    <span id="subtotal" class="font-medium">R$ 1.074,00</span>
+                  </div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-gray-600">Desconto</span>
+                    <span id="discount" class="text-[#d22630]">-R$ 120,00</span>
+                  </div>
+                </div>
+
+                <div class="border-t border-gray-200 pt-4 mb-6">
+                  <div class="flex justify-between">
+                    <span class="font-bold text-[#003057]">Total</span>
+                    <span id="total" class="font-bold text-[#d22630] text-lg"
+                      >R$ 954,00</span
+                    >
+                  </div>
+                  <p id="installment-info" class="text-sm text-gray-600 mt-1">
+                    ou 6x de R$ 179,00 sem juros
+                  </p>
+                </div>
+
+                <div class="bg-[#f8f8f8] p-4 rounded-lg">
+                  <div class="flex items-start">
+                    <i class="fas fa-shield-alt text-[#003057] mt-1 mr-3"></i>
+                    <span class="text-sm text-gray-600"
+                      >Compra 100% segura. Seus dados estão protegidos.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="w-full md:w-2/3">
+              <h2 class="text-xl font-bold text-[#003057] mb-6">
+                Método de Pagamento
+              </h2>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <button
+                  class="payment-method bg-white rounded-lg shadow-sm p-4 border-2 border-transparent hover:border-[#003057] flex flex-col items-center"
+                  data-method="credit"
+                >
+                  <i
+                    class="fas fa-credit-card text-3xl text-[#003057] mb-2"
+                  ></i>
+                  <span class="font-medium text-[#003057]"
+                    >Cartão de Crédito</span
+                  >
+                </button>
+                <button
+                  class="payment-method bg-white rounded-lg shadow-sm p-4 border-2 border-transparent hover:border-[#003057] flex flex-col items-center"
+                  data-method="pix"
+                >
+                  <i class="fas fa-qrcode text-3xl text-[#003057] mb-2"></i>
+                  <span class="font-medium text-[#003057]">PIX</span>
+                </button>
+                <button
+                  class="payment-method bg-white rounded-lg shadow-sm p-4 border-2 border-transparent hover:border-[#003057] flex flex-col items-center"
+                  data-method="boleto"
+                >
+                  <i class="fas fa-barcode text-3xl text-[#003057] mb-2"></i>
+                  <span class="font-medium text-[#003057]">Boleto</span>
+                </button>
+              </div>
+
+              <!-- Credit Card Form -->
+              <div
+                id="credit-card-form"
+                class="bg-white rounded-lg shadow-md p-6 mb-8"
+              >
+                <h3 class="text-lg font-bold text-[#003057] mb-4">
+                  Cartão de Crédito
+                </h3>
+
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Número do Cartão</label
+                  >
+                  <div class="relative">
+                    <input
+                      type="text"
+                      class="card-input w-full px-4 py-2 border border-gray-300 rounded-lg outline-none"
+                      placeholder="0000 0000 0000 0000"
+                      maxlength="19"
+                    />
+                    <div
+                      class="absolute right-3 top-1/2 transform -translate-y-1/2"
+                    >
+                      <i class="fab fa-cc-visa text-gray-400 text-xl mr-1"></i>
+                      <i
+                        class="fab fa-cc-mastercard text-gray-400 text-xl mr-1"
+                      ></i>
+                      <i class="fab fa-cc-amex text-gray-400 text-xl"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Nome no Cartão</label
+                  >
+                  <input
+                    type="text"
+                    class="card-input w-full px-4 py-2 border border-gray-300 rounded-lg outline-none"
+                    placeholder="Como escrito no cartão"
+                  />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >Validade</label
+                    >
+                    <input
+                      type="text"
+                      class="card-input w-full px-4 py-2 border border-gray-300 rounded-lg outline-none"
+                      placeholder="MM/AA"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >CVV</label
+                    >
+                    <div class="relative">
+                      <input
+                        type="text"
+                        class="card-input w-full px-4 py-2 border border-gray-300 rounded-lg outline-none"
+                        placeholder="000"
+                        maxlength="4"
+                      />
+                      <div
+                        class="absolute right-3 top-1/2 transform -translate-y-1/2"
+                      >
+                        <i
+                          class="fas fa-question-circle text-gray-400"
+                          title="Os 3 dígitos atrás do cartão"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Parcelamento</label
+                  >
+                  <select
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none"
+                  >
+                    <option>1x de R$ 954,00 (à vista)</option>
+                    <option>2x de R$ 477,00 sem juros</option>
+                    <option>3x de R$ 318,00 sem juros</option>
+                    <option>4x de R$ 238,50 sem juros</option>
+                    <option>5x de R$ 190,80 sem juros</option>
+                    <option selected>6x de R$ 159,00 sem juros</option>
+                  </select>
+                </div>
+
+                <div class="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="save-card"
+                    class="w-4 h-4 text-[#d22630] rounded border-gray-300 focus:ring-[#d22630]"
+                  />
+                  <label for="save-card" class="ml-2 text-sm text-gray-600"
+                    >Salvar cartão para próximas compras</label
+                  >
+                </div>
+              </div>
+
+              <!-- PIX Payment -->
+              <div
+                id="pix-payment"
+                class="hidden bg-white rounded-lg shadow-md p-6 mb-8"
+              >
+                <h3 class="text-lg font-bold text-[#003057] mb-4">
+                  Pagamento via PIX
+                </h3>
+                <p class="text-gray-600 mb-6">
+                  Pague com PIX e tenha seu acesso liberado em até 15 minutos!
+                </p>
+
+                <div class="flex flex-col md:flex-row gap-6">
+                  <div class="w-full md:w-1/2">
+                    <div
+                      class="qr-code-placeholder w-full h-64 rounded-lg mb-4 flex items-center justify-center"
+                    >
+                      <span class="text-gray-500"
+                        >QR Code será gerado após confirmação</span
+                      >
+                    </div>
+                    <p class="text-sm text-gray-500 text-center">
+                      Escaneie o QR Code com seu app de banco
+                    </p>
+                  </div>
+                  <div class="w-full md:w-1/2">
+                    <h4 class="font-medium text-[#003057] mb-2">
+                      Ou copie o código PIX:
+                    </h4>
+                    <div class="bg-[#f8f8f8] p-3 rounded-lg mb-4">
+                      <div class="flex justify-between items-center">
+                        <span class="text-sm font-mono text-gray-700 truncate"
+                          >00020126580014br.gov.bcb.pix0136aae6d8b-5d7f-4c1e-9b3a-7e8f9a2b1c0d5204000053039865406954.005802BR5913NihongoMaster6009SAO
+                          PAULO61080540900062250521qrcodepixnhstatic6304E563</span
+                        >
+                        <button
+                          class="ml-2 text-[#003057] hover:text-[#d22630]"
+                        >
+                          <i class="fas fa-copy"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Validade: 1 hora</p>
+                    <div
+                      class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4"
+                    >
+                      <div class="flex">
+                        <div class="flex-shrink-0">
+                          <i
+                            class="fas fa-exclamation-circle text-yellow-400"
+                          ></i>
+                        </div>
+                        <div class="ml-3">
+                          <p class="text-sm text-yellow-700">
+                            Após o pagamento, seu acesso será liberado
+                            automaticamente em até 15 minutos.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Boleto Payment -->
+              <div
+                id="boleto-payment"
+                class="hidden bg-white rounded-lg shadow-md p-6 mb-8"
+              >
+                <h3 class="text-lg font-bold text-[#003057] mb-4">
+                  Pagamento via Boleto
+                </h3>
+                <p class="text-gray-600 mb-6">
+                  O boleto bancário pode levar até 3 dias úteis para compensar.
+                </p>
+
+                <div class="bg-[#f8f8f8] p-4 rounded-lg mb-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-medium text-[#003057]"
+                      >Valor do boleto:</span
+                    >
+                    <span class="font-bold text-[#d22630]">R$ 954,00</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-medium text-[#003057]">Vencimento:</span>
+                    <span class="text-gray-600">15/07/2023</span>
+                  </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-4">
+                  <button
+                    class="flex-1 bg-[#003057] text-white py-3 px-4 rounded-lg font-medium hover:bg-[#00203f] transition-colors"
+                  >
+                    <i class="fas fa-print mr-2"></i> Imprimir Boleto
+                  </button>
+                  <button
+                    class="flex-1 bg-white border border-[#003057] text-[#003057] py-3 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                  >
+                    <i class="fas fa-envelope mr-2"></i> Enviar por Email
+                  </button>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-6">
+                  <div class="flex">
+                    <div class="flex-shrink-0">
+                      <i class="fas fa-exclamation-circle text-yellow-400"></i>
+                    </div>
+                    <div class="ml-3">
+                      <p class="text-sm text-yellow-700">
+                        Seu acesso será liberado apenas após a compensação do
+                        boleto, o que pode levar até 3 dias úteis.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Security Badges -->
+              <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <img
+                  src="https://www.ssl.com/wp-content/uploads/2020/09/SSLcom-SiteSeal-TrustLogo.svg"
+                  alt="SSL Secure"
+                  class="h-12"
+                />
+                <img
+                  src="https://www.paypalobjects.com/webstatic/mktg/logo-center/PP_Acceptance_Marks_for_LogoCenter_76x48.png"
+                  alt="PayPal"
+                  class="h-12"
+                />
+                <img
+                  src="https://www.ebanx.com/wp-content/uploads/2021/10/logo-ebanx-vertical.svg"
+                  alt="EBANX"
+                  class="h-12"
+                />
+              </div>
+
+              <!-- Finalize Button -->
+              <button
+                id="finalize-payment"
+                class="w-full bg-[#d22630] text-white py-3 px-4 rounded-lg font-bold text-lg hover:bg-[#b51e28] transition-colors mb-4"
+              >
+                Finalizar Compra
+              </button>
+
+              <p class="text-center text-sm text-gray-500">
+                Ao finalizar, você concorda com nossos
+                <a href="#" class="text-[#d22630] hover:underline"
+                  >Termos de Serviço</a
+                >
+                e
+                <a href="#" class="text-[#d22630] hover:underline"
+                  >Política de Privacidade</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirmation Modal (Hidden by default) -->
+        <div
+          id="confirmation-modal"
+          class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+        >
+          <div
+            class="bg-white rounded-lg shadow-xl max-w-md w-full p-8 text-center"
+          >
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-check text-green-500 text-3xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-[#003057] mb-2">
+              Pagamento Confirmado!
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Sua matrícula no curso de japonês foi realizada com sucesso.
+            </p>
+
+            <div class="bg-[#f8f8f8] rounded-lg p-4 mb-6 text-left">
+              <h3 class="font-medium text-[#003057] mb-2">
+                Detalhes da compra:
+              </h3>
+              <p class="text-sm text-gray-600">
+                <span class="font-medium">Plano:</span>
+                <span id="confirmation-plan">Aulas em Grupo - Semestral</span>
+              </p>
+              <p class="text-sm text-gray-600">
+                <span class="font-medium">Valor:</span>
+                <span id="confirmation-price">R$ 954,00</span>
+              </p>
+              <p class="text-sm text-gray-600">
+                <span class="font-medium">Método:</span>
+                <span id="confirmation-method">Cartão de Crédito (6x)</span>
+              </p>
+              <p class="text-sm text-gray-600">
+                <span class="font-medium">Nº do pedido:</span> #NH20230714-4582
+              </p>
+            </div>
+
+            <p class="text-sm text-gray-500 mb-6">
+              Enviamos os detalhes para
+              <span class="font-medium">aluno@email.com</span>. Você será
+              redirecionado em <span id="countdown">5</span> segundos.
+            </p>
+
+            <button
+              id="go-to-dashboard"
+              class="w-full bg-[#d22630] text-white py-3 px-4 rounded-lg font-medium hover:bg-[#b51e28] transition-colors"
+            >
+              Acessar Área do Aluno Agora
+            </button>
           </div>
         </div>
       </div>
-    </main>
+    </page>
 
     <footer class="footer">
       <div class="footer__container">
@@ -445,9 +1417,9 @@
           .forEach((el) => (el.textContent = new Date().getFullYear()));
       </script>
     </footer>
-
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+    <script src="./assets/js/pages/pagamento/payment.js"></script>
     <script type="module" src="./assets/js/pages/index/index.js"></script>
   </body>
 </html>
