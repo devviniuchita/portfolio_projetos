@@ -1,4 +1,6 @@
 {
+  "name": "kengi-idiomas",
+  "version": "1.0.0",
   "scripts": {
     "build": "npx postcss ./assets/CSS/global/global.css -o ./dist/output.css --env production",
     "dev": "npx postcss ./assets/CSS/global/global.css -o ./dist/output.css --watch"

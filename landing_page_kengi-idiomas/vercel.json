@@ -1,10 +1,10 @@
 {
   "builds": [
     {
-      "src": "assets/CSS/global/global.css",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "outputDir": "dist",
+        "distDir": "dist",
         "buildCommand": "npm run build"
       }
     },
