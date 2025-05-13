@@ -1,16 +1,16 @@
 .plans {
   position: relative;
   padding: 1rem 2rem;
+  margin: 0 auto;
 }
 .plans__header {
-  width: 17.44rem;
-  height: 5.56rem;
+  margin-bottom: 1%;
 }
 .plans__title {
   font-family: var(--font-kyokasho);
   font-weight: bold;
-  font-size: 4rem;
-  line-height: 1;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.2;
   letter-spacing: 0;
   color: var(--secondary-color);
 }

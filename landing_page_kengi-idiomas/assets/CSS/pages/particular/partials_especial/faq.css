@@ -1,0 +1,153 @@
+.faq {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 2rem;
+}
+.faq__header {
+  max-width: 100%;
+}
+.faq__title {
+  font-family: var(--font-kyokasho);
+  font-weight: bold;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.2;
+  color: var(--secondary-color);
+  margin: 0;
+}
+.faq__dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.3125rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+.faq__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+.faq__item {
+  padding: 1rem 0;
+  overflow: hidden;
+  transform: scale(1);
+  border-radius: 0.2rem;
+  transition: all 0.3s ease;
+  border-bottom: 0.125rem solid #ccdbe6;
+}
+.faq__item:hover {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.05);
+  transform: scale(1.02);
+}
+.faq__summary {
+  cursor: pointer;
+  font-family: var(--font-montserrat);
+  font-size: clamp(1rem, 3vw, 1.375rem);
+  font-weight: 600;
+  list-style: none;
+  user-select: none;
+  position: relative;
+  padding-right: 2.5rem;
+}
+/* Estilo do chevron (seta para baixo) */
+.faq__summary::after {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>')
+    no-repeat center;
+  background-size: contain;
+}
+/* Quando o item está aberto, rotaciona o chevron para cima */
+.faq__item[open] .faq__summary::after {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>')
+    no-repeat center;
+  background-size: contain;
+  transform: translateY(-50%) rotate(360deg);
+}
+.faq__answer {
+  font-family: var(--font-montserrat);
+  font-size: clamp(0.9rem, 2.5vw, 1.375rem);
+  padding-top: 1rem;
+  line-height: 1.6;
+}
+
+/* Telas de notebook pequenas (1024px - 1280px) */
+@media (min-width: 1024px) {
+  .faq {
+    flex-direction: row;
+    padding: 3rem;
+  }
+  .faq__header {
+    max-width: 40%;
+    text-align: left;
+  }
+  .faq__content {
+    max-width: 60%;
+  }
+}
+
+/* Telas de tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .faq {
+    padding: 2.5rem;
+  }
+  .faq__title {
+    font-size: 3rem;
+  }
+}
+
+/* Telas de celulares grandes (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .faq {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .faq__title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Telas de celulares médios (376px - 480px) */
+@media (min-width: 376px) and (max-width: 480px) {
+  .faq {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .faq__title {
+    font-size: 2rem;
+  }
+  .faq__summary {
+    padding-right: 1.8rem;
+  }
+}
+
+/* Telas de celulares pequenos (até 375px) */
+@media (max-width: 375px) {
+  .faq {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .faq__title {
+    font-size: 1.8rem;
+  }
+  .faq__summary {
+    padding-right: 1.5rem;
+  }
+  .faq__summary::after {
+    width: 1rem;
+    height: 1rem;
+  }
+}
