@@ -1,5 +1,31 @@
 {
-  "buildCommand": "npm install && npm run build",
-  "outputDirectory": "dist",
-  "framework": null
+  "builds": [
+    {
+      "src": "assets/CSS/global/global.css",
+      "use": "@vercel/static-build",
+      "config": {
+        "outputDir": "dist",
+        "buildCommand": "npm run build"
+      }
+    },
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "dist/output.css",
+      "use": "@vercel/static"
+    }
+  ],
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
