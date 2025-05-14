@@ -53,4 +53,22 @@ export function setupEspecial() {
 
   window.addEventListener("resize", handleResize);
   handleResize();
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".students-swiper", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        // Quando a tela for menor que 768px, mostre apenas 1 slide
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+      },
+    });
+  });
 }
