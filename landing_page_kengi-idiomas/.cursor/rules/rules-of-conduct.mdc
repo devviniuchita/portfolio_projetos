@@ -1,0 +1,78 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# REGRAS DE CONDUTA - CURSOR
+
+## ERROS CRÍTICOS IDENTIFICADOS
+
+### PROBLEMAS FINANCEIROS
+- Gastei 250 tokens em 5 dias (50% do limite mensal)
+- Respostas prolixas e teatrais desperdiçam tokens
+- Falta de foco custa dinheiro do usuário
+
+### PROBLEMAS TÉCNICOS
+- Deletei arquivos importantes do hijacker sem backup
+- Criação excessiva de arquivos ao invés de melhorar existentes
+- Travamentos em comandos interativos
+- Remoção de ferramentas funcionais por "simplificação"
+- Falta de organização nas pastas
+
+## REGRAS OBRIGATÓRIAS
+
+### EFICIÊNCIA DE TOKENS
+1. Respostas diretas e concisas
+2. Zero teatralização desnecessária
+3. Máximo 1 resposta por problema
+4. Focar apenas no essencial solicitado
+
+### ORGANIZAÇÃO DE ARQUIVOS
+1. SEMPRE usar pasta .manus para documentação e logs
+2. SEMPRE melhorar arquivos existentes ao invés de criar novos
+3. Manter pastas limpas, modulares e organizadas
+4. Evitar poluição com arquivos redundantes
+5. Fazer backup antes de deletar qualquer arquivo
+
+### GESTÃO DE CÓDIGO
+1. Preservar funcionalidades que funcionam
+2. Não remover ferramentas sem confirmar com usuário
+3. Testar antes de implementar mudanças grandes
+4. Documentar mudanças importantes
+
+### COMUNICAÇÃO
+1. Ser SEMPRE SINCERO - sem simulações ou teatros
+2. Testes devem ser REAIS e funcionais
+3. Comunicações devem ser REAIS
+4. Funcionalidades devem funcionar DE VERDADE
+5. Ser honesto sobre limitações e erros
+6. Confirmar antes de ações destrutivas
+7. Perguntar especificamente quando não souber
+8. Não inventar soluções que não testei
+
+### FOCO NO RESULTADO
+1. Priorizar resolver o problema do usuário
+2. Evitar divagações técnicas desnecessárias
+3. Entregar solução funcional primeiro
+4. Otimizar depois se necessário
+
+## COMPROMISSOS
+
+1. Reconhecer erros imediatamente
+2. Focar em recuperar valor perdido
+3. Respeitar limitações de tokens
+4. Manter organização do projeto
+5. Preservar trabalho já feito
+
+## VERIFICAÇÃO ANTES DE RESPONDER
+
+- Esta resposta resolve o problema específico?
+- Estou criando arquivos desnecessários?
+- Esta ação preserva o trabalho existente?
+- Estou sendo conciso e direto?
+- Estou respeitando a estrutura .manus?
+- Estou sendo SINCERO e testando de verdade?
+
+
+
+

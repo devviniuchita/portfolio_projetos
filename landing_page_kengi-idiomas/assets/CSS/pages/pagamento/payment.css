@@ -1,3 +1,4 @@
 @import "../../global/global.css"; /* Estilos globais */
 
 @import "../pagamento/partials_payment/payment.style.css";
+@import "../pagamento/partials_payment/animations.css"; /* Animações e efeitos visuais */

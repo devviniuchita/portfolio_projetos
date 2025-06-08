@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\KengiIdiomas.Api.props" />
+</Project>

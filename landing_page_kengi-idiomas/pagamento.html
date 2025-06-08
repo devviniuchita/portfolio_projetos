@@ -44,6 +44,7 @@
 
     <!-- Estilos -->
     <link rel="stylesheet" href="./assets/CSS/pages/index/index.css" />
+    <link rel="stylesheet" href="./assets/CSS/pages/pagamento/payment.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -57,6 +58,8 @@
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google OAuth Library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
       tailwind.config = {
         theme: {
@@ -144,6 +147,106 @@
           transform: translateY(0);
         }
       }
+
+      /* Estilos customizados para botões Entrar/Cadastrar */
+      button[type="submit"],
+      .btn-primary,
+      #email-login button[type="submit"],
+      #email-register button[type="submit"] {
+        background-color: #d22630 !important;
+        color: white !important;
+        transition: all 0.4s ease !important;
+      }
+      
+      button[type="submit"]:hover,
+      .btn-primary:hover,
+      #email-login button[type="submit"]:hover,
+      #email-register button[type="submit"]:hover {
+        background-color: #a91d25 !important;
+        color: white !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 12px rgba(210, 38, 48, 0.4) !important;
+      }
+
+      /* Aplicar também aos botões de switch entre login/cadastro */
+      #switch-to-register,
+      #switch-to-login,
+      .switch-modal,
+      .form-footer a {
+        color: #d22630 !important;
+        transition: all 0.4s ease !important;
+      }
+
+      #switch-to-register:hover,
+      #switch-to-login:hover,
+      .switch-modal:hover,
+      .form-footer a:hover {
+        color: #a91d25 !important;
+        text-decoration: underline !important;
+      }
+
+      /* Botões no header/navegação */
+      .btn-login,
+      .btn-register {
+        background-color: #d22630 !important;
+        color: white !important;
+        border: 2px dashed #d22630 !important;
+        transition: all 0.4s ease !important;
+      }
+
+      .btn-login:hover,
+      .btn-register:hover {
+        background-color: #a91d25 !important;
+        color: white !important;
+        border: 2px dashed white !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 12px rgba(210, 38, 48, 0.4) !important;
+      }
+
+      /* Google OAuth Button Styles */
+      #google-login-custom {
+        transition: all 0.3s ease !important;
+      }
+
+      #google-login-custom:hover {
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+      }
+
+      /* Aplicar também aos botões de switch entre login/cadastro */
+      #switch-to-register,
+      #switch-to-login,
+      .switch-modal,
+      .form-footer a {
+        color: #d22630 !important;
+        transition: all 0.3s ease !important;
+      }
+
+      #switch-to-register:hover,
+      #switch-to-login:hover,
+      .switch-modal:hover,
+      .form-footer a:hover {
+        color: #a91d25 !important;
+        text-decoration: underline !important;
+      }
+
+      /* Botões no header/navegação */
+      .btn-login,
+      .btn-register {
+        background-color: #d22630 !important;
+        color: white !important;
+        border: 2px solid #d22630 !important;
+        transition: all 0.3s ease !important;
+      }
+
+      .btn-login:hover,
+      .btn-register:hover {
+        background-color: #a91d25 !important;
+        color: white !important;
+        border: 2px solid white !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 8px rgba(210, 38, 48, 0.3) !important;
+      }
     </style>
   </head>
 
@@ -182,11 +285,8 @@
           <li class="nav__item">
             <a href="index.html#sobre" class="nav__link">Sobre</a>
           </li>
-          <li class="nav__contact-button">
-            <a href="index.html#contato" class="nav__contact-link">
-              <div class="contact-button__background"></div>
-              <div class="contact-button__text">Entre em contato</div>
-            </a>
+          <li class="nav__item">
+            <div class="user-info"></div>
           </li>
         </ul>
       </nav>
@@ -198,39 +298,52 @@
         <div class="flex justify-between items-center mb-12 px-4">
           <div class="progress-step">
             <div
+              id="step-1"
               class="w-10 h-10 rounded-full bg-[#003057] flex items-center justify-center text-white font-semibold"
             >
               1
             </div>
-            <p class="mt-2 text-sm font-medium text-[#003057]">
+            <p id="step-1-text" class="mt-2 text-sm font-medium text-[#003057]">
               Login/Cadastro
             </p>
           </div>
           <div class="progress-step">
             <div
+              id="step-2"
               class="w-10 h-10 rounded-full bg-[#ccd6e6] flex items-center justify-center text-[#003057] font-semibold"
             >
               2
             </div>
-            <p class="mt-2 text-sm font-medium text-gray-500">
+            <p id="step-2-text" class="mt-2 text-sm font-medium text-gray-500">
               Seleção de Plano
             </p>
           </div>
           <div class="progress-step">
             <div
+              id="step-3"
               class="w-10 h-10 rounded-full bg-[#ccd6e6] flex items-center justify-center text-[#003057] font-semibold"
             >
               3
             </div>
-            <p class="mt-2 text-sm font-medium text-gray-500">Pagamento</p>
+            <p id="step-3-text" class="mt-2 text-sm font-medium text-gray-500">Agenda</p>
           </div>
           <div class="progress-step">
             <div
+              id="step-4"
               class="w-10 h-10 rounded-full bg-[#ccd6e6] flex items-center justify-center text-[#003057] font-semibold"
             >
               4
             </div>
-            <p class="mt-2 text-sm font-medium text-gray-500">Confirmação</p>
+            <p id="step-4-text" class="mt-2 text-sm font-medium text-gray-500">Pagamento</p>
+          </div>
+          <div class="progress-step">
+            <div
+              id="step-5"
+              class="w-10 h-10 rounded-full bg-[#ccd6e6] flex items-center justify-center text-[#003057] font-semibold"
+            >
+              5
+            </div>
+            <p id="step-5-text" class="mt-2 text-sm font-medium text-gray-500">Confirmação</p>
           </div>
         </div>
 
@@ -246,14 +359,16 @@
 
               <!-- Google OAuth Button -->
               <button
-                id="google-login"
-                class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 rounded-lg py-3 px-4 mb-6 hover:bg-gray-50 transition-colors"
+                id="google-login-custom"
+                class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 rounded-lg py-3 px-4 mb-6 hover:bg-gray-50 transition-colors shadow-sm"
+                onclick="handleGoogleSignInClick()"
               >
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                  alt="Google Logo"
-                  class="w-5 h-5"
-                />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
                 <span class="text-gray-700 font-medium"
                   >Continuar com Google</span
                 >
@@ -310,7 +425,7 @@
                 </div>
                 <button
                   type="submit"
-                  class="w-full bg-[#d22630] text-white py-3 px-4 rounded-lg font-medium hover:bg-[#b51e28] transition-colors"
+                  class="w-full bg-[#d22630] text-white py-3 px-4 rounded-lg font-medium hover:bg-[#b51e28] transition-colors shadow-md"
                 >
                   Entrar
                 </button>
@@ -320,7 +435,7 @@
                 Não tem uma conta?
                 <button
                   id="switch-to-register"
-                  class="text-[#d22630] hover:underline font-medium"
+                  class="text-[#d22630] hover:text-[#b51e28] font-medium hover:underline transition-colors"
                 >
                   Cadastre-se
                 </button>
@@ -421,7 +536,7 @@
                 </div>
                 <button
                   type="submit"
-                  class="w-full bg-[#d22630] text-white py-3 px-4 rounded-lg font-medium hover:bg-[#b51e28] transition-colors"
+                  class="w-full bg-[#d22630] text-white py-3 px-4 rounded-lg font-medium hover:bg-[#b51e28] transition-colors shadow-md"
                 >
                   Cadastrar
                 </button>
@@ -431,7 +546,7 @@
                 Já tem uma conta?
                 <button
                   id="switch-to-login"
-                  class="text-[#d22630] hover:underline font-medium"
+                  class="text-[#d22630] hover:text-[#b51e28] font-medium hover:underline transition-colors"
                 >
                   Faça login
                 </button>
@@ -487,16 +602,10 @@
           <div class="mb-8">
             <div class="flex justify-center mb-6">
               <div class="inline-flex rounded-md shadow-sm">
-                <button
-                  id="group-tab"
-                  class="px-6 py-2 text-sm font-medium rounded-l-lg border border-[#003057] bg-[#003057] text-white"
-                >
+                <button id="group-tab" class="px-6 py-2 text-sm font-medium rounded-l-lg border border-[#003057] bg-[#003057] text-white">
                   Aulas em Grupo
                 </button>
-                <button
-                  id="private-tab"
-                  class="px-6 py-2 text-sm font-medium rounded-r-lg border border-[#003057] bg-white text-[#003057] hover:bg-gray-50"
-                >
+                <button id="private-tab" class="px-6 py-2 text-sm font-medium rounded-r-lg border border-[#003057] bg-white text-[#003057] hover:bg-gray-50">
                   Aulas Particulares
                 </button>
               </div>
@@ -532,7 +641,7 @@
                     </li>
                   </ul>
                   <button
-                    class="select-plan w-full bg-[#d22630] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#a91d25] transition-colors"
+                    class="select-plan-btn w-full bg-[#d22630] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#a91d25] transition-colors"
                     data-type="group"
                     data-period="monthly"
                     data-price="199"
@@ -584,7 +693,7 @@
                     </li>
                   </ul>
                   <button
-                    class="select-plan w-full bg-[#d22630] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#a91d25] transition-colors"
+                    class="select-plan-btn w-full bg-[#d22630] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#a91d25] transition-colors"
                     data-type="group"
                     data-period="semester"
                     data-price="179"
@@ -633,7 +742,7 @@
                     </li>
                   </ul>
                   <button
-                    class="select-plan w-full bg-[#d22630] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#a91d25] transition-colors"
+                    class="select-plan-btn w-full bg-[#d22630] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#a91d25] transition-colors"
                     data-type="group"
                     data-period="annual"
                     data-price="159"
@@ -647,17 +756,17 @@
             <!-- Private Plans (Hidden by default) -->
             <div
               id="private-plans"
-              class="hidden grid-cols-1 md:grid-cols-3 gap-6"
+              class="hidden grid grid-cols-1 md:grid-cols-3 gap-6"
             >
               <!-- Monthly Private -->
               <div
-                class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:border-[#003057] transition-colors"
+                class="bg-[#ccd6e6] rounded-lg shadow-md overflow-hidden border border-gray-200 hover:border-[#003057] transition-colors"
               >
                 <div class="p-6">
                   <h3 class="text-xl font-bold text-[#003057] mb-2">Mensal</h3>
                   <p class="text-gray-600 mb-4">4 aulas por mês</p>
                   <div class="mb-6">
-                    <span class="text-3xl font-bold text-[#d22630]"
+                    <span class="text-3xl font-bold text-[#003057]"
                       >R$ 399</span
                     >
                     <span class="text-gray-500">/mês</span>
@@ -677,7 +786,7 @@
                     </li>
                   </ul>
                   <button
-                    class="select-plan w-full bg-[#003057] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#00203f] transition-colors"
+                    class="select-plan-btn w-full bg-[#d22630] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#a91d25] transition-colors"
                     data-type="private"
                     data-period="monthly"
                     data-price="399"
@@ -702,7 +811,7 @@
                   </h3>
                   <p class="text-gray-600 mb-4">24 aulas em 6 meses</p>
                   <div class="mb-6">
-                    <span class="text-3xl font-bold text-[#d22630]"
+                    <span class="text-3xl font-bold text-[#003057]"
                       >R$ 359</span
                     >
                     <span class="text-gray-500">/mês</span>
@@ -729,7 +838,7 @@
                     </li>
                   </ul>
                   <button
-                    class="select-plan w-full bg-[#003057] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#00203f] transition-colors"
+                    class="select-plan-btn w-full bg-[#d22630] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#a91d25] transition-colors"
                     data-type="private"
                     data-period="semester"
                     data-price="359"
@@ -741,13 +850,13 @@
 
               <!-- Annual Private -->
               <div
-                class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:border-[#003057] transition-colors"
+                class="bg-[#ccd6e6] rounded-lg shadow-md overflow-hidden border border-gray-200 hover:border-[#003057] transition-colors"
               >
                 <div class="p-6">
                   <h3 class="text-xl font-bold text-[#003057] mb-2">Anual</h3>
                   <p class="text-gray-600 mb-4">48 aulas em 12 meses</p>
                   <div class="mb-6">
-                    <span class="text-3xl font-bold text-[#d22630]"
+                    <span class="text-3xl font-bold text-[#003057]"
                       >R$ 319</span
                     >
                     <span class="text-gray-500">/mês</span>
@@ -782,7 +891,7 @@
                     </li>
                   </ul>
                   <button
-                    class="select-plan w-full bg-[#003057] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#00203f] transition-colors"
+                    class="select-plan-btn w-full bg-[#d22630] text-white py-2 px-4 rounded-lg font-medium hover:bg-[#a91d25] transition-colors"
                     data-type="private"
                     data-period="annual"
                     data-price="319"
@@ -842,6 +951,150 @@
                   anuais dentro dos primeiros 30 dias. Planos mensais não têm
                   reembolso, mas você pode cancelar a qualquer momento sem
                   custos adicionais.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agenda Section (Hidden by default) - ETAPA 3 CRÍTICA -->
+        <div id="agenda-section" class="hidden fade-in">
+          <h2 class="text-2xl font-bold text-[#003057] mb-8">
+            Escolha seu horário
+          </h2>
+          
+          <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h3 class="text-lg font-bold text-[#003057]">Plano Selecionado</h3>
+                <p id="selected-plan-info" class="text-gray-600">Aulas em Grupo - Semestral</p>
+              </div>
+              <button id="change-plan" class="text-[#d22630] hover:underline text-sm">
+                Alterar plano
+              </button>
+            </div>
+          </div>
+
+          <!-- Seleção de Dia da Semana -->
+          <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h3 class="text-lg font-bold text-[#003057] mb-4">
+              Escolha o dia da semana
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+              <button class="day-selector p-3 border border-gray-300 rounded-lg text-center hover:border-[#003057] hover:bg-[#f8f9fa] transition-colors" data-day="segunda">
+                <div class="font-medium text-[#003057]">SEG</div>
+                <div class="text-xs text-gray-500">Segunda</div>
+              </button>
+              <button class="day-selector p-3 border border-gray-300 rounded-lg text-center hover:border-[#003057] hover:bg-[#f8f9fa] transition-colors" data-day="terca">
+                <div class="font-medium text-[#003057]">TER</div>
+                <div class="text-xs text-gray-500">Terça</div>
+              </button>
+              <button class="day-selector p-3 border border-gray-300 rounded-lg text-center hover:border-[#003057] hover:bg-[#f8f9fa] transition-colors" data-day="quarta">
+                <div class="font-medium text-[#003057]">QUA</div>
+                <div class="text-xs text-gray-500">Quarta</div>
+              </button>
+              <button class="day-selector p-3 border border-gray-300 rounded-lg text-center hover:border-[#003057] hover:bg-[#f8f9fa] transition-colors" data-day="quinta">
+                <div class="font-medium text-[#003057]">QUI</div>
+                <div class="text-xs text-gray-500">Quinta</div>
+              </button>
+              <button class="day-selector p-3 border border-gray-300 rounded-lg text-center hover:border-[#003057] hover:bg-[#f8f9fa] transition-colors" data-day="sexta">
+                <div class="font-medium text-[#003057]">SEX</div>
+                <div class="text-xs text-gray-500">Sexta</div>
+              </button>
+              <button class="day-selector p-3 border border-gray-300 rounded-lg text-center hover:border-[#003057] hover:bg-[#f8f9fa] transition-colors" data-day="sabado">
+                <div class="font-medium text-[#003057]">SÁB</div>
+                <div class="text-xs text-gray-500">Sábado</div>
+              </button>
+              <button class="day-selector p-3 border border-gray-300 rounded-lg text-center hover:border-[#003057] hover:bg-[#f8f9fa] transition-colors" data-day="domingo">
+                <div class="font-medium text-[#003057]">DOM</div>
+                <div class="text-xs text-gray-500">Domingo</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Seleção de Horários -->
+          <div id="horarios-container" class="bg-white rounded-lg shadow-md p-6 mb-6 hidden">
+            <h3 class="text-lg font-bold text-[#003057] mb-4">
+              Horários disponíveis para <span id="selected-day-name">Segunda-feira</span>
+            </h3>
+            
+            <div id="horarios-loading" class="text-center py-8 hidden">
+              <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#003057]"></div>
+              <p class="mt-2 text-gray-600">Carregando horários...</p>
+            </div>
+
+            <div id="horarios-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <!-- Horários serão carregados dinamicamente via JavaScript -->
+            </div>
+
+            <div id="no-horarios" class="text-center py-8 hidden">
+              <div class="text-gray-400 mb-4">
+                <i class="fas fa-calendar-times text-4xl"></i>
+              </div>
+              <h4 class="text-lg font-medium text-gray-600 mb-2">
+                Nenhum horário disponível
+              </h4>
+              <p class="text-gray-500 mb-4">
+                Não há horários disponíveis para este dia. Que tal tentar outro dia ou entrar na lista de espera?
+              </p>
+              <button id="join-waitlist" class="bg-[#d22630] text-white px-6 py-2 rounded-lg hover:bg-[#b51e28] transition-colors">
+                Entrar na Lista de Espera
+              </button>
+            </div>
+          </div>
+
+          <!-- Resumo da Seleção -->
+          <div id="selection-summary" class="bg-[#f8f9fa] rounded-lg p-6 mb-6 hidden">
+            <h3 class="text-lg font-bold text-[#003057] mb-4">
+              Resumo da sua seleção
+            </h3>
+            <div class="space-y-2">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Tipo de aula:</span>
+                <span id="summary-type" class="font-medium">Aulas em Grupo</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Plano:</span>
+                <span id="summary-plan" class="font-medium">Semestral</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Dia da semana:</span>
+                <span id="summary-day" class="font-medium">Segunda-feira</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Horário:</span>
+                <span id="summary-time" class="font-medium">14:00 - 15:00</span>
+              </div>
+              <div class="border-t pt-2 mt-4">
+                <div class="flex justify-between text-lg font-bold">
+                  <span class="text-[#003057]">Valor:</span>
+                  <span id="summary-price" class="text-[#d22630]">R$ 1.074,00</span>
+                </div>
+              </div>
+            </div>
+            
+            <button id="proceed-to-payment" class="w-full mt-6 bg-[#d22630] text-white py-3 px-4 rounded-lg font-medium hover:bg-[#b51e28] transition-colors">
+              Prosseguir para Pagamento
+            </button>
+          </div>
+
+          <!-- Informações Importantes -->
+          <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <i class="fas fa-exclamation-triangle text-yellow-400"></i>
+              </div>
+              <div class="ml-3">
+                <h4 class="text-sm font-medium text-yellow-800">
+                  Importante sobre os horários
+                </h4>
+                <div class="mt-2 text-sm text-yellow-700">
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>Os horários são limitados e podem esgotar rapidamente</li>
+                    <li>Após a confirmação do pagamento, seu horário será reservado</li>
+                    <li>Você pode reagendar com até 24h de antecedência</li>
+                    <li>Em caso de horário indisponível, você entrará na lista de espera</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -1422,8 +1675,615 @@
       </script>
     </footer>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script src="./assets/js/pages/pagamento/payment.js"></script>
+    <!-- Scripts Modularizados -->
     <script type="module" src="./assets/js/pages/index/index.js"></script>
+    <!-- Serviços -->
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/auth.js"></script>
+    <!-- Controller de Página -->
+    <script type="module" src="./assets/js/pages/pagamento/payment-page.js"></script>
+    
+    <!-- Script de correção para navegação entre etapas -->
+    <script>
+      // Inicializar a classe KengiAPI se não existir
+      if (typeof KengiAPI === 'undefined') {
+        window.KengiAPI = {
+          AuthAPI: {
+            isAuthenticated() {
+              return localStorage.getItem('kengi_auth_token') !== null;
+            },
+            getCurrentUser() {
+              const userStr = localStorage.getItem('kengi_user');
+              return userStr ? JSON.parse(userStr) : null;
+            }
+          },
+          UIHelpers: {
+            showError(message) {
+              alert(message);
+            },
+            showSuccess(message) {
+              alert(message);
+            },
+            showLoading() {},
+            hideLoading() {}
+          },
+          FormValidation: {
+            validateEmail(email) {
+              return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            },
+            validatePassword(password) {
+              return password.length >= 6;
+            },
+            validateRequired(value) {
+              return !!value;
+            }
+          }
+        };
+      }
+      
+      // Inicializar o gerenciador de autenticação se não existir
+      if (typeof authManager === 'undefined') {
+        window.authManager = new AuthManager();
+      }
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('🔄 Inicializando scripts de correção...');
+        
+        // Corrigir problemas de navegação entre etapas
+        setupAuthNavigation();
+        
+        // Carregar dados do plano selecionado (se existir)
+        loadSelectedPlan();
+        
+        // Configurar seleção de planos
+        setupPlanSelection();
+      });
+      
+      function setupAuthNavigation() {
+        // Login form
+        const loginForm = document.getElementById('email-login');
+        if (loginForm) {
+          loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            if (!email || !password) {
+              alert('Preencha todos os campos');
+              return;
+            }
+            
+            // Simular login bem-sucedido
+            const userData = {
+              id: 1,
+              nome: email.split('@')[0],
+              email: email
+            };
+            
+            localStorage.setItem('kengi_auth_token', 'demo_token_' + Date.now());
+            localStorage.setItem('kengi_user', JSON.stringify(userData));
+            
+            // Avançar para a próxima etapa
+            proceedToNextStep();
+          });
+        }
+        
+        // Register form
+        const registerForm = document.getElementById('email-register');
+        if (registerForm) {
+          registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+            
+            if (!name || !email || !password || !confirmPassword) {
+              alert('Preencha todos os campos');
+              return;
+            }
+            
+            if (password !== confirmPassword) {
+              alert('Senhas não coincidem');
+              return;
+            }
+            
+            // Simular cadastro bem-sucedido
+            const userData = {
+              id: 1,
+              nome: name,
+              email: email
+            };
+            
+            localStorage.setItem('kengi_auth_token', 'demo_token_' + Date.now());
+            localStorage.setItem('kengi_user', JSON.stringify(userData));
+            
+            // Avançar para a próxima etapa
+            proceedToNextStep();
+          });
+        }
+        
+        // Switch between login and register
+        const switchToRegister = document.getElementById('switch-to-register');
+        if (switchToRegister) {
+          switchToRegister.addEventListener('click', function() {
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('register-form').classList.remove('hidden');
+          });
+        }
+        
+        const switchToLogin = document.getElementById('switch-to-login');
+        if (switchToLogin) {
+          switchToLogin.addEventListener('click', function() {
+            document.getElementById('register-form').classList.add('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
+          });
+        }
+        
+        // Google login - CORRIGIDO
+        window.handleGoogleSignInClick = function() {
+          console.log('🔄 Autenticando com Google...');
+          
+          // Simular login com Google bem-sucedido
+          const userData = {
+            id: 1,
+            nome: 'Usuário Google',
+            email: 'usuario@gmail.com'
+          };
+          
+          localStorage.setItem('kengi_auth_token', 'google_token_' + Date.now());
+          localStorage.setItem('kengi_user', JSON.stringify(userData));
+          
+          console.log('✅ Login com Google bem-sucedido!');
+          
+          // Avançar para a próxima etapa
+          proceedToNextStep();
+        };
+        
+        console.log('✅ Navegação de autenticação configurada!');
+      }
+      
+      function proceedToNextStep() {
+        console.log('🔄 Avançando para a etapa de seleção de plano...');
+        
+        // Atualizar barra de progresso
+        const step1 = document.getElementById('step-1');
+        const step1Text = document.getElementById('step-1-text');
+        const step2 = document.getElementById('step-2');
+        const step2Text = document.getElementById('step-2-text');
+        
+        if (step1 && step2) {
+          step1.classList.add('bg-[#003057]');
+          step1.classList.add('text-white');
+          step1Text.classList.add('text-[#003057]');
+          
+          step2.classList.remove('bg-[#ccd6e6]');
+          step2.classList.add('bg-[#003057]');
+          step2.classList.remove('text-[#003057]');
+          step2.classList.add('text-white');
+          step2Text.classList.remove('text-gray-500');
+          step2Text.classList.add('text-[#003057]');
+        }
+        
+        // Esconder auth section e mostrar plan section
+        const authSection = document.getElementById('auth-section');
+        const planSection = document.getElementById('plan-section');
+        
+        if (authSection && planSection) {
+          authSection.classList.add('hidden');
+          planSection.classList.remove('hidden');
+          console.log('✅ Navegação concluída com sucesso!');
+        } else {
+          console.error('❌ Seções não encontradas!');
+        }
+      }
+      
+      // NOVO - Carregar dados do plano selecionado
+      function loadSelectedPlan() {
+        console.log('🔄 Verificando plano selecionado...');
+        
+        // Obter parâmetros da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const planType = urlParams.get('type'); // 'group' ou 'private'
+        const planPeriod = urlParams.get('period'); // 'monthly', 'semester', 'annual'
+        const planPrice = urlParams.get('price'); // valor do plano
+        
+        console.log('📊 Parâmetros URL:', { planType, planPeriod, planPrice });
+        
+        if (planType && planPeriod) {
+          // Armazenar dados do plano selecionado
+          window.selectedPlan = {
+            type: planType,
+            period: planPeriod,
+            price: planPrice || getPlanPrice(planType, planPeriod)
+          };
+          
+          console.log('✅ Plano carregado da URL:', window.selectedPlan);
+          
+          // Selecionar a tab correta
+          if (planType === 'group') {
+            document.getElementById('group-tab')?.click();
+          } else if (planType === 'private') {
+            document.getElementById('private-tab')?.click();
+          }
+          
+          // Selecionar o plano correto
+          setTimeout(() => {
+            const selector = `[data-type="${planType}"][data-period="${planPeriod}"]`;
+            const planButton = document.querySelector(selector);
+            if (planButton) {
+              planButton.click();
+            }
+          }, 500);
+        }
+      }
+      
+      // NOVO - Obter preço do plano
+      function getPlanPrice(type, period) {
+        const prices = {
+          group: {
+            monthly: '199',
+            semester: '1074',
+            annual: '1908'
+          },
+          private: {
+            monthly: '399',
+            semester: '2154',
+            annual: '3828'
+          }
+        };
+        
+        return prices[type]?.[period] || '0';
+      }
+      
+      // NOVO - Configurar seleção de planos
+      function setupPlanSelection() {
+        console.log('🔄 Configurando seleção de planos...');
+        
+        // Alternar entre planos em grupo e particulares
+        const groupTab = document.getElementById('group-tab');
+        const privateTab = document.getElementById('private-tab');
+        const groupPlans = document.getElementById('group-plans');
+        const privatePlans = document.getElementById('private-plans');
+        
+        if (groupTab && privateTab) {
+          groupTab.addEventListener('click', function() {
+            groupTab.classList.add('bg-[#003057]');
+            groupTab.classList.add('text-white');
+            groupTab.classList.remove('bg-white');
+            groupTab.classList.remove('text-[#003057]');
+            
+            privateTab.classList.remove('bg-[#003057]');
+            privateTab.classList.remove('text-white');
+            privateTab.classList.add('bg-white');
+            privateTab.classList.add('text-[#003057]');
+            
+            if (groupPlans && privatePlans) {
+              groupPlans.classList.remove('hidden');
+              privatePlans.classList.add('hidden');
+            }
+          });
+          
+          privateTab.addEventListener('click', function() {
+            privateTab.classList.add('bg-[#003057]');
+            privateTab.classList.add('text-white');
+            privateTab.classList.remove('bg-white');
+            privateTab.classList.remove('text-[#003057]');
+            
+            groupTab.classList.remove('bg-[#003057]');
+            groupTab.classList.remove('text-white');
+            groupTab.classList.add('bg-white');
+            groupTab.classList.add('text-[#003057]');
+            
+            if (privatePlans && groupPlans) {
+              privatePlans.classList.remove('hidden');
+              groupPlans.classList.add('hidden');
+            }
+          });
+        }
+        
+        // Selecionar plano
+        const selectPlanButtons = document.querySelectorAll('.select-plan-btn');
+        selectPlanButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const type = this.dataset.type;
+            const period = this.dataset.period;
+            const price = this.dataset.price;
+            
+            console.log('✅ Plano selecionado:', { type, period, price });
+            
+            // Armazenar plano selecionado
+            window.selectedPlan = { type, period, price };
+            
+            // Destacar plano selecionado
+            selectPlanButtons.forEach(btn => {
+              btn.textContent = 'Selecionar';
+              btn.closest('.plan-card').classList.remove('border-[#003057]');
+            });
+            
+            this.textContent = 'Selecionado';
+            this.closest('.plan-card').classList.add('border-[#003057]');
+            
+            // Habilitar botão de continuar
+            proceedToAgendaStep();
+          });
+        });
+      }
+      
+      // NOVO - Avançar para etapa de agenda
+      function proceedToAgendaStep() {
+        console.log('🔄 Avançando para etapa de agenda...');
+        
+        // Atualizar barra de progresso
+        const step2 = document.getElementById('step-2');
+        const step2Text = document.getElementById('step-2-text');
+        const step3 = document.getElementById('step-3');
+        const step3Text = document.getElementById('step-3-text');
+        
+        if (step2 && step3) {
+          step2.classList.add('bg-[#003057]');
+          step2.classList.add('text-white');
+          step2Text.classList.add('text-[#003057]');
+          
+          step3.classList.remove('bg-[#ccd6e6]');
+          step3.classList.add('bg-[#003057]');
+          step3.classList.remove('text-[#003057]');
+          step3.classList.add('text-white');
+          step3Text.classList.remove('text-gray-500');
+          step3Text.classList.add('text-[#003057]');
+        }
+        
+        // Esconder seção de planos e mostrar seção de agenda
+        const planSection = document.getElementById('plan-section');
+        const agendaSection = document.getElementById('agenda-section');
+        
+        if (planSection && agendaSection) {
+          planSection.classList.add('hidden');
+          agendaSection.classList.remove('hidden');
+          
+          // Atualizar informações do plano selecionado
+          const selectedPlanInfo = document.getElementById('selected-plan-info');
+          if (selectedPlanInfo && window.selectedPlan) {
+            const planType = window.selectedPlan.type === 'group' ? 'Aulas em Grupo' : 'Aulas Particulares';
+            const planPeriod = {
+              'monthly': 'Mensal',
+              'semester': 'Semestral',
+              'annual': 'Anual'
+            }[window.selectedPlan.period] || '';
+            
+            selectedPlanInfo.textContent = `${planType} - ${planPeriod} - R$ ${window.selectedPlan.price}`;
+          }
+          
+          console.log('✅ Avançado para agenda com sucesso!');
+          
+          // Carregar horários disponíveis
+          const dayFilter = document.getElementById('day-filter');
+          if (dayFilter) {
+            loadScheduleSlots(dayFilter.value);
+          }
+        } else {
+          console.error('❌ Seções não encontradas!');
+        }
+      }
+      
+      // Função para carregar slots de horário (simulação)
+      function loadScheduleSlots(day) {
+        const slotsContainer = document.getElementById('schedule-slots');
+        if (!slotsContainer) return;
+        
+        slotsContainer.innerHTML = '<div class="p-4 text-center">Carregando horários disponíveis...</div>';
+        
+        setTimeout(() => {
+          // Simular horários disponíveis
+          const slots = [
+            { id: `${day}-1`, time: '09:00 - 10:30', available: true },
+            { id: `${day}-2`, time: '11:00 - 12:30', available: true },
+            { id: `${day}-3`, time: '14:00 - 15:30', available: false },
+            { id: `${day}-4`, time: '16:00 - 17:30', available: true },
+            { id: `${day}-5`, time: '18:00 - 19:30', available: true }
+          ];
+          
+          slotsContainer.innerHTML = '';
+          
+          slots.forEach(slot => {
+            const slotEl = document.createElement('div');
+            slotEl.className = `schedule-slot p-3 mb-2 border rounded ${slot.available ? 'cursor-pointer hover:bg-gray-100' : 'bg-gray-100 opacity-50'}`;
+            slotEl.dataset.slotId = slot.id;
+            
+            slotEl.innerHTML = `
+              <div class="flex justify-between items-center">
+                <div class="schedule-time font-medium">${slot.time}</div>
+                <div class="schedule-status text-sm ${slot.available ? 'text-green-600' : 'text-red-500'}">
+                  ${slot.available ? 'Disponível' : 'Indisponível'}
+                </div>
+              </div>
+            `;
+            
+            if (slot.available) {
+              slotEl.addEventListener('click', () => selectScheduleSlot(slotEl, slot));
+            }
+            
+            slotsContainer.appendChild(slotEl);
+          });
+        }, 800);
+      }
+      
+      // Função para selecionar um horário
+      function selectScheduleSlot(slotElement, slotData) {
+        // Remover seleção anterior
+        document.querySelectorAll('.schedule-slot').forEach(slot => {
+          slot.classList.remove('border-[#003057]', 'bg-blue-50');
+        });
+        
+        // Destacar o horário selecionado
+        slotElement.classList.add('border-[#003057]', 'bg-blue-50');
+        
+        // Armazenar horário selecionado
+        window.selectedSchedule = slotData;
+        
+        // Habilitar o botão de continuar
+        document.getElementById('schedule-next-btn').disabled = false;
+      }
+    </script>
+    
+    <!-- CORREÇÃO: Avanço para agenda ao clicar em qualquer plano -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.select-plan-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          // Salva o plano selecionado (opcional)
+          window.selectedPlan = {
+            type: btn.getAttribute('data-type'),
+            period: btn.getAttribute('data-period'),
+            price: btn.getAttribute('data-price')
+          };
+
+          // Atualiza barra de progresso para etapa 3 (agenda)
+          if (typeof updateProgressStep === 'function') {
+            updateProgressStep(3);
+          } else {
+            for (let i = 1; i <= 5; i++) {
+              const stepCircle = document.getElementById(`step-${i}`);
+              const stepText = document.getElementById(`step-${i}-text`);
+              if (stepCircle && stepText) {
+                stepCircle.classList.remove('bg-[#003057]', 'text-white');
+                stepCircle.classList.add('bg-[#ccd6e6]', 'text-[#003057]');
+                stepText.classList.remove('text-[#003057]', 'font-medium');
+                stepText.classList.add('text-gray-500');
+              }
+            }
+            const activeCircle = document.getElementById('step-3');
+            const activeText = document.getElementById('step-3-text');
+            if (activeCircle && activeText) {
+              activeCircle.classList.remove('bg-[#ccd6e6]', 'text-[#003057]');
+              activeCircle.classList.add('bg-[#003057]', 'text-white');
+              activeText.classList.remove('text-gray-500');
+              activeText.classList.add('text-[#003057]', 'font-medium');
+            }
+          }
+
+          // Esconde a seção de planos e mostra a de agenda
+          document.getElementById('plan-section')?.classList.add('hidden');
+          document.getElementById('agenda-section')?.classList.remove('hidden');
+        });
+      });
+    });
+    </script>
+    <!-- CORREÇÃO: Agenda 100% funcional com mock -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // --- MOCK DE HORÁRIOS POR DIA ---
+      const horariosMock = {
+        segunda: [
+          { id: 1, hora: '09:00 - 10:30', disponivel: true },
+          { id: 2, hora: '14:00 - 15:30', disponivel: true },
+          { id: 3, hora: '18:00 - 19:30', disponivel: false }
+        ],
+        terca: [
+          { id: 4, hora: '10:00 - 11:30', disponivel: true },
+          { id: 5, hora: '16:00 - 17:30', disponivel: true }
+        ],
+        quarta: [
+          { id: 6, hora: '09:00 - 10:30', disponivel: true },
+          { id: 7, hora: '14:00 - 15:30', disponivel: false }
+        ],
+        quinta: [
+          { id: 8, hora: '11:00 - 12:30', disponivel: true },
+          { id: 9, hora: '17:00 - 18:30', disponivel: true }
+        ],
+        sexta: [
+          { id: 10, hora: '08:00 - 09:30', disponivel: true },
+          { id: 11, hora: '19:00 - 20:30', disponivel: true }
+        ],
+        sabado: [
+          { id: 12, hora: '10:00 - 11:30', disponivel: true }
+        ],
+        domingo: []
+      };
+
+      // --- Seleção de dia ---
+      document.querySelectorAll('.day-selector').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.day-selector').forEach(b => b.classList.remove('border-[#003057]', 'bg-blue-50'));
+          btn.classList.add('border-[#003057]', 'bg-blue-50');
+          const dia = btn.getAttribute('data-day');
+          carregarHorarios(dia);
+        });
+      });
+
+      // --- Carregar horários do mock ---
+      function carregarHorarios(dia) {
+        const horarios = horariosMock[dia] || [];
+        const container = document.getElementById('horarios-list');
+        const loading = document.getElementById('horarios-loading');
+        const noHorarios = document.getElementById('no-horarios');
+        const selectedDayName = document.getElementById('selected-day-name');
+        if (selectedDayName) selectedDayName.textContent = btnDiaParaNome(dia);
+        if (loading) loading.classList.remove('hidden');
+        if (noHorarios) noHorarios.classList.add('hidden');
+        container.innerHTML = '';
+        setTimeout(() => {
+          if (loading) loading.classList.add('hidden');
+          if (horarios.length === 0) {
+            if (noHorarios) noHorarios.classList.remove('hidden');
+            return;
+          }
+          horarios.forEach(horario => {
+            const div = document.createElement('div');
+            div.className = `schedule-slot p-3 mb-2 border rounded flex justify-between items-center ${horario.disponivel ? 'cursor-pointer hover:bg-gray-100' : 'bg-gray-100 opacity-50'}`;
+            div.dataset.horarioId = horario.id;
+            div.innerHTML = `<span class="font-medium">${horario.hora}</span><span class="text-sm ${horario.disponivel ? 'text-green-600' : 'text-red-500'}">${horario.disponivel ? 'Disponível' : 'Indisponível'}</span>`;
+            if (horario.disponivel) {
+              div.addEventListener('click', function() {
+                document.querySelectorAll('.schedule-slot').forEach(s => s.classList.remove('border-[#003057]', 'bg-blue-50'));
+                div.classList.add('border-[#003057]', 'bg-blue-50');
+                window.selectedSchedule = { dia, ...horario };
+                atualizarResumoSelecao();
+                document.getElementById('selection-summary').classList.remove('hidden');
+                document.getElementById('proceed-to-payment').disabled = false;
+              });
+            }
+            container.appendChild(div);
+          });
+        }, 400);
+      }
+
+      // --- Atualizar resumo da seleção ---
+      function atualizarResumoSelecao() {
+        const plan = window.selectedPlan || {};
+        const horario = window.selectedSchedule || {};
+        document.getElementById('summary-type').textContent = plan.type === 'group' ? 'Aulas em Grupo' : 'Aulas Particulares';
+        document.getElementById('summary-plan').textContent = plan.period ? (plan.period === 'monthly' ? 'Mensal' : plan.period === 'semester' ? 'Semestral' : 'Anual') : '';
+        document.getElementById('summary-day').textContent = btnDiaParaNome(horario.dia);
+        document.getElementById('summary-time').textContent = horario.hora || '';
+        document.getElementById('summary-price').textContent = plan.price ? `R$ ${plan.price}` : '';
+      }
+
+      // --- Utilitário para nome do dia ---
+      function btnDiaParaNome(dia) {
+        const nomes = {segunda:'Segunda-feira',terca:'Terça-feira',quarta:'Quarta-feira',quinta:'Quinta-feira',sexta:'Sexta-feira',sabado:'Sábado',domingo:'Domingo'};
+        return nomes[dia] || dia;
+      }
+
+      // --- Inicialização: selecionar segunda por padrão ---
+      setTimeout(() => {
+        document.querySelector('.day-selector[data-day="segunda"]')?.click();
+      }, 200);
+
+      // --- Desabilitar botão de avançar até selecionar horário ---
+      const proceedBtn = document.getElementById('proceed-to-payment');
+      if (proceedBtn) {
+        proceedBtn.disabled = true;
+        proceedBtn.addEventListener('click', function() {
+          if (!window.selectedSchedule) {
+            alert('Selecione um horário para continuar!');
+            return;
+          }
+        });
+      }
+    });
+    </script>
   </body>
 </html>

@@ -106,15 +106,64 @@
 .students-swiper__prev {
   left: -4rem;
 }
-/* Card de depoimento */
-.student-card {
-  background-color: var(--white-color);
-  border-radius: 1rem;
+/* Layout dos cards de depoimento */
+.student-card__container {
+  position: relative;
+  width: 350px;
+  height: 371px;
+}
+.student-card__layout {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.student-card__main-rectangle {
+  position: absolute;
+  width: 350px;
+  height: 300px;
+  background-color: #dee8ef;
+  border-radius: 20px 20px 20px 10px;
   padding: 2rem;
-  box-shadow: var(--box-shadow);
-  min-height: 320px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+.student-card__bottom-right-rectangle {
+  position: absolute;
+  width: 120px;
+  height: 130px;
+  background-color: #dee8ef;
+  right: 0;
+  top: 262px;
+  border-radius: 15px;
+}
+.student-card__middle-strip {
+  position: absolute;
+  width: 180px;
+  height: 65px;
+  background-color: #dee8ef;
+  right: 0;
+  top: 292px;
+}
+.student-card__blue-rectangle {
+  position: absolute;
+  width: 230px;
+  height: 80px;
+  background-color: var(--secondary-color);
+  left: 0;
+  top: 292px;
+  border-radius: 0 15px 0 15px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+/* Card de depoimento */
+.student-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 370px;
+  padding: 0;
+  border-radius: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .student-card:hover {
@@ -153,14 +202,14 @@
 .student-card__name {
   font-family: var(--font-montserrat);
   font-weight: 700;
-  font-size: 1rem;
-  color: var(--text-color);
+  font-size: 0.875rem;
+  color: var(--background-clear);
 }
 .student-card__city {
   font-family: var(--font-montserrat);
   font-size: 0.875rem;
   opacity: 0.8;
-  color: var(--text-color);
+  color: var(--background-clear);
 }
 
 /* Ajustes para telas menores */

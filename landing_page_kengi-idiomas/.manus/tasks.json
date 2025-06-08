@@ -1,0 +1,280 @@
+{
+  "project": "Kengi Idiomas",
+  "version": "1.0.0",
+  "updated": "2023-06-10",
+  "sprints": [
+    {
+      "id": 1,
+      "name": "Estrutura Base",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "T001",
+          "description": "Configurar estrutura do projeto",
+          "assignee": "Dev Team",
+          "status": "done",
+          "priority": "high"
+        },
+        {
+          "id": "T002",
+          "description": "Criar layouts HTML base",
+          "assignee": "Frontend Team",
+          "status": "done",
+          "priority": "high"
+        },
+        {
+          "id": "T003",
+          "description": "Implementar estilos CSS globais",
+          "assignee": "Frontend Team",
+          "status": "done",
+          "priority": "medium"
+        },
+        {
+          "id": "T004",
+          "description": "Configurar backend .NET 8",
+          "assignee": "Backend Team",
+          "status": "done",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Autenticação e Usuários",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "T005",
+          "description": "Implementar AuthController",
+          "assignee": "Backend Team",
+          "status": "done",
+          "priority": "high"
+        },
+        {
+          "id": "T006",
+          "description": "Configurar JWT",
+          "assignee": "Backend Team",
+          "status": "done",
+          "priority": "high"
+        },
+        {
+          "id": "T007",
+          "description": "Implementar Google OAuth",
+          "assignee": "Backend Team",
+          "status": "done",
+          "priority": "medium"
+        },
+        {
+          "id": "T008",
+          "description": "Criar serviço de autenticação frontend",
+          "assignee": "Frontend Team",
+          "status": "done",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Sistema de Agenda",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "T009",
+          "description": "Implementar AgendaController",
+          "assignee": "Backend Team",
+          "status": "done",
+          "priority": "high"
+        },
+        {
+          "id": "T010",
+          "description": "Criar modelo de dados para horários",
+          "assignee": "Backend Team",
+          "status": "done",
+          "priority": "medium"
+        },
+        {
+          "id": "T011",
+          "description": "Implementar sistema de reserva",
+          "assignee": "Backend Team",
+          "status": "done",
+          "priority": "high"
+        },
+        {
+          "id": "T012",
+          "description": "Criar serviço de seleção frontend",
+          "assignee": "Frontend Team",
+          "status": "done",
+          "priority": "high"
+        },
+        {
+          "id": "T013",
+          "description": "Implementar interface de seleção de horários",
+          "assignee": "Frontend Team",
+          "status": "done",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Sistema de Pagamentos",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "T014",
+          "description": "Implementar PaymentController",
+          "assignee": "Backend Team",
+          "status": "done",
+          "priority": "high"
+        },
+        {
+          "id": "T015",
+          "description": "Configurar métodos de pagamento (cartão, PIX, boleto)",
+          "assignee": "Backend Team",
+          "status": "done",
+          "priority": "high"
+        },
+        {
+          "id": "T016",
+          "description": "Criar serviço de pagamento frontend",
+          "assignee": "Frontend Team",
+          "status": "done",
+          "priority": "high"
+        },
+        {
+          "id": "T017",
+          "description": "Implementar interface de pagamento",
+          "assignee": "Frontend Team",
+          "status": "done",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Integração Frontend-Backend",
+      "status": "in_progress",
+      "tasks": [
+        {
+          "id": "T018",
+          "description": "Criar serviço API para comunicação com backend",
+          "assignee": "Frontend Team",
+          "status": "done",
+          "priority": "high"
+        },
+        {
+          "id": "T019",
+          "description": "Integrar autenticação frontend com backend",
+          "assignee": "Dev Team",
+          "status": "in_progress",
+          "priority": "high"
+        },
+        {
+          "id": "T020",
+          "description": "Integrar seleção de horários frontend com backend",
+          "assignee": "Dev Team",
+          "status": "in_progress",
+          "priority": "high"
+        },
+        {
+          "id": "T021",
+          "description": "Integrar pagamentos frontend com backend",
+          "assignee": "Dev Team",
+          "status": "in_progress",
+          "priority": "high"
+        },
+        {
+          "id": "T022",
+          "description": "Implementar tratamento de erros",
+          "assignee": "Dev Team",
+          "status": "in_progress",
+          "priority": "medium"
+        },
+        {
+          "id": "T023",
+          "description": "Testar fluxo completo end-to-end",
+          "assignee": "QA Team",
+          "status": "to_do",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Persistência e Produção",
+      "status": "to_do",
+      "tasks": [
+        {
+          "id": "T024",
+          "description": "Implementar Entity Framework Core",
+          "assignee": "Backend Team",
+          "status": "to_do",
+          "priority": "high"
+        },
+        {
+          "id": "T025",
+          "description": "Criar migrations e seed de dados",
+          "assignee": "Backend Team",
+          "status": "to_do",
+          "priority": "medium"
+        },
+        {
+          "id": "T026",
+          "description": "Configurar ambiente de produção AWS",
+          "assignee": "DevOps Team",
+          "status": "to_do",
+          "priority": "high"
+        },
+        {
+          "id": "T027",
+          "description": "Implementar CI/CD",
+          "assignee": "DevOps Team",
+          "status": "to_do",
+          "priority": "medium"
+        },
+        {
+          "id": "T028",
+          "description": "Configurar monitoramento e logs",
+          "assignee": "DevOps Team",
+          "status": "to_do",
+          "priority": "low"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Testes e Otimização",
+      "status": "to_do",
+      "tasks": [
+        {
+          "id": "T029",
+          "description": "Implementar testes unitários backend",
+          "assignee": "Backend Team",
+          "status": "to_do",
+          "priority": "medium"
+        },
+        {
+          "id": "T030",
+          "description": "Implementar testes de integração",
+          "assignee": "QA Team",
+          "status": "to_do",
+          "priority": "medium"
+        },
+        {
+          "id": "T031",
+          "description": "Otimizar performance",
+          "assignee": "Dev Team",
+          "status": "to_do",
+          "priority": "low"
+        },
+        {
+          "id": "T032",
+          "description": "Melhorar acessibilidade",
+          "assignee": "Frontend Team",
+          "status": "to_do",
+          "priority": "low"
+        }
+      ]
+    }
+  ]
+} 

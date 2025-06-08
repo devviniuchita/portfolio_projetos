@@ -1,0 +1,100 @@
+/* Animações para a página de pagamento */
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Destaque para o plano selecionado */
+.plan-info__badge {
+  display: inline-block;
+  background-color: #003057;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.plan-info__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.plan-info__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #003057;
+  margin: 0 0 10px 0;
+}
+
+.plan-info__price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #d22630;
+  margin: 0 0 5px 0;
+}
+
+.plan-info__period {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.plan-info__features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.plan-info__features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #444;
+}
+
+.plan-info__features li i {
+  color: #d22630;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.plan-info__action {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.plan-info__change-btn {
+  display: inline-flex;
+  align-items: center;
+  color: #003057;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #003057;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.plan-info__change-btn:hover {
+  background-color: #003057;
+  color: white;
+}
+
+.plan-info__change-btn i {
+  margin-right: 5px;
+} 

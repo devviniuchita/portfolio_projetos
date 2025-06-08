@@ -1,0 +1,150 @@
+{
+  "project": "Kengi Idiomas",
+  "last_updated": "2025-01-27T22:00:00Z",
+  "overall_progress": "55%",
+  "status_real": "SPRINT 4 - INTEGRAÇÃO FRONTEND/BACKEND (20% CONCLUÍDO)",
+  "sprints": [
+    {
+      "sprint_id": 1,
+      "name": "Fundação e Autenticação",
+      "status": "completed",
+      "completion_date": "2025-01-27",
+      "progress": "100%",
+      "tasks": [
+        {"task_id": "task_id_001", "description": "Setup Projeto .NET 8", "assigned_to": "CURSOR", "status": "completed", "dependencies": []},
+        {"task_id": "task_id_002", "description": "Config MySQL + EF Core", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_001"]},
+        {"task_id": "task_id_003", "description": "Setup Auth JWT", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_001"]},
+        {"task_id": "task_id_004", "description": "Entidades do Banco", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_002"]},
+        {"task_id": "task_id_005", "description": "Controllers Auth", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_003", "task_id_004"]},
+        {"task_id": "task_id_006", "description": "Services Auth", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_003", "task_id_004"]},
+        {"task_id": "task_id_007", "description": "DTOs e Models", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_004"]},
+        {"task_id": "task_id_008", "description": "Swagger + CORS", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_001"]}
+      ]
+    },
+    {
+      "sprint_id": 2,
+      "name": "Sistema de Agenda",
+      "status": "completed",
+      "completion_date": "2025-01-27",
+      "progress": "100%",
+      "tasks": [
+        {"task_id": "task_id_009", "description": "Modelo Agenda", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_004"]},
+        {"task_id": "task_id_010", "description": "DTO Agenda", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_007", "task_id_009"]},
+        {"task_id": "task_id_011", "description": "Service Agenda", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_009"]},
+        {"task_id": "task_id_012", "description": "Controller Agenda", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_010", "task_id_011"]},
+        {"task_id": "task_id_013", "description": "Validação Agenda", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_011"]},
+        {"task_id": "task_id_014", "description": "Fila de Espera", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_011"]}
+      ]
+    },
+    {
+      "sprint_id": 3,
+      "name": "Sistema de Pagamentos",
+      "status": "completed",
+      "completion_date": "2025-01-27",
+      "progress": "100%",
+      "tasks": [
+        {"task_id": "task_id_015", "description": "Modelo Pagamento", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_004", "task_id_009"]},
+        {"task_id": "task_id_016", "description": "DTO Pagamento", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_007", "task_id_015"]},
+        {"task_id": "task_id_017", "description": "Service Pagamento", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_015"]},
+        {"task_id": "task_id_018", "description": "Controller Pagamento", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_016", "task_id_017"]},
+        {"task_id": "task_id_019", "description": "Gateway Pagamento", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_017"]},
+        {"task_id": "task_id_020", "description": "Webhook Pagamento", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_019"]}
+      ]
+    },
+    {
+      "sprint_id": 4,
+      "name": "Integração Frontend-Backend",
+      "status": "in_progress",
+      "start_date": "2025-01-27",
+      "expected_end_date": "2025-01-28",
+      "progress": "20%",
+      "tasks": [
+        {"task_id": "task_id_021", "description": "API Calls Frontend", "assigned_to": "CURSOR", "status": "completed", "dependencies": [], "details": "Implementação dos serviços JavaScript para comunicação com a API (auth.js, api.js)"},
+        {"task_id": "task_id_022", "description": "Serviço Agenda Frontend", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_021"], "details": "Implementação do serviço para gerenciar horários e agenda (agenda.js)"},
+        {"task_id": "task_id_023", "description": "Serviço Pagamento Frontend", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_021"], "details": "Implementação do serviço para processar pagamentos (pagamento.js)"},
+        {"task_id": "task_id_024", "description": "Serviço Planos Frontend", "assigned_to": "CURSOR", "status": "completed", "dependencies": ["task_id_021"], "details": "Implementação do serviço para gerenciar planos e cursos (planos.js)"},
+        {"task_id": "task_id_025", "description": "Integração Autenticação", "assigned_to": "CURSOR", "status": "in_progress", "dependencies": ["task_id_021"], "details": "Integração do sistema de autenticação no frontend"},
+        {"task_id": "task_id_026", "description": "Integração Agenda", "assigned_to": "CURSOR", "status": "pending", "dependencies": ["task_id_022", "task_id_025"], "details": "Integração do sistema de agendamento no frontend"},
+        {"task_id": "task_id_027", "description": "Integração Pagamento", "assigned_to": "CURSOR", "status": "pending", "dependencies": ["task_id_023", "task_id_025", "task_id_026"], "details": "Integração do sistema de pagamento no frontend"},
+        {"task_id": "task_id_028", "description": "Integração Planos", "assigned_to": "CURSOR", "status": "pending", "dependencies": ["task_id_024"], "details": "Integração dos planos e cursos no frontend"}
+      ]
+    },
+    {
+      "sprint_id": 5,
+      "name": "Dashboard Admin",
+      "status": "pending",
+      "progress": "0%",
+      "tasks": [
+        {"task_id": "task_id_029", "description": "Backend Admin", "assigned_to": "não atribuído", "status": "pending", "dependencies": []},
+        {"task_id": "task_id_030", "description": "Frontend Admin", "assigned_to": "não atribuído", "status": "pending", "dependencies": ["task_id_029"]},
+        {"task_id": "task_id_031", "description": "Relatórios", "assigned_to": "não atribuído", "status": "pending", "dependencies": ["task_id_029"]}
+      ]
+    },
+    {
+      "sprint_id": 6,
+      "name": "Testes e Qualidade",
+      "status": "pending",
+      "progress": "0%",
+      "tasks": [
+        {"task_id": "task_id_032", "description": "Testes Unitários", "assigned_to": "não atribuído", "status": "pending", "dependencies": []},
+        {"task_id": "task_id_033", "description": "Testes End-to-End", "assigned_to": "não atribuído", "status": "pending", "dependencies": ["task_id_032"]},
+        {"task_id": "task_id_034", "description": "Testes Performance", "assigned_to": "não atribuído", "status": "pending", "dependencies": ["task_id_032"]}
+      ]
+    },
+    {
+      "sprint_id": 7,
+      "name": "Deploy e Infraestrutura",
+      "status": "in_progress",
+      "progress": "50%",
+      "tasks": [
+        {"task_id": "task_id_035", "description": "Setup AWS", "assigned_to": "não atribuído", "status": "completed", "dependencies": []},
+        {"task_id": "task_id_036", "description": "Pipeline CI/CD", "assigned_to": "não atribuído", "status": "in_progress", "dependencies": ["task_id_035"]},
+        {"task_id": "task_id_037", "description": "Domínio e SSL", "assigned_to": "não atribuído", "status": "pending", "dependencies": ["task_id_035"]}
+      ]
+    }
+  ],
+  "critical_features": {
+    "authentication": {
+      "status": "✅ CONCLUÍDO",
+      "progress": "100%",
+      "components": ["JWT", "BCrypt", "Login", "Register", "Auth Service"]
+    },
+    "agenda_system": {
+      "status": "✅ CONCLUÍDO", 
+      "progress": "100%",
+      "components": ["Horários", "Reservas", "Fila Espera", "Planos", "Agenda Service"]
+    },
+    "payment_system": {
+      "status": "✅ CONCLUÍDO",
+      "progress": "100%",
+      "components": ["Gateway", "PIX", "Cartão", "Boleto", "Webhooks", "Payment Service"]
+    },
+    "frontend_integration": {
+      "status": "⚠️ PENDENTE",
+      "progress": "10%",
+      "components": ["API Calls", "Auth Frontend", "Agenda Frontend", "Payment Frontend"]
+    }
+  },
+  "next_priority": "Sprint 4 - Integração Frontend-Backend",
+  "problemas_identificados": [
+    {
+      "id": "prob_001",
+      "descricao": "Duplicação de entidades (Agenda vs HorarioDisponivel)",
+      "status": "resolvido",
+      "solucao": "Entidades unificadas por script unificar_entidades.sh"
+    },
+    {
+      "id": "prob_002",
+      "descricao": "Falta de migrations para o banco de dados",
+      "status": "resolvido",
+      "solucao": "Migrations criadas por script setup_migrations.sh"
+    },
+    {
+      "id": "prob_003",
+      "descricao": "Integração frontend-backend incompleta",
+      "status": "em_progresso",
+      "solucao": "Implementar chamadas API no frontend conforme PLANO_INTEGRACAO_FRONTEND.md"
+    }
+  ]
+}
+

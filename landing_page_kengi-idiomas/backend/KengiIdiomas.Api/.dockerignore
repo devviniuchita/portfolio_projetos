@@ -1,0 +1,48 @@
+# ===== KENGI IDIOMAS - DOCKERIGNORE =====
+
+# Arquivos de desenvolvimento
+**/.vs
+**/.vscode
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/bin
+**/obj
+**/out
+**/TestResults
+
+# Arquivos de sistema
+**/.git
+**/.gitignore
+**/.gitattributes
+**/README.md
+**/Dockerfile*
+**/.dockerignore
+
+# Logs e temporários
+**/logs
+**/*.log
+**/tmp
+**/temp
+
+# Dependências
+**/node_modules
+**/packages
+
+# Arquivos de configuração local
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/.env
+**/.env.local
+
+# Arquivos de backup
+**/*.bak
+**/*.swp
+**/*.tmp
+
+# Arquivos de IDE
+**/.idea
+**/*.suo
+**/*.user
+**/*.userosscache
+**/*.sln.docstates 
